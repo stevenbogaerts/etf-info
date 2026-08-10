@@ -2,4 +2,30 @@
 title: "Quick-Start Guide to PrairieLearn and the ETF"
 ---
 
-Coming soon!
+## What is PrairieLearn?
+
+PrairieLearn is an online learning and assessment platform used for practice, homework, quizzes, and exams.
+
+- Main site: <https://www.prairielearn.org/>
+- Documentation: <https://prairielearn.readthedocs.io/>
+
+## What is PrairieTest?
+
+PrairieTest is the testing workflow used to deliver and support exams built from PrairieLearn content.
+
+- PrairieTest site: <https://www.prairietest.org/>
+- Add the most useful local PrairieTest docs or contacts here.
+
+## What is the ETF at University of Michigan?
+
+The ETF is the Engineering Testing Facility at the University of Michigan.
+
+- Add the brief official description or local landing page here.
+- Add the key people, email, or support channel here.
+
+## Start here
+
+Use the pages in the navbar for the two main workflows:
+
+- [Making PrairieLearn Content](pl_web.qmd)
+- [Making an Exam for the ETF](exam_etf.qmd)

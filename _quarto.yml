@@ -6,8 +6,11 @@ website:
   navbar:
     left:
       - href: index.qmd
-        text: Home
-      - about.qmd
+        text: Introduction
+      - href: pl_web.qmd
+        text: PrairieLearn Content
+      - href: exam_etf.qmd
+        text: ETF Exam
 
 format:
   html:
