@@ -1,0 +1,16 @@
+<pl-question-panel>
+  <p>QUESTION TEXT - params from server.py are available here too.</p>
+  <p>SECOND PARAGRAPH</p>
+  <!-- DELETE when adapting: LaTeX examples -->
+  <p>LaTeX if needed: $\sum_{i=1}^{n} i$ and: $$\sum_{i=1}^{n} i$$</p>
+  <!-- END DELETE -->
+  <p>Write a Python expression using <code>range</code> that produces the
+     integers 0 through {{params.n}}, inclusive.</p>
+</pl-question-panel>
+
+<pl-string-input answers-name="answer" label="Code:" remove-leading-trailing="true"
+                 placeholder=""></pl-string-input>
+
+<pl-submission-panel>
+  {{#feedback.general}}<p>{{feedback.general}}</p>{{/feedback.general}}
+</pl-submission-panel>

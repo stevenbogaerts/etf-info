@@ -1,0 +1,18 @@
+{
+  "uuid": "64be628e-e82c-44f1-b0e4-e54105b0d9c4",
+  "type": "v3",
+  "title": "QUESTION TITLE",
+  "topic": "QUESTION TOPIC (Lecture title)",
+  "tags": [
+    "multiple_choice",
+    "printed_output",
+    "template:mc_rv_printed"
+  ],
+  "authors": [{ "name": "Steven Bogaerts", "email": "bogaerts@umich.edu", "orcid": "0009-0008-3430-0956" }],
+  "gradingMethod": "Internal",
+  "singleVariant": false,
+  "showCorrectAnswer": false,
+  "partialCredit": true,
+  "sharePublicly": false,
+  "shareSourcePublicly": false
+}

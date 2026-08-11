@@ -1,0 +1,22 @@
+{
+  "uuid": "a1c2e3d4-96cb-4e88-9f1f-66415f55ff42",
+  "type": "v3",
+  "title": "QUESTION TITLE",
+  "topic": "QUESTION TOPIC (Lecture title)",
+  "tags": [
+    "code_writing",
+    "template:code_rv"
+  ],
+  "authors": [{ "name": "Steven Bogaerts", "email": "bogaerts@umich.edu", "orcid": "0009-0008-3430-0956" }],
+  "gradingMethod": "External",
+  "singleVariant": false,
+  "showCorrectAnswer": false,
+  "externalGradingOptions": {
+    "enabled": true,
+    "image": "prairielearn/grader-python",
+    "entrypoint": "/python_autograder/run.sh",
+    "timeout": 20
+  },
+  "sharePublicly": false,
+  "shareSourcePublicly": false
+}

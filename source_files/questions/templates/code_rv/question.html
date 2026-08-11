@@ -1,0 +1,39 @@
+<pl-question-panel>
+  <p>QUESTION TEXT - describe the function signature and behavior. Reference the random parameter with <code>{{params.n}}</code>.</p>
+  <p>SECOND PARAGRAPH</p>
+  <!-- DELETE when adapting: LaTeX examples -->
+  <p>LaTeX if needed: $\sum_{i=1}^{n} i$ and: $$\sum_{i=1}^{n} i$$</p>
+  <p>Dollar sign without triggering LaTeX:
+    <div class="mathjax_ignore">
+      It costs $5 to buy this item.
+    </div>
+  </p>
+  <pl-code language="python" highlight-lines="1-2,4">
+# Code block if needed
+def say_hi():
+    print("hi")
+
+say_hi()
+print("All done!")
+  </pl-code>
+  <!-- END DELETE -->
+  <p>
+    Write a function <code>{{params.func_name}}(x)</code> that returns <code>x * {{params.n}}</code>.
+    For example, <code>{{params.func_name}}({{params.example_input}})</code> should return <code>{{params.example_output}}</code>.
+  </p>
+  <pl-external-grader-variables params-name="names_from_user"></pl-external-grader-variables>
+  <pl-file-editor file-name="user_code.py" ace-mode="ace/mode/python">
+def {{params.func_name}}(x: int) -> int:
+    '''
+    Requires: Nothing
+    Modifies: Nothing
+    Effects: Returns x multiplied by {{params.n}}.
+    '''
+
+  </pl-file-editor>
+</pl-question-panel>
+
+<pl-submission-panel>
+  <pl-external-grader-results></pl-external-grader-results>
+  <pl-file-preview></pl-file-preview>
+</pl-submission-panel>

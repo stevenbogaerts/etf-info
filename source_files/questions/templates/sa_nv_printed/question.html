@@ -1,0 +1,20 @@
+<pl-question-panel>
+  <p>What gets printed when the following code runs?</p>
+  <!-- TEMPLATE NOTE: build the code string in _get_raw_parameters (raw_params["code"]).
+       The code shown depends on which major variant was randomly selected:
+         range_n            →  for i in range(n):
+         range_start_stop   →  for i in range(start, stop):
+         range_start_stop_step → for i in range(start, stop, step):
+       For single-line output, use end="" or end="_" etc. in your print statements.
+       For multi-line output, use regular print() calls (default newline). -->
+  <pl-code language="python" prevent-select="true">
+{{params.code}}
+  </pl-code>
+  <p>Enter the output exactly, including any characters from <code>end=</code>.</p>
+</pl-question-panel>
+
+<pl-string-input placeholder="" answers-name="answer" remove-leading-trailing="true"></pl-string-input>
+
+<pl-submission-panel>
+  {{#feedback.general}}<p>{{feedback.general}}</p>{{/feedback.general}}
+</pl-submission-panel>

@@ -1,0 +1,23 @@
+<pl-question-panel>
+  <p>What gets printed when the following code runs?</p>
+  <!-- TEMPLATE NOTE: build the code string in _get_raw_parameters (raw_params["code"]).
+       The code shown depends on which major variant was randomly selected:
+         range_n            →  for i in range(n):
+         range_start_stop   →  for i in range(start, stop):
+         range_start_stop_step → for i in range(start, stop, step):
+       For single-line output, use end="" or end="_" etc. in your print statements.
+       For multi-line output, use PLUtils.code_block() in _get_correct_answer and _get_distractors. -->
+  <pl-code language="python" prevent-select="true">
+{{params.code}}
+  </pl-code>
+</pl-question-panel>
+
+<!-- Triple braces {{{...}}} are required on all answers: they may be plain text OR
+     raw HTML from PLUtils.code_block() (for multi-line output). -->
+<pl-multiple-choice answers-name="selected" fixed-order="false">
+  <pl-answer correct="true">{{{params.correct}}}</pl-answer>
+
+  {{#params.distractors}}
+  <pl-answer feedback="{{feedback}}">{{{text}}}</pl-answer>
+  {{/params.distractors}}
+</pl-multiple-choice>

@@ -1,0 +1,28 @@
+<pl-question-panel>
+  <p>QUESTION TEXT - params from server.py are available here too.</p>
+  <p>SECOND PARAGRAPH</p>
+  <!-- DELETE when adapting: LaTeX examples -->
+  <p>LaTeX if needed: $\sum_{i=1}^{n} i$ and: $$\sum_{i=1}^{n} i$$</p>
+  <p>Dollar sign without triggering LaTeX:
+    <div class="mathjax_ignore">
+      It costs $5 to buy this item.
+    </div>
+  </p>
+  <pl-code language="python" highlight-lines="1-2,4">
+# Code block if needed
+def say_hi():
+    print("hi")
+
+say_hi()
+print("All done!")
+  </pl-code>
+  <!-- END DELETE -->
+  <p>What is {{params.left}} + {{params.right}}?</p>
+  <p>{{params.answer_format_phrase}}</p>
+</pl-question-panel>
+
+<pl-string-input placeholder="" answers-name="answer" remove-leading-trailing="true"></pl-string-input>
+
+<pl-submission-panel>
+  {{#feedback.general}}<p>{{feedback.general}}</p>{{/feedback.general}}
+</pl-submission-panel>

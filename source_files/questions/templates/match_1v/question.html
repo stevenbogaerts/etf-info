@@ -1,0 +1,20 @@
+<pl-question-panel>
+  <p>QUESTION TEXT - params from server.py are available here too.</p>
+  <p>SECOND PARAGRAPH</p>
+  <p>LaTeX if needed: $\sum_{i=1}^{n} i$ and: $$\sum_{i=1}^{n} i$$</p>
+  <p>Dollar sign without triggering LaTeX:
+    <div class="mathjax_ignore">
+      It costs $5 to buy this item.
+    </div>
+  </p>
+</pl-question-panel>
+
+<pl-matching answers-name="matching">
+  {{#params.statements}}
+  <pl-statement match="{{match}}">{{{text}}}</pl-statement>
+  {{/params.statements}}
+
+  {{#params.options}}
+  <pl-option name="{{name}}">{{{text}}}</pl-option>
+  {{/params.options}}
+</pl-matching>

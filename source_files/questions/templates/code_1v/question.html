@@ -1,0 +1,39 @@
+<pl-question-panel>
+  <p>QUESTION TEXT - describe the function signature and behavior.</p>
+  <p>SECOND PARAGRAPH</p>
+  <!-- DELETE when adapting: LaTeX examples -->
+  <p>LaTeX if needed: $\sum_{i=1}^{n} i$ and: $$\sum_{i=1}^{n} i$$</p>
+  <p>Dollar sign without triggering LaTeX:
+    <div class="mathjax_ignore">
+      It costs $5 to buy this item.
+    </div>
+  </p>
+  <pl-code language="python" highlight-lines="1-2,4">
+# Code block if needed
+def say_hi():
+    print("hi")
+
+say_hi()
+print("All done!")
+  </pl-code>
+  <!-- END DELETE -->
+  <p>
+    Write a function <code>my_function(x, n)</code> that returns <code>x * n</code>.
+    For example, <code>my_function(3, 5)</code> should return <code>15</code>.
+  </p>
+  <pl-external-grader-variables params-name="names_from_user"></pl-external-grader-variables>
+  <pl-file-editor file-name="user_code.py" ace-mode="ace/mode/python">
+def my_function(x: int, n: int) -> int:
+    '''
+    Requires: preconditions (assumptions about the inputs), or Nothing
+    Modifies: externally-visible changes (e.g. mutations of parameters, file writes), or Nothing
+    Effects: Returns x * n.
+    '''
+
+  </pl-file-editor>
+</pl-question-panel>
+
+<pl-submission-panel>
+  <pl-external-grader-results></pl-external-grader-results>
+  <pl-file-preview></pl-file-preview>
+</pl-submission-panel>

@@ -1,16 +1,10 @@
 project:
   type: website
+  render:
+    - "index.qmd"
 
 website:
   title: "Quick-Start Guide to PrairieLearn and the ETF"
-  navbar:
-    left:
-      - href: index.qmd
-        text: Introduction
-      - href: pl_web.qmd
-        text: PrairieLearn Content
-      - href: exam_etf.qmd
-        text: ETF Exam
 
 format:
   html:
