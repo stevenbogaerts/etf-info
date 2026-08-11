@@ -1,16 +1,79 @@
 [
   {
-    "objectID": "pl_web.html",
-    "href": "pl_web.html",
-    "title": "About",
-    "section": "",
-    "text": "About this site"
-  },
-  {
     "objectID": "index.html",
     "href": "index.html",
     "title": "Quick-Start Guide to PrairieLearn and the ETF",
     "section": "",
-    "text": "Coming soon!"
+    "text": "This is a quick-start guide for faculty members at University of Michigan - Ann Arbor on using PrairieLearn and giving exams at the Engineering Testing Facility (ETF).\nPlease note: Given the large range of faculty member backgrounds in the concepts discussed here, this documentation does not attempt to be one-size-fits-all nor comprehensive. Rather, this is provided to point faculty members to a few key ideas to get started quickly. Web searches, AI, and I (as the ETF faculty advisor) are all good resources if you get stuck. I am happy to assist U-M faculty members on these topics.\nIf you would like to see comprehensive documentation, visit the official PrairieLearn documentation."
+  },
+  {
+    "objectID": "index.html#what-is-prairielearn",
+    "href": "index.html#what-is-prairielearn",
+    "title": "Quick-Start Guide to PrairieLearn and the ETF",
+    "section": "What is PrairieLearn?",
+    "text": "What is PrairieLearn?\nPrairieLearn is an online learning and assessment platform used for practice, homework, quizzes, and exams. Some notable features include:\n\nGreat flexibility in question types and grading\nAutomatic and manual grading support\nEasy-to-use web interface, plus the opportunity to integrate with agentic AI workflows"
+  },
+  {
+    "objectID": "index.html#what-are-prairietest-and-the-etf",
+    "href": "index.html#what-are-prairietest-and-the-etf",
+    "title": "Quick-Start Guide to PrairieLearn and the ETF",
+    "section": "What are PrairieTest and the ETF?",
+    "text": "What are PrairieTest and the ETF?\nPrairieTest is a system that uses PrairieLearn content to deliver and support exams. The Engineering Testing Facility (ETF) at U-M is the testing center that uses PrairieTest to deliver exams. Faculty members can reserve with the ETF, design their exams in PrairieLearn, and then the ETF will deliver the exam to students.\nThis Quick-Start Guide is about PrairieLearn, not about PrairieTest nor the ETF. For more information on those resources, visit the ETF website."
+  },
+  {
+    "objectID": "index.html#access",
+    "href": "index.html#access",
+    "title": "Quick-Start Guide to PrairieLearn and the ETF",
+    "section": "Getting Access",
+    "text": "Getting Access\n\nRequest a PrairieLearn course: For each course you intend to use with PrairieLearn, you need a “PrairieLearn course” to be created for you, if you don’t already have one. Go to the PrairieLearn site and click “Free sign up” in the top-right corner. Login by clicking the “University of Michigan” button down below, not via “Sign in with Google”. Follow the steps presented to request your course.\nGet a GitHub.com account: GitHub is a web-based platform for managing software development projects. Eventually, it will play an integral role in your PrairieLearn workflow. If you don’t already have an account, go to GitHub.com and click the “Sign up” button in the top-right corner. Follow the steps presented to create your account.\nAccess Your GitHub PrairieLearn Repository: When your PrairieLearn course is created, you will receive an email with an invitation to access your course’s GitHub repository (a collection of files related to your PrairieLearn course). Accept the invitation and connect it to your GitHub account."
+  },
+  {
+    "objectID": "index.html#making-your-first-prairielearn-question",
+    "href": "index.html#making-your-first-prairielearn-question",
+    "title": "Quick-Start Guide to PrairieLearn and the ETF",
+    "section": "Making Your First PrairieLearn Question",
+    "text": "Making Your First PrairieLearn Question\nLog in to PrairieLearn at the PrairieLearn course site and navigate to your course. Click on “Questions” in the left-hand navigation menu. Then click the “Add questions” drop-down and choose “Generate question with AI”. Enter whatever details of a question you’d like. For a simple first example, you might consider: “Show a randomly generated linear equation and a random x value. Students must enter (short-answer) the resulting y value.”\nThe AI will “think” for a bit and then generate a question you can try out in the “Preview” tab. You can chat with the AI to adjust the question as needed. When you are satisfied with the question, click “Finalize question”. Give it a title (student-facing) and a QID (question ID). The QID must be unique within your course. Click “Finalize question” again.\nClick on the questions tab, and click the link for the question you just made. It will open in the “Preview” tab, where you can try it out again. Click on the “Settings” tab for the question and note the things you can change. Also briefly check out the “Files” tab, and you’ll see that there are three files associated with your question:\n\ninfo.json - contains basic settings for your question\nquestion.html - defines, in HTML syntax, what the question looks like to students\nserver.py - Python code that generates the question\n\nYou can use PrairieLearn without knowing anything about JSON, HTML, or Python, though in some cases it may be helpful to know a little bit about these tools."
+  },
+  {
+    "objectID": "index.html#making-your-first-assessment",
+    "href": "index.html#making-your-first-assessment",
+    "title": "Quick-Start Guide to PrairieLearn and the ETF",
+    "section": "Making Your First Assessment",
+    "text": "Making Your First Assessment\nIn PrairieLearn, an “assessment” is a collection of questions that students will answer. There are two types of assessments, “Homework” and “Exam”. The type determines some default settings, but these can be changed later, as we’ll see.\nTo make your first assessment, click on “Assessments” in the left-hand navigation menu. Then click the “Add assessment” button. Let’s give it the title “Homework 1”, short name “hw1”, set the type to “Homework”, and the “set” to whatever you’d like. (You can also edit the available assessment sets in Course Settings, Assessment Sets.) Press the “Create” button.\nYou’ll see your new assessment’s page. There are no questions in it yet, so click “Add questions”. You’ll see “Zone 1”. In the right panel, you can click your question (not the blue underlined link, but the box around the question) to add it to the assessment.\nHit the blue disk icon button (labeled “Save” on hover) to save, and you’ll be back in your Assessment.\nGo back to the Questions page and make a few more questions, so that you have a few to try out the assessment functionality with. Then add them to your assessment.\nWhen looking at your assessment page, you can try it out as a student will see it by clicking on your name in the upper-right corner and choosing “Student view without access restrictions”.\nWhen you’re done exploring it, go back to the regular view (upper-right corner, “Staff view”). Click the other tabs at top to explore what’s possible, such as the “Access” tab, “Files”, “Manual grading”, “Settings”, etc.\nWhen you’re ready to make an exam to be administered in the ETF, you’ll make an assessment of type “Exam” and then follow ETF procedures."
+  },
+  {
+    "objectID": "index.html#reading-some-documentation",
+    "href": "index.html#reading-some-documentation",
+    "title": "Quick-Start Guide to PrairieLearn and the ETF",
+    "section": "Reading Some Documentation",
+    "text": "Reading Some Documentation\nWith that brief introduction, you might consider visiting the official PrairieLearn documentation to skim/read as you please. I recommend you look around just to get a general idea of what details are available. In particular, you may want to follow the Getting Started page for a more detailed and technical walkthrough than what we did above."
+  },
+  {
+    "objectID": "index.html#importing-questions-from-canvas",
+    "href": "index.html#importing-questions-from-canvas",
+    "title": "Quick-Start Guide to PrairieLearn and the ETF",
+    "section": "Importing Questions from Canvas",
+    "text": "Importing Questions from Canvas\nDetails coming soon!"
+  },
+  {
+    "objectID": "index.html#working-directly-with-your-prairielearn-repository",
+    "href": "index.html#working-directly-with-your-prairielearn-repository",
+    "title": "Quick-Start Guide to PrairieLearn and the ETF",
+    "section": "Working Directly With Your PrairieLearn Repository",
+    "text": "Working Directly With Your PrairieLearn Repository\nIt is possible to work with PrairieLearn only via the web interface, as described above. However, consider the following questions:\n\nWill you create hundreds of questions in PrairieLearn?\nWould you like some of your questions to be significantly more complex than the example above?\nWould you like to be able to leverage agentic AI (e.g., Claude Code) in your question development? (Note: this can allow you to achieve much more, much more quickly!)\n\nIf you answered “yes” to any of the above, I strongly recommend you invest a little more time learning how to work directory with your PrairieLearn GitHub repository (“repo”).\n\nTools to Install\nFirst, you’ll need to install a few things (if you don’t already have them installed):\n\nGit\nPython\n\nNext, you will need an integrated development environment (IDE). If you are already familiar with one and can use agentic workflows in it, then you can stick with that. Otherwise, some options include:\n\nVS Code plus an AI extension (e.g., Claude Code)\nChatGPT’s Codex\n\nUsing AI in this way will require a subscription. For example, with VS Code and a $20/month Claude Code subscription, I almost never reach my quota for usage, even with heavy PrairieLearn development. If you’re unsure what to do, I recommend following this setup.\n\n\nCloning Your Repo\nAs briefly mentioned above, your PrairieLearn course (including questions and assessments) is stored in the GitHub repo that you gained access to when your course was created. This basically means that your course is stored “in the cloud”. We need to get a local copy of it; this is called “cloning” the repo. Follow these instructions to clone a repo.\n\n\nOpening and Exploring Your Repo\nOpen your Repo in your IDE. For example, if you’re using VS Code, click on “File” in the top menu, then “Open Folder”. Navigate to the folder where you cloned your repo and open it. You should see a list of files and folders in the left-hand panel.\nExplore the folder structure a bit, and open the files you see. You should recognize some of the files you saw in the web interface. For example, in the questions folder, there should be a subfolder for each question you created, and inside each of those subfolders are the files that define the question: info.json, question.html, and server.py. Similarly, note the assessments folder contents.\nNow, you can edit these files directly in your IDE, and also ask AI do it for you.\n\n\nMaking Changes to Your Local Code, and Sending to the Remote PrairieLearn Repo\nWhen you edit files in your local repo, you need to “push” those changes back to the GitHub.com repo so that PrairieLearn can see them. The easiest way to do this is through VS Code’s built-in Source Control panel:\n\nClick the Source Control icon in the left-hand activity bar (it looks like three connected dots and is labeled “Source Control” when you hover over it; it often shows a number badge for changed files).\nYou’ll see a list of your changed files. Hover over “Changes” and click the “+” icon to stage all of them (or stage individual files the same way).\nType a short message describing what you changed (e.g., “Added new question about linear equations”) in the message box at the top.\nClick the blue “Commit” button, then click “Sync Changes” (or “Push”) to send your changes to GitHub.com.\n\nIf you prefer the terminal, open a terminal in VS Code (Terminal menu, “New Terminal”) and run these three commands in your repo folder, in order:\ngit add .\ngit commit -m \"Describe your changes here\"\ngit push\nFinally, we need to tell the PL web interface to “reload” the course so that it sees the changes we just pushed. Click the “Sync” tab on the left side, and then the blue “Pull from remote git repository” button. When the process completes successfully, your course has been updated! You can verify this by looking at the changed items (e.g., questions, assessments) in the web interface.\n\n\nMaking Changes on the PrairieLearn Web Interface, and Pulling to Your Local Repo\nSimilarly, if you make changes to your PrairieLearn course via the web interface, you need to “pull” those changes to your local repo so that your local files are up to date. First, in the PrairieLearn web interface, click the “Sync” tab and then the blue “Push to remote git repository” button, so that your web-based changes are saved to GitHub.com.\nThen, in VS Code, click the Source Control icon in the left-hand activity bar and click the “…” (More Actions) menu at the top, then choose “Pull” (or simply click the sync/refresh icon in the bottom status bar if you see one). Your local files will be updated to match what’s on GitHub.com.\nIf you prefer the terminal, open a terminal in VS Code and run this command in your repo folder:\ngit pull\nAvoid syncing conflicts: Don’t edit the same question or assessment both locally and in the web interface between syncs — pick one place to work at a time, and sync before switching. If you do end up with a conflict, stop and reach out to me rather than trying to resolve it yourself."
+  },
+  {
+    "objectID": "index.html#student-facing-resources",
+    "href": "index.html#student-facing-resources",
+    "title": "Quick-Start Guide to PrairieLearn and the ETF",
+    "section": "Student-Facing Resources",
+    "text": "Student-Facing Resources\nIf you find the following helpful, you are welcome to use / copy / adapt these student-facing resources for your own courses:\n\nEECS 183 PrairieLearn Tutorial\nEECS 183 PrairieTest Tutorial\nEECS 183 Exam Details"
+  },
+  {
+    "objectID": "index.html#prairielearn-resources",
+    "href": "index.html#prairielearn-resources",
+    "title": "Quick-Start Guide to PrairieLearn and the ETF",
+    "section": "PrairieLearn Resources",
+    "text": "PrairieLearn Resources\nI recommend you download these useful PrairieLearn files and copy them into the root of your PrairieLearn repo. That is, after copying, your repo should have folders called serverFilesCourse and tools at the root (not inside some sub-folder), and your questions folder should have a templates folder inside of it.\nThe templates folder contains several example questions. These templates show you or an AI agent what syntax is needed to create various question types. You may find it useful to refer to them in any prompts for creating questions.\nAlso note that there are many more questions you can use as templates in the (PrairieLearn Question Catalog)[https://www.prairielearn.com/catalog/questions]."
   }
 ]
