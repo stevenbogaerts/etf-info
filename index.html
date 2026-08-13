@@ -134,6 +134,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#making-your-first-prairielearn-question" id="toc-making-your-first-prairielearn-question" class="nav-link" data-scroll-target="#making-your-first-prairielearn-question">Making Your First PrairieLearn Question</a></li>
   <li><a href="#making-your-first-assessment" id="toc-making-your-first-assessment" class="nav-link" data-scroll-target="#making-your-first-assessment">Making Your First Assessment</a></li>
   <li><a href="#importing-content-from-canvas" id="toc-importing-content-from-canvas" class="nav-link" data-scroll-target="#importing-content-from-canvas">Importing Content from Canvas</a></li>
+  <li><a href="#adding-a-standard-notes-page-to-your-assessment" id="toc-adding-a-standard-notes-page-to-your-assessment" class="nav-link" data-scroll-target="#adding-a-standard-notes-page-to-your-assessment">Adding a Standard Notes Page to Your Assessment</a></li>
+  <li><a href="#allowing-students-to-add-a-custom-notes-page-to-your-assessment" id="toc-allowing-students-to-add-a-custom-notes-page-to-your-assessment" class="nav-link" data-scroll-target="#allowing-students-to-add-a-custom-notes-page-to-your-assessment">Allowing Students to Add a Custom Notes Page to Your Assessment</a></li>
   </ul></li>
   <li><a href="#additional-resources" id="toc-additional-resources" class="nav-link" data-scroll-target="#additional-resources">Additional Resources</a></li>
   <li><a href="#repo" id="toc-repo" class="nav-link" data-scroll-target="#repo">The PrairieLearn GitHub Repository Interface</a>
@@ -246,6 +248,51 @@ Note
 <h3 class="anchored" data-anchor-id="importing-content-from-canvas">Importing Content from Canvas</h3>
 <p>If you have quizzes on Canvas that you’d like to import into PrairieLearn, there is a convenient way to do that. For details, visit the official documentation on <a href="https://docs.prairielearn.com/importingContent/">Importing content from other platforms</a>.</p>
 </section>
+<section id="adding-a-standard-notes-page-to-your-assessment" class="level3">
+<h3 class="anchored" data-anchor-id="adding-a-standard-notes-page-to-your-assessment">Adding a Standard Notes Page to Your Assessment</h3>
+<p>PrairieLearn enables you to add files to an assessment that students will be allowed to access. For example, suppose you have a <code>reference.pdf</code> file you want students to be able to access during the exam. First, we need to provide the file to PrairieLearn:</p>
+<ul>
+<li>In the left sidebar, choose “Assessments” and click on the assessment you want to add the file to.</li>
+<li>Click on the “Files” tab and hit the “Add new client files” button.</li>
+<li>Upload your <code>reference.pdf</code> file via the file dialog that appears.</li>
+<li>In the “Files” window, you should now see a new folder named “clientFilesAssessment”. If you click on that folder, you should see the <code>reference.pdf</code> file inside. You can click on it to verify that it’s the correct file.</li>
+</ul>
+<p>Next, we need to give students access to the file in the assessment itself:</p>
+<ul>
+<li><p>Still in the “Files” tab for the assessment, click the <code>edit</code> button for the file <code>infoAssessment.json</code> to open it in an in-browser editor.</p></li>
+<li><p>We need to add one entry to the file: a <code>"text"</code> field containing a link to the file and any accompanying text we want. The <code>"text"</code> field must be valid HTML, and the file accessed via the URL <code>{{ client_files_assessment }}/reference.pdf</code> (or adjust for your file name). The <code>{{ client_files_assessment }}</code> is a placeholder that PrairieLearn will replace with the correct URL for the assessment’s files. For example:</p>
+<ul>
+<li>Suppose you want your “Quiz 1” assessment to allow access to a <code>reference.pdf</code> file you’ve created.</li>
+<li>When you open <code>infoAssessment.json</code>, you’ll see something like this:</li>
+</ul>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode json code-with-copy"><code class="sourceCode json"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">{</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="dt">"uuid"</span><span class="fu">:</span> <span class="st">"some unique identifier here"</span><span class="fu">,</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="dt">"type"</span><span class="fu">:</span> <span class="st">"Exam"</span><span class="fu">,</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="dt">"title"</span><span class="fu">:</span> <span class="st">"Quiz 1"</span><span class="fu">,</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="dt">"set"</span><span class="fu">:</span> <span class="st">"Quizzes"</span><span class="fu">,</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="er">...</span> <span class="er">(more</span> <span class="er">settings</span> <span class="er">omitted</span> <span class="er">for</span> <span class="er">brevity)</span> <span class="er">...</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="fu">}</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Add a new line for the “text” field. Anywhere is fine. For example, see below:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode json code-with-copy"><code class="sourceCode json"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">{</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="dt">"uuid"</span><span class="fu">:</span> <span class="st">"some unique identifier here"</span><span class="fu">,</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="dt">"type"</span><span class="fu">:</span> <span class="st">"Exam"</span><span class="fu">,</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="dt">"title"</span><span class="fu">:</span> <span class="st">"Quiz 1"</span><span class="fu">,</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="dt">"text"</span><span class="fu">:</span> <span class="st">"&lt;p&gt;&lt;a href=</span><span class="ch">\"</span><span class="st">{{ client_files_assessment }}/reference.pdf</span><span class="ch">\"</span><span class="st">&gt;Click here for the exam reference sheet&lt;/a&gt;. You may find it convenient to open this document in a new browser tab.&lt;/p&gt;"</span><span class="fu">,</span>  </span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="dt">"set"</span><span class="fu">:</span> <span class="st">"Quizzes"</span><span class="fu">,</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="er">...</span> <span class="er">(more</span> <span class="er">settings</span> <span class="er">omitted</span> <span class="er">for</span> <span class="er">brevity)</span> <span class="er">...</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="fu">}</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Note the HTML syntax, the use of <code>"</code> and <code>\"</code>, and the <code>,</code> at the end. Such syntax is required. The following is just that line, which you can easily copy by hovering your mouse over the box and clicking the clipboard icon in the upper-right corner:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode json code-with-copy"><code class="sourceCode json"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="st">"text"</span><span class="er">:</span> <span class="st">"&lt;p&gt;&lt;a href=</span><span class="ch">\"</span><span class="st">{{ client_files_assessment }}/reference.pdf</span><span class="ch">\"</span><span class="st">&gt;Click here for the exam reference sheet&lt;/a&gt;. You may find it convenient to open this document in a new browser tab.&lt;/p&gt;"</span><span class="er">,</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
+<li><p>You may need to adjust the file name if yours is not called <code>reference.pdf</code>, and you may also wish to change the wording.</p></li>
+<li><p>Click the <code>Save</code> button when you are finished editing.</p></li>
+</ul>
+<p>With the changes above, students will see a link to the <code>reference.pdf</code> file when they open the assessment. I recommend you test this out with the “Student view without access restrictions” option to verify that it works as needed.</p>
+</section>
+<section id="allowing-students-to-add-a-custom-notes-page-to-your-assessment" class="level3">
+<h3 class="anchored" data-anchor-id="allowing-students-to-add-a-custom-notes-page-to-your-assessment">Allowing Students to Add a Custom Notes Page to Your Assessment</h3>
+<p>In some cases, rather than preparing a reference sheet yourself, you may want students to prepare their own reference sheet. However, please note: in the ETF, for reasons of exam security (especially when multiple courses’ exams are administered simultaneously), students are never allowed to bring in physical copies of their own reference sheets. Thus, if you want students to be able to use their own personally-prepared reference sheets during an exam, we need to set up PrairieLearn to allow this.</p>
+<p>Details coming soon!</p>
+</section>
 </section>
 <section id="additional-resources" class="level2">
 <h2 class="anchored" data-anchor-id="additional-resources">Additional Resources</h2>
@@ -325,9 +372,9 @@ Note
 <li>Click the blue “Commit” button, then click “Sync Changes” (or “Push”) to send your changes to GitHub.com.</li>
 </ol>
 <p>If you prefer the terminal, open a terminal in VS Code (Terminal menu, “New Terminal”) and run these three commands in your repo folder, in order:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> add .</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"Describe your changes here"</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> push</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> add .</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"Describe your changes here"</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> push</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Finally, we need to tell the PL web interface to “reload” the course so that it sees the changes we just pushed. Click the “Sync” tab on the left side, and then the blue “Pull from remote git repository” button. When the process completes successfully, your course has been updated! You can verify this by looking at the changed items (e.g., questions, assessments) in the web interface.</p>
 </section>
 <section id="making-changes-on-the-prairielearn-web-interface-and-pulling-to-your-local-repo" class="level3">
@@ -335,7 +382,7 @@ Note
 <p>Similarly, if you make changes to your PrairieLearn course via the web interface, you need to “pull” those changes to your local repo so that your local files are up to date. First, in the PrairieLearn web interface, click the “Sync” tab and then the blue “Push to remote git repository” button, so that your web-based changes are saved to GitHub.com.</p>
 <p>Then, in VS Code, click the Source Control icon in the left-hand activity bar and click the “…” (More Actions) menu at the top, then choose “Pull” (or simply click the sync/refresh icon in the bottom status bar if you see one). Your local files will be updated to match what’s on GitHub.com.</p>
 <p>If you prefer the terminal, open a terminal in VS Code and run this command in your repo folder:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> pull</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> pull</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="callout callout-style-default callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
