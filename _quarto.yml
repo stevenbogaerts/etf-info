@@ -5,6 +5,7 @@ project:
 
 website:
   title: "Quick-Start Guide to PrairieLearn and the ETF"
+  favicon: images/favicon.png
 
 format:
   html:
