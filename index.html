@@ -68,6 +68,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
+<link href="./images/favicon.png" rel="icon" type="image/png">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -273,15 +274,15 @@ Note
 <p>Working with the repo allows you to use AI in practically unbounded ways to support your PrairieLearn development. For example, consider the following (abbreviated) prompts:</p>
 <ul>
 <li><strong>Bulk Generation</strong>: Generate 10 questions similar to Lecture 7 examples and add them to a new assessment.</li>
-<li><strong>Format Conversion</strong>: Convert these 5 multiple-choice questions into short-answer <code>&lt;pl-string-input&gt;</code> elements.</li>
-<li><strong>Metadata &amp; Tagging</strong>: Find all questions discussing [Topic X] and append tag [Y] to their info.json files.</li>
-<li><strong>Parameter Randomization</strong>: Modify server.py in Q1–Q5 to generate integer values instead of floats for cleaner math.</li>
-<li><strong>Scope Verification</strong>: Verify that all questions in Exam 1 use only concepts covered in Lectures 1 through 8.</li>
-<li><strong>Bug &amp; Edge-Case Audit</strong>: Check server.py across Quiz 3 to ensure random parameters never cause zero-division errors.</li>
+<li><strong>Format Conversion</strong>: Convert these 5 multiple-choice questions into short-answer questions.</li>
+<li><strong>Metadata &amp; Tagging</strong>: Find all questions discussing [Topic X] and append tag ‘Y’ to their tag lists.</li>
+<li><strong>Parameter Randomization</strong>: Modify Q1–Q5 to generate integer values instead of floats for cleaner math.</li>
+<li><strong>Scope Verification</strong>: Verify that all questions in this assessment use only concepts covered in Lectures 1 through 8.</li>
+<li><strong>Bug &amp; Edge-Case Audit</strong>: Check all questions in this assessment to ensure random parameters never cause zero-division errors.</li>
 <li><strong>Difficulty &amp; Weighting</strong>: Identify difficulty outliers in this assessment and critique the assigned point values.</li>
-<li><strong>Dynamic Explanations</strong>: Write step-by-step student feedback in <code>&lt;pl-answer-panel&gt;</code> using randomized variables.</li>
+<li><strong>Dynamic Explanations</strong>: Write step-by-step student feedback (consistent with randomized variables) for wrong answers in this question.</li>
 </ul>
-<p>If you’d like to explore these possibilities, follow the steps below.</p>
+<p>If you’d like to create content in this manner, follow the steps below.</p>
 <section id="tools-to-install" class="level3">
 <h3 class="anchored" data-anchor-id="tools-to-install">Tools to Install</h3>
 <p>First, you’ll need to install a few things (if you don’t already have them installed):</p>
