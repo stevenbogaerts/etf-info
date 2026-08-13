@@ -6,7 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2026-08-11">
+<meta name="dcterms.date" content="2026-08-13">
 
 <title>Quick-Start Guide to PrairieLearn and the ETF</title>
 <style>
@@ -23,6 +23,41 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -87,23 +122,28 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#what-is-prairielearn" id="toc-what-is-prairielearn" class="nav-link active" data-scroll-target="#what-is-prairielearn">What is PrairieLearn?</a></li>
+  <li><a href="#introduction-to-prairielearn" id="toc-introduction-to-prairielearn" class="nav-link active" data-scroll-target="#introduction-to-prairielearn">Introduction to PrairieLearn</a>
+  <ul class="collapse">
+  <li><a href="#what-is-prairielearn" id="toc-what-is-prairielearn" class="nav-link" data-scroll-target="#what-is-prairielearn">What is PrairieLearn?</a></li>
   <li><a href="#what-are-prairietest-and-the-etf" id="toc-what-are-prairietest-and-the-etf" class="nav-link" data-scroll-target="#what-are-prairietest-and-the-etf">What are PrairieTest and the ETF?</a></li>
-  <li><a href="#access" id="toc-access" class="nav-link" data-scroll-target="#access">Getting Access</a></li>
+  <li><a href="#access" id="toc-access" class="nav-link" data-scroll-target="#access">Getting Access to PrairieLearn</a></li>
+  </ul></li>
+  <li><a href="#the-prairielearn-web-interface" id="toc-the-prairielearn-web-interface" class="nav-link" data-scroll-target="#the-prairielearn-web-interface">The PrairieLearn Web Interface</a>
+  <ul class="collapse">
   <li><a href="#making-your-first-prairielearn-question" id="toc-making-your-first-prairielearn-question" class="nav-link" data-scroll-target="#making-your-first-prairielearn-question">Making Your First PrairieLearn Question</a></li>
   <li><a href="#making-your-first-assessment" id="toc-making-your-first-assessment" class="nav-link" data-scroll-target="#making-your-first-assessment">Making Your First Assessment</a></li>
-  <li><a href="#reading-some-documentation" id="toc-reading-some-documentation" class="nav-link" data-scroll-target="#reading-some-documentation">Reading Some Documentation</a></li>
-  <li><a href="#importing-questions-from-canvas" id="toc-importing-questions-from-canvas" class="nav-link" data-scroll-target="#importing-questions-from-canvas">Importing Questions from Canvas</a></li>
-  <li><a href="#working-directly-with-your-prairielearn-repository" id="toc-working-directly-with-your-prairielearn-repository" class="nav-link" data-scroll-target="#working-directly-with-your-prairielearn-repository">Working Directly With Your PrairieLearn Repository</a>
+  <li><a href="#importing-content-from-canvas" id="toc-importing-content-from-canvas" class="nav-link" data-scroll-target="#importing-content-from-canvas">Importing Content from Canvas</a></li>
+  </ul></li>
+  <li><a href="#additional-resources" id="toc-additional-resources" class="nav-link" data-scroll-target="#additional-resources">Additional Resources</a></li>
+  <li><a href="#repo" id="toc-repo" class="nav-link" data-scroll-target="#repo">The PrairieLearn GitHub Repository Interface</a>
   <ul class="collapse">
   <li><a href="#tools-to-install" id="toc-tools-to-install" class="nav-link" data-scroll-target="#tools-to-install">Tools to Install</a></li>
   <li><a href="#cloning-your-repo" id="toc-cloning-your-repo" class="nav-link" data-scroll-target="#cloning-your-repo">Cloning Your Repo</a></li>
   <li><a href="#opening-and-exploring-your-repo" id="toc-opening-and-exploring-your-repo" class="nav-link" data-scroll-target="#opening-and-exploring-your-repo">Opening and Exploring Your Repo</a></li>
   <li><a href="#making-changes-to-your-local-code-and-sending-to-the-remote-prairielearn-repo" id="toc-making-changes-to-your-local-code-and-sending-to-the-remote-prairielearn-repo" class="nav-link" data-scroll-target="#making-changes-to-your-local-code-and-sending-to-the-remote-prairielearn-repo">Making Changes to Your Local Code, and Sending to the Remote PrairieLearn Repo</a></li>
   <li><a href="#making-changes-on-the-prairielearn-web-interface-and-pulling-to-your-local-repo" id="toc-making-changes-on-the-prairielearn-web-interface-and-pulling-to-your-local-repo" class="nav-link" data-scroll-target="#making-changes-on-the-prairielearn-web-interface-and-pulling-to-your-local-repo">Making Changes on the PrairieLearn Web Interface, and Pulling to Your Local Repo</a></li>
+  <li><a href="#resources-for-your-repo" id="toc-resources-for-your-repo" class="nav-link" data-scroll-target="#resources-for-your-repo">Resources for your Repo</a></li>
   </ul></li>
-  <li><a href="#student-facing-resources" id="toc-student-facing-resources" class="nav-link" data-scroll-target="#student-facing-resources">Student-Facing Resources</a></li>
-  <li><a href="#prairielearn-resources" id="toc-prairielearn-resources" class="nav-link" data-scroll-target="#prairielearn-resources">PrairieLearn Resources</a></li>
   </ul>
 </nav>
     </div>
@@ -123,7 +163,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">August 11, 2026</p>
+      <p class="date">August 13, 2026</p>
     </div>
   </div>
   
@@ -136,10 +176,24 @@ ul.task-list li input[type="checkbox"] {
 
 
 <p>This is a quick-start guide for faculty members at University of Michigan - Ann Arbor on using PrairieLearn and giving exams at the Engineering Testing Facility (ETF).</p>
-<p>Please note: Given the large range of faculty member backgrounds in the concepts discussed here, this documentation does not attempt to be one-size-fits-all nor comprehensive. Rather, this is provided to point faculty members to a few key ideas to get started quickly. Web searches, AI, and I (as the ETF faculty advisor) are all good resources if you get stuck. I am happy to assist U-M faculty members on these topics.</p>
-<p>If you would like to see comprehensive documentation, visit the <a href="https://docs.prairielearn.com/">official PrairieLearn documentation</a>.</p>
-<section id="what-is-prairielearn" class="level2">
-<h2 class="anchored" data-anchor-id="what-is-prairielearn">What is PrairieLearn?</h2>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Given the large range of faculty member backgrounds in the concepts discussed here, this documentation does not attempt to be one-size-fits-all nor comprehensive. Rather, this is provided to point faculty members to a few key ideas to get started quickly. The <a href="https://docs.prairielearn.com/">official PrairieLearn documentation</a>, web searches, and AI questions are all good resources for more information. I (as the ETF faculty advisor) am also happy to assist U-M faculty members on these topics.</p>
+</div>
+</div>
+<section id="introduction-to-prairielearn" class="level2">
+<h2 class="anchored" data-anchor-id="introduction-to-prairielearn">Introduction to PrairieLearn</h2>
+<p>This section provides brief information on PrairieLearn, PrairieTest, and how to get access to PrairieLearn.</p>
+<section id="what-is-prairielearn" class="level3">
+<h3 class="anchored" data-anchor-id="what-is-prairielearn">What is PrairieLearn?</h3>
 <p>PrairieLearn is an online learning and assessment platform used for practice, homework, quizzes, and exams. Some notable features include:</p>
 <ul>
 <li>Great flexibility in question types and grading</li>
@@ -147,21 +201,25 @@ ul.task-list li input[type="checkbox"] {
 <li>Easy-to-use web interface, plus the opportunity to integrate with agentic AI workflows</li>
 </ul>
 </section>
-<section id="what-are-prairietest-and-the-etf" class="level2">
-<h2 class="anchored" data-anchor-id="what-are-prairietest-and-the-etf">What are PrairieTest and the ETF?</h2>
+<section id="what-are-prairietest-and-the-etf" class="level3">
+<h3 class="anchored" data-anchor-id="what-are-prairietest-and-the-etf">What are PrairieTest and the ETF?</h3>
 <p>PrairieTest is a system that uses PrairieLearn content to deliver and support exams. The Engineering Testing Facility (ETF) at U-M is the testing center that uses PrairieTest to deliver exams. Faculty members can reserve with the ETF, design their exams in PrairieLearn, and then the ETF will deliver the exam to students.</p>
 <p>This Quick-Start Guide is about PrairieLearn, not about PrairieTest nor the ETF. For more information on those resources, visit the ETF website. <!-- TO DO website link? --></p>
 </section>
-<section id="access" class="level2">
-<h2 class="anchored" data-anchor-id="access">Getting Access</h2>
+<section id="access" class="level3">
+<h3 class="anchored" data-anchor-id="access">Getting Access to PrairieLearn</h3>
 <ul>
 <li><strong>Request a PrairieLearn course</strong>: For each course you intend to use with PrairieLearn, you need a “PrairieLearn course” to be created for you, if you don’t already have one. Go to the <a href="https://www.prairielearn.com">PrairieLearn site</a> and click “Free sign up” in the top-right corner. Login by clicking the “University of Michigan” button down below, <strong><em>not</em></strong> via “Sign in with Google”. Follow the steps presented to request your course.</li>
 <li><strong>Get a GitHub.com account</strong>: GitHub is a web-based platform for managing software development projects. Eventually, it will play an integral role in your PrairieLearn workflow. If you don’t already have an account, go to <a href="https://github.com">GitHub.com</a> and click the “Sign up” button in the top-right corner. Follow the steps presented to create your account.</li>
 <li><strong>Access Your GitHub PrairieLearn Repository</strong>: When your PrairieLearn course is created, you will receive an email with an invitation to access your course’s GitHub <em>repository</em> (a collection of files related to your PrairieLearn course). Accept the invitation and connect it to your GitHub account.</li>
 </ul>
 </section>
-<section id="making-your-first-prairielearn-question" class="level2">
-<h2 class="anchored" data-anchor-id="making-your-first-prairielearn-question">Making Your First PrairieLearn Question</h2>
+</section>
+<section id="the-prairielearn-web-interface" class="level2">
+<h2 class="anchored" data-anchor-id="the-prairielearn-web-interface">The PrairieLearn Web Interface</h2>
+<p>Once you <a href="#access">gain access to PrairieLearn</a>, read the following sections describing first steps for working with its web interface.</p>
+<section id="making-your-first-prairielearn-question" class="level3">
+<h3 class="anchored" data-anchor-id="making-your-first-prairielearn-question">Making Your First PrairieLearn Question</h3>
 <p>Log in to PrairieLearn at the <a href="https://us.prairielearn.com/">PrairieLearn course site</a> and navigate to your course. Click on “Questions” in the left-hand navigation menu. Then click the “Add questions” drop-down and choose “Generate question with AI”. Enter whatever details of a question you’d like. For a simple first example, you might consider: “Show a randomly generated linear equation and a random x value. Students must enter (short-answer) the resulting y value.”</p>
 <p>The AI will “think” for a bit and then generate a question you can try out in the “Preview” tab. You can chat with the AI to adjust the question as needed. When you are satisfied with the question, click “Finalize question”. Give it a title (student-facing) and a QID (question ID). The QID must be unique within your course. Click “Finalize question” again.</p>
 <p>Click on the questions tab, and click the link for the question you just made. It will open in the “Preview” tab, where you can try it out again. Click on the “Settings” tab for the question and note the things you can change. Also briefly check out the “Files” tab, and you’ll see that there are three files associated with your question:</p>
@@ -172,8 +230,8 @@ ul.task-list li input[type="checkbox"] {
 </ul>
 <p>You can use PrairieLearn without knowing anything about JSON, HTML, or Python, though in some cases it may be helpful to know a little bit about these tools.</p>
 </section>
-<section id="making-your-first-assessment" class="level2">
-<h2 class="anchored" data-anchor-id="making-your-first-assessment">Making Your First Assessment</h2>
+<section id="making-your-first-assessment" class="level3">
+<h3 class="anchored" data-anchor-id="making-your-first-assessment">Making Your First Assessment</h3>
 <p>In PrairieLearn, an “assessment” is a collection of questions that students will answer. There are two types of assessments, “Homework” and “Exam”. The type determines some default settings, but these can be changed later, as we’ll see.</p>
 <p>To make your first assessment, click on “Assessments” in the left-hand navigation menu. Then click the “Add assessment” button. Let’s give it the title “Homework 1”, short name “hw1”, set the type to “Homework”, and the “set” to whatever you’d like. (You can also edit the available assessment sets in Course Settings, Assessment Sets.) Press the “Create” button.</p>
 <p>You’ll see your new assessment’s page. There are no questions in it yet, so click “Add questions”. You’ll see “Zone 1”. In the right panel, you can click your question (not the blue underlined link, but the box around the question) to add it to the assessment.</p>
@@ -183,23 +241,47 @@ ul.task-list li input[type="checkbox"] {
 <p>When you’re done exploring it, go back to the regular view (upper-right corner, “Staff view”). Click the other tabs at top to explore what’s possible, such as the “Access” tab, “Files”, “Manual grading”, “Settings”, etc.</p>
 <p>When you’re ready to make an exam to be administered in the ETF, you’ll make an assessment of type “Exam” and then follow ETF procedures. <!-- TO DO link --></p>
 </section>
-<section id="reading-some-documentation" class="level2">
-<h2 class="anchored" data-anchor-id="reading-some-documentation">Reading Some Documentation</h2>
-<p>With that brief introduction, you might consider visiting the <a href="https://docs.prairielearn.com/">official PrairieLearn documentation</a> to skim/read as you please. I recommend you look around just to get a general idea of what details are available. In particular, you may want to follow the <a href="https://docs.prairielearn.com/getting-started/">Getting Started</a> page for a more detailed and technical walkthrough than what we did above.</p>
+<section id="importing-content-from-canvas" class="level3">
+<h3 class="anchored" data-anchor-id="importing-content-from-canvas">Importing Content from Canvas</h3>
+<p>If you have quizzes on Canvas that you’d like to import into PrairieLearn, there is a convenient way to do that. For details, visit the official documentation on <a href="https://docs.prairielearn.com/importingContent/">Importing content from other platforms</a>.</p>
 </section>
-<section id="importing-questions-from-canvas" class="level2">
-<h2 class="anchored" data-anchor-id="importing-questions-from-canvas">Importing Questions from Canvas</h2>
-<p>Details coming soon! <!-- TO DO --></p>
 </section>
-<section id="working-directly-with-your-prairielearn-repository" class="level2">
-<h2 class="anchored" data-anchor-id="working-directly-with-your-prairielearn-repository">Working Directly With Your PrairieLearn Repository</h2>
-<p>It is possible to work with PrairieLearn only via the web interface, as described above. However, consider the following questions:</p>
+<section id="additional-resources" class="level2">
+<h2 class="anchored" data-anchor-id="additional-resources">Additional Resources</h2>
+<ul>
+<li><a href="https://docs.prairielearn.com/">Official PrairieLearn Documentation</a> - With the brief introduction above, you might now consider visiting the official PrairieLearn documentation to skim/read as you please. I recommend you look around just to get a general idea of what details are available.
+<ul>
+<li><a href="https://docs.prairielearn.com/getting-started/">Getting Started</a> - a more detailed walkthrough of the ideas we touched upon above.</li>
+</ul></li>
+<li>You may also like to consider the following student-facing resources. You are welcome to use / copy / adapt them for your own courses:
+<ul>
+<li><a href="https://py183.eecs.umich.edu/tutorials/prairielearn/prairielearn.html">EECS 183 PrairieLearn Tutorial</a></li>
+<li><a href="https://py183.eecs.umich.edu/tutorials/prairietest/prairietest.html">EECS 183 PrairieTest Tutorial</a></li>
+<li><a href="https://py183.eecs.umich.edu/docs/exams.html">EECS 183 Exam Details</a></li>
+</ul></li>
+</ul>
+</section>
+<section id="repo" class="level2">
+<h2 class="anchored" data-anchor-id="repo">The PrairieLearn GitHub Repository Interface</h2>
+<p>It is possible to work with PrairieLearn only via the web interface illustrated above. However, consider the following questions:</p>
 <ul>
 <li>Will you create hundreds of questions in PrairieLearn?</li>
 <li>Would you like some of your questions to be significantly more complex than the example above?</li>
 <li>Would you like to be able to leverage agentic AI (e.g., Claude Code) in your question development? (Note: this can allow you to achieve much more, much more quickly!)</li>
 </ul>
 <p>If you answered “yes” to any of the above, I strongly recommend you invest a little more time learning how to work directory with your PrairieLearn GitHub repository (“repo”).</p>
+<p>Working with the repo allows you to use AI in practically unbounded ways to support your PrairieLearn development. For example, consider the following (abbreviated) prompts:</p>
+<ul>
+<li><strong>Bulk Generation</strong>: Generate 10 questions similar to Lecture 7 examples and add them to a new assessment.</li>
+<li><strong>Format Conversion</strong>: Convert these 5 multiple-choice questions into short-answer <code>&lt;pl-string-input&gt;</code> elements.</li>
+<li><strong>Metadata &amp; Tagging</strong>: Find all questions discussing [Topic X] and append tag [Y] to their info.json files.</li>
+<li><strong>Parameter Randomization</strong>: Modify server.py in Q1–Q5 to generate integer values instead of floats for cleaner math.</li>
+<li><strong>Scope Verification</strong>: Verify that all questions in Exam 1 use only concepts covered in Lectures 1 through 8.</li>
+<li><strong>Bug &amp; Edge-Case Audit</strong>: Check server.py across Quiz 3 to ensure random parameters never cause zero-division errors.</li>
+<li><strong>Difficulty &amp; Weighting</strong>: Identify difficulty outliers in this assessment and critique the assigned point values.</li>
+<li><strong>Dynamic Explanations</strong>: Write step-by-step student feedback in <code>&lt;pl-answer-panel&gt;</code> using randomized variables.</li>
+</ul>
+<p>If you’d like to explore these possibilities, follow the steps below.</p>
 <section id="tools-to-install" class="level3">
 <h3 class="anchored" data-anchor-id="tools-to-install">Tools to Install</h3>
 <p>First, you’ll need to install a few things (if you don’t already have them installed):</p>
@@ -207,12 +289,20 @@ ul.task-list li input[type="checkbox"] {
 <li><a href="https://git-scm.com/install/">Git</a></li>
 <li><a href="https://www.python.org/downloads/">Python</a></li>
 </ul>
-<p>Next, you will need an integrated development environment (IDE). If you are already familiar with one and can use agentic workflows in it, then you can stick with that. Otherwise, some options include:</p>
-<ul>
-<li><a href="https://code.visualstudio.com/">VS Code</a> plus an AI extension (e.g., <a href="https://code.claude.com/docs/en/vs-code">Claude Code</a>)</li>
-<li><a href="https://chatgpt.com/codex/">ChatGPT’s Codex</a></li>
-</ul>
-<p>Using AI in this way will require a subscription. For example, with VS Code and a $20/month Claude Code subscription, I almost never reach my quota for usage, even with heavy PrairieLearn development. If you’re unsure what to do, I recommend following this setup.</p>
+<p>Next, you will need an integrated development environment (IDE). If you’re already familiar with a particular IDE and know how to (1) use the terminal and (2) use agentic workflows with code, then stick with what you know. Otherwise, I recommend using <a href="https://code.visualstudio.com/">VS Code</a> with an AI extension (e.g., <a href="https://code.claude.com/docs/en/vs-code">Claude Code</a>).</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>You can use VS Code for free, but if you want AI assistance with more than minimal usage, you’ll need a subscription. For example, for my usage with PrairieLearn, I find the $20/month Claude Code subscription sufficient and <em>highly</em> useful.</p>
+</div>
+</div>
 </section>
 <section id="cloning-your-repo" class="level3">
 <h3 class="anchored" data-anchor-id="cloning-your-repo">Cloning Your Repo</h3>
@@ -234,9 +324,9 @@ ul.task-list li input[type="checkbox"] {
 <li>Click the blue “Commit” button, then click “Sync Changes” (or “Push”) to send your changes to GitHub.com.</li>
 </ol>
 <p>If you prefer the terminal, open a terminal in VS Code (Terminal menu, “New Terminal”) and run these three commands in your repo folder, in order:</p>
-<pre><code>git add .
-git commit -m "Describe your changes here"
-git push</code></pre>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> add .</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"Describe your changes here"</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> push</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Finally, we need to tell the PL web interface to “reload” the course so that it sees the changes we just pushed. Click the “Sync” tab on the left side, and then the blue “Pull from remote git repository” button. When the process completes successfully, your course has been updated! You can verify this by looking at the changed items (e.g., questions, assessments) in the web interface.</p>
 </section>
 <section id="making-changes-on-the-prairielearn-web-interface-and-pulling-to-your-local-repo" class="level3">
@@ -244,26 +334,27 @@ git push</code></pre>
 <p>Similarly, if you make changes to your PrairieLearn course via the web interface, you need to “pull” those changes to your local repo so that your local files are up to date. First, in the PrairieLearn web interface, click the “Sync” tab and then the blue “Push to remote git repository” button, so that your web-based changes are saved to GitHub.com.</p>
 <p>Then, in VS Code, click the Source Control icon in the left-hand activity bar and click the “…” (More Actions) menu at the top, then choose “Pull” (or simply click the sync/refresh icon in the bottom status bar if you see one). Your local files will be updated to match what’s on GitHub.com.</p>
 <p>If you prefer the terminal, open a terminal in VS Code and run this command in your repo folder:</p>
-<pre><code>git pull</code></pre>
-<p><strong>Avoid syncing conflicts:</strong> Don’t edit the same question or assessment both locally and in the web interface between syncs — pick one place to work at a time, and sync before switching. If you do end up with a conflict, stop and reach out to me rather than trying to resolve it yourself.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> pull</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Warning
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Avoid syncing conflicts:</strong> Don’t edit the same question or assessment both locally and in the web interface between syncs – pick one place to work at a time, and sync before switching.</p>
+</div>
+</div>
 </section>
-</section>
-<section id="student-facing-resources" class="level2">
-<h2 class="anchored" data-anchor-id="student-facing-resources">Student-Facing Resources</h2>
-<p>If you find the following helpful, you are welcome to use / copy / adapt these student-facing resources for your own courses:</p>
-<ul>
-<li><a href="https://py183.eecs.umich.edu/tutorials/prairielearn/prairielearn.html">EECS 183 PrairieLearn Tutorial</a></li>
-<li><a href="https://py183.eecs.umich.edu/tutorials/prairietest/prairietest.html">EECS 183 PrairieTest Tutorial</a></li>
-<li><a href="https://py183.eecs.umich.edu/docs/exams.html">EECS 183 Exam Details</a></li>
-</ul>
-</section>
-<section id="prairielearn-resources" class="level2">
-<h2 class="anchored" data-anchor-id="prairielearn-resources">PrairieLearn Resources</h2>
-<p>I recommend you download these <a href="files/pl_for_UM.zip">useful PrairieLearn files</a> and copy them into the root of your PrairieLearn repo. That is, after copying, your repo should have folders called <code>serverFilesCourse</code> and <code>tools</code> at the root (not inside some sub-folder), and your questions folder should have a templates folder inside of it.</p>
-<p>The templates folder contains several example questions. These templates show you or an AI agent what syntax is needed to create various question types. You may find it useful to refer to them in any prompts for creating questions.</p>
-<p>Also note that there are many more questions you can use as templates in the (PrairieLearn Question Catalog)[https://www.prairielearn.com/catalog/questions].</p>
+<section id="resources-for-your-repo" class="level3">
+<h3 class="anchored" data-anchor-id="resources-for-your-repo">Resources for your Repo</h3>
+<p>I recommend you download these <a href="files/pl_for_UM.zip">useful PrairieLearn files</a> and copy them into the root of your PrairieLearn repo. That is, after copying, your repo should have folders called <code>serverFilesCourse</code> and <code>tools</code> at the root (not inside some sub-folder), and your questions folder should have a templates folder inside of it. The templates folder contains several example questions. These templates show you or an AI agent what syntax is needed to create various question types. You may find it useful to refer to them in any prompts for creating questions.</p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->

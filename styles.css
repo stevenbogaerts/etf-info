@@ -1,1 +1,13 @@
 /* css styles */
+
+/* Colored left-hand bars on headings, using University of Michigan colors */
+h2 {
+  border-left: 20px solid #00274C; /* UM primary blue */
+  padding-left: 0.5em;
+}
+
+h3 {
+  border-left: 5px solid #FFCB05; /* UM maize */
+  padding-left: 0.5em;
+}
+
