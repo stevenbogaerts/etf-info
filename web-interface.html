@@ -186,8 +186,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#question" id="toc-question" class="nav-link active" data-scroll-target="#question">Making Your First PrairieLearn Question</a></li>
   <li><a href="#making-your-first-assessment" id="toc-making-your-first-assessment" class="nav-link" data-scroll-target="#making-your-first-assessment">Making Your First Assessment</a></li>
   <li><a href="#importing-content-from-canvas" id="toc-importing-content-from-canvas" class="nav-link" data-scroll-target="#importing-content-from-canvas">Importing Content from Canvas</a></li>
-  <li><a href="#adding-a-standard-notes-page-to-your-assessment" id="toc-adding-a-standard-notes-page-to-your-assessment" class="nav-link" data-scroll-target="#adding-a-standard-notes-page-to-your-assessment">Adding a Standard Notes Page to Your Assessment</a></li>
-  <li><a href="#allowing-students-to-add-a-custom-notes-page-to-your-assessment" id="toc-allowing-students-to-add-a-custom-notes-page-to-your-assessment" class="nav-link" data-scroll-target="#allowing-students-to-add-a-custom-notes-page-to-your-assessment">Allowing Students to Add a Custom Notes Page to Your Assessment</a></li>
+  <li><a href="#optional-adding-a-standard-notes-page-to-your-assessment" id="toc-optional-adding-a-standard-notes-page-to-your-assessment" class="nav-link" data-scroll-target="#optional-adding-a-standard-notes-page-to-your-assessment">Optional: Adding a Standard Notes Page to Your Assessment</a></li>
+  <li><a href="#optional-allowing-students-to-add-a-custom-notes-page-to-your-assessment" id="toc-optional-allowing-students-to-add-a-custom-notes-page-to-your-assessment" class="nav-link" data-scroll-target="#optional-allowing-students-to-add-a-custom-notes-page-to-your-assessment">Optional: Allowing Students to Add a Custom Notes Page to Your Assessment</a></li>
   </ul>
 </nav>
     </div>
@@ -228,15 +228,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Once you <a href="./index.html#access">gain access to PrairieLearn</a>, read the following sections describing first steps for working with its web interface.</p>
 <section id="question" class="level2">
 <h2 class="anchored" data-anchor-id="question">Making Your First PrairieLearn Question</h2>
-<p>Log in to PrairieLearn at the <a href="https://us.prairielearn.com/">PrairieLearn course site</a> and navigate to your course. Click on “Questions” in the left-hand navigation menu. Then click the “Add questions” drop-down and choose “Generate question with AI”. Enter whatever details of a question you’d like. For a simple first example, you might consider: “Show a randomly generated linear equation and a random x value. Students must enter (short-answer) the resulting y value.”</p>
-<p>The AI will “think” for a bit and then generate a question you can try out in the “Preview” tab. You can chat with the AI to adjust the question as needed. When you are satisfied with the question, click “Finalize question”. Give it a title (student-facing) and a QID (question ID). The QID must be unique within your course. Click “Finalize question” again.</p>
-<p>Click on the questions tab, and click the link for the question you just made. It will open in the “Preview” tab, where you can try it out again. Click on the “Settings” tab for the question and note the things you can change. Also briefly check out the “Files” tab, and you’ll see that there are three files associated with your question:</p>
+<p>Log in to the <a href="https://us.prairielearn.com/">PrairieLearn course site</a> and navigate to your course. Click on “Questions” in the left-hand navigation menu. Then click the “Add questions” drop-down and choose “Generate question with AI”. Enter whatever details of a question you’d like. For a simple first example, you might consider: “Show a randomly generated linear equation and a random x value. Students must enter (short-answer) the resulting y value.”</p>
+<p>The AI will process for a bit and then generate a question you can try out in the “Preview” tab. You can chat with the AI to adjust the question as needed. When you are satisfied with the question, click “Finalize question”. Give it a title (student-facing) and a QID (question ID). The QID must be unique within your course. Click “Finalize question” again.</p>
+<p>Click on the questions tab, and click the link for the question you just made. It will open in the “Preview” tab, where you can try it out again. Click on the “Settings” tab for the question and note what’s available. Also briefly check out the “Files” tab, and you’ll see that there are three files associated with your question:</p>
 <ul>
-<li>info.json - contains basic settings for your question</li>
-<li>question.html - defines, in HTML syntax, what the question looks like to students</li>
-<li>server.py - Python code that generates the question</li>
+<li><code>info.json</code> - contains basic settings for your question, in JSON format</li>
+<li><code>question.html</code> - defines what the question looks like to students, in HTML format</li>
+<li><code>server.py</code> - defines how the question is generated, in Python code</li>
 </ul>
-<p>You can use PrairieLearn without knowing anything about JSON, HTML, or Python, though in some cases it may be helpful to know a little bit about these tools.</p>
+<p>Only minimal JSON and HTML knowledge is needed, if any. For Python, more can be helpful, but you can also manage with little or none if you use AI to help you.</p>
 </section>
 <section id="making-your-first-assessment" class="level2">
 <h2 class="anchored" data-anchor-id="making-your-first-assessment">Making Your First Assessment</h2>
@@ -253,8 +253,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 class="anchored" data-anchor-id="importing-content-from-canvas">Importing Content from Canvas</h2>
 <p>If you have quizzes on Canvas that you’d like to import into PrairieLearn, there is a convenient way to do that. For details, visit the official documentation on <a href="https://docs.prairielearn.com/importingContent/">Importing content from other platforms</a>.</p>
 </section>
-<section id="adding-a-standard-notes-page-to-your-assessment" class="level2">
-<h2 class="anchored" data-anchor-id="adding-a-standard-notes-page-to-your-assessment">Adding a Standard Notes Page to Your Assessment</h2>
+<section id="optional-adding-a-standard-notes-page-to-your-assessment" class="level2">
+<h2 class="anchored" data-anchor-id="optional-adding-a-standard-notes-page-to-your-assessment">Optional: Adding a Standard Notes Page to Your Assessment</h2>
 <p>PrairieLearn enables you to add files to an assessment that students will be allowed to access. For example, suppose you have a <code>reference.pdf</code> file you want students to be able to access during the exam. First, we need to provide the file to PrairieLearn:</p>
 <ul>
 <li>In the left sidebar, choose “Assessments” and click on the assessment you want to add the file to.</li>
@@ -293,8 +293,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul>
 <p>With the changes above, students will see a link to the <code>reference.pdf</code> file when they open the assessment. I recommend you test this out with the “Student view without access restrictions” option to verify that it works as needed.</p>
 </section>
-<section id="allowing-students-to-add-a-custom-notes-page-to-your-assessment" class="level2">
-<h2 class="anchored" data-anchor-id="allowing-students-to-add-a-custom-notes-page-to-your-assessment">Allowing Students to Add a Custom Notes Page to Your Assessment</h2>
+<section id="optional-allowing-students-to-add-a-custom-notes-page-to-your-assessment" class="level2">
+<h2 class="anchored" data-anchor-id="optional-allowing-students-to-add-a-custom-notes-page-to-your-assessment">Optional: Allowing Students to Add a Custom Notes Page to Your Assessment</h2>
 <p>In some cases, rather than preparing a reference sheet yourself, you may want students to prepare their own reference sheet. However, please note: in the ETF, for reasons of exam security (especially when multiple courses’ exams are administered simultaneously), students are never allowed to bring in physical copies of their own reference sheets. Thus, if you want students to be able to use their own personally-prepared reference sheets during an exam, we need to set up PrairieLearn to allow this.</p>
 <p>Details coming soon!</p>
 
