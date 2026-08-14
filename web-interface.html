@@ -9,7 +9,7 @@
 <meta name="author" content="Steven Bogaerts">
 <meta name="dcterms.date" content="2026-08-14">
 
-<title>Introduction to PrairieLearn – Quick-Start Guide to PrairieLearn</title>
+<title>Web Interface – Quick-Start Guide to PrairieLearn</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -25,6 +25,41 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -35,7 +70,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./web-interface.html" rel="next">
+<link href="./github-repo.html" rel="next">
+<link href="./index.html" rel="prev">
 <link href="./images/favicon.png" rel="icon" type="image/png">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -89,7 +125,7 @@ ul.task-list li input[type="checkbox"] {
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
         <a class="flex-grow-1 no-decor" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-          <h1 class="quarto-secondary-nav-title">Introduction to PrairieLearn</h1>
+          <h1 class="quarto-secondary-nav-title">Web Interface</h1>
         </a>     
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
@@ -115,13 +151,13 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active">
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Introduction to PrairieLearn</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./web-interface.html" class="sidebar-item-text sidebar-link">
+  <a href="./web-interface.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Web Interface</span></a>
   </div>
 </li>
@@ -147,10 +183,11 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#what-is-prairielearn" id="toc-what-is-prairielearn" class="nav-link active" data-scroll-target="#what-is-prairielearn">What is PrairieLearn?</a></li>
-  <li><a href="#what-are-prairietest-and-the-etf" id="toc-what-are-prairietest-and-the-etf" class="nav-link" data-scroll-target="#what-are-prairietest-and-the-etf">What are PrairieTest and the ETF?</a></li>
-  <li><a href="#access" id="toc-access" class="nav-link" data-scroll-target="#access">Getting Access to PrairieLearn and PrairieTest / the U-M ETF</a></li>
-  <li><a href="#next-steps" id="toc-next-steps" class="nav-link" data-scroll-target="#next-steps">Next Steps</a></li>
+  <li><a href="#question" id="toc-question" class="nav-link active" data-scroll-target="#question">Making Your First PrairieLearn Question</a></li>
+  <li><a href="#making-your-first-assessment" id="toc-making-your-first-assessment" class="nav-link" data-scroll-target="#making-your-first-assessment">Making Your First Assessment</a></li>
+  <li><a href="#importing-content-from-canvas" id="toc-importing-content-from-canvas" class="nav-link" data-scroll-target="#importing-content-from-canvas">Importing Content from Canvas</a></li>
+  <li><a href="#adding-a-standard-notes-page-to-your-assessment" id="toc-adding-a-standard-notes-page-to-your-assessment" class="nav-link" data-scroll-target="#adding-a-standard-notes-page-to-your-assessment">Adding a Standard Notes Page to Your Assessment</a></li>
+  <li><a href="#allowing-students-to-add-a-custom-notes-page-to-your-assessment" id="toc-allowing-students-to-add-a-custom-notes-page-to-your-assessment" class="nav-link" data-scroll-target="#allowing-students-to-add-a-custom-notes-page-to-your-assessment">Allowing Students to Add a Custom Notes Page to Your Assessment</a></li>
   </ul>
 </nav>
     </div>
@@ -159,7 +196,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block">Introduction to PrairieLearn</h1>
+<h1 class="title d-none d-lg-block">Web Interface</h1>
 </div>
 
 
@@ -188,53 +225,78 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>This is a quick-start guide for faculty members at University of Michigan - Ann Arbor on using PrairieLearn and giving exams at the Engineering Testing Facility (ETF).</p>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Given the large range of faculty member backgrounds in the concepts discussed here, this documentation does not attempt to be one-size-fits-all nor comprehensive. Rather, this is provided to point faculty members to a few key ideas to get started quickly. The <a href="https://docs.prairielearn.com/">official PrairieLearn documentation</a>, web searches, and AI questions are all good resources for more information. I (as the ETF faculty advisor) am also happy to assist U-M faculty members on these topics.</p>
-</div>
-</div>
-<p>This page provides brief information on PrairieLearn, PrairieTest, and how to get access to PrairieLearn.</p>
-<section id="what-is-prairielearn" class="level2">
-<h2 class="anchored" data-anchor-id="what-is-prairielearn">What is PrairieLearn?</h2>
-<p>PrairieLearn is an online learning and assessment platform useful for practice, homework, quizzes, and exams. Some notable features include:</p>
+<p>Once you <a href="./index.html#access">gain access to PrairieLearn</a>, read the following sections describing first steps for working with its web interface.</p>
+<section id="question" class="level2">
+<h2 class="anchored" data-anchor-id="question">Making Your First PrairieLearn Question</h2>
+<p>Log in to PrairieLearn at the <a href="https://us.prairielearn.com/">PrairieLearn course site</a> and navigate to your course. Click on “Questions” in the left-hand navigation menu. Then click the “Add questions” drop-down and choose “Generate question with AI”. Enter whatever details of a question you’d like. For a simple first example, you might consider: “Show a randomly generated linear equation and a random x value. Students must enter (short-answer) the resulting y value.”</p>
+<p>The AI will “think” for a bit and then generate a question you can try out in the “Preview” tab. You can chat with the AI to adjust the question as needed. When you are satisfied with the question, click “Finalize question”. Give it a title (student-facing) and a QID (question ID). The QID must be unique within your course. Click “Finalize question” again.</p>
+<p>Click on the questions tab, and click the link for the question you just made. It will open in the “Preview” tab, where you can try it out again. Click on the “Settings” tab for the question and note the things you can change. Also briefly check out the “Files” tab, and you’ll see that there are three files associated with your question:</p>
 <ul>
-<li>Great flexibility in question types and randomization of question details</li>
-<li>Support for automatic and manual grading</li>
-<li>Easy-to-use web interface, plus the opportunity to integrate with agentic AI workflows</li>
+<li>info.json - contains basic settings for your question</li>
+<li>question.html - defines, in HTML syntax, what the question looks like to students</li>
+<li>server.py - Python code that generates the question</li>
 </ul>
+<p>You can use PrairieLearn without knowing anything about JSON, HTML, or Python, though in some cases it may be helpful to know a little bit about these tools.</p>
 </section>
-<section id="what-are-prairietest-and-the-etf" class="level2">
-<h2 class="anchored" data-anchor-id="what-are-prairietest-and-the-etf">What are PrairieTest and the ETF?</h2>
-<p>PrairieTest is a system that uses PrairieLearn content to deliver and support exams. The Engineering Testing Facility (ETF) at U-M is the testing center that uses PrairieTest to deliver exams. Faculty members can reserve with the ETF, design their exams in PrairieLearn, and then the ETF will deliver the exam to students.</p>
-<p>This Quick-Start Guide is about PrairieLearn, not about PrairieTest nor the ETF. For more information on those resources, visit the ETF website. <!-- TO DO website link? --></p>
+<section id="making-your-first-assessment" class="level2">
+<h2 class="anchored" data-anchor-id="making-your-first-assessment">Making Your First Assessment</h2>
+<p>In PrairieLearn, an “assessment” is a collection of questions that students will answer. There are two types of assessments, “Homework” and “Exam”. The type determines some default settings, but these can be changed later, as we’ll see.</p>
+<p>To make your first assessment, click on “Assessments” in the left-hand navigation menu. Then click the “Add assessment” button. Let’s give it the title “Homework 1”, short name “hw1”, set the type to “Homework”, and the “set” to whatever you’d like. (You can also edit the available assessment sets in Course Settings, Assessment Sets.) Press the “Create” button.</p>
+<p>You’ll see your new assessment’s page. There are no questions in it yet, so click “Add questions”. You’ll see “Zone 1”. In the right panel, you can click your question (not the blue underlined link, but the box around the question) to add it to the assessment.</p>
+<p>Hit the blue disk icon button (labeled “Save” on hover) to save, and you’ll be back in your Assessment.</p>
+<p>Go back to the Questions page and make a few more questions, so that you have a few to try out the assessment functionality with. Then add them to your assessment.</p>
+<p>When looking at your assessment page, you can try it out as a student will see it by clicking on your name in the upper-right corner and choosing “Student view without access restrictions”.</p>
+<p>When you’re done exploring it, go back to the regular view (upper-right corner, “Staff view”). Click the other tabs at top to explore what’s possible, such as the “Access” tab, “Files”, “Manual grading”, “Settings”, etc.</p>
+<p>When you’re ready to make an exam to be administered in the ETF, you’ll make an assessment of type “Exam” and then follow ETF procedures. <!-- TO DO link --></p>
 </section>
-<section id="access" class="level2">
-<h2 class="anchored" data-anchor-id="access">Getting Access to PrairieLearn and PrairieTest / the U-M ETF</h2>
+<section id="importing-content-from-canvas" class="level2">
+<h2 class="anchored" data-anchor-id="importing-content-from-canvas">Importing Content from Canvas</h2>
+<p>If you have quizzes on Canvas that you’d like to import into PrairieLearn, there is a convenient way to do that. For details, visit the official documentation on <a href="https://docs.prairielearn.com/importingContent/">Importing content from other platforms</a>.</p>
+</section>
+<section id="adding-a-standard-notes-page-to-your-assessment" class="level2">
+<h2 class="anchored" data-anchor-id="adding-a-standard-notes-page-to-your-assessment">Adding a Standard Notes Page to Your Assessment</h2>
+<p>PrairieLearn enables you to add files to an assessment that students will be allowed to access. For example, suppose you have a <code>reference.pdf</code> file you want students to be able to access during the exam. First, we need to provide the file to PrairieLearn:</p>
 <ul>
-<li><strong>Request a PrairieLearn course</strong>: For each course you intend to use with PrairieLearn, you need a “PrairieLearn course” to be created for you, if you don’t already have one. Go to the <a href="https://www.prairielearn.com">PrairieLearn site</a> and click “Free sign up” in the top-right corner. Login by clicking the “University of Michigan” button down below, <strong><em>not</em></strong> via “Sign in with Google”. Follow the steps presented to request your course.</li>
-<li><strong>Get a GitHub.com account</strong>: GitHub is a web-based platform for managing software development projects. Eventually, it will play an integral role in your PrairieLearn workflow. If you don’t already have an account, go to <a href="https://github.com">GitHub.com</a> and click the “Sign up” button in the top-right corner. Follow the steps presented to create your account.</li>
-<li><strong>Access Your GitHub PrairieLearn Repository</strong>: When your PrairieLearn course is created, you will receive an email with an invitation to access your course’s GitHub <em>repository</em> (a collection of files related to your PrairieLearn course). Accept the invitation and connect it to your GitHub account.</li>
-<li><strong>Get in touch with the ETF Staff</strong>: If you intend to use PrairieLearn for exams, you will need to request access to PrairieTest and the U-M ETF. If you haven’t already, please contact the ETF staff for details. <!-- TO DO: direct link --></li>
+<li>In the left sidebar, choose “Assessments” and click on the assessment you want to add the file to.</li>
+<li>Click on the “Files” tab and hit the “Add new client files” button.</li>
+<li>Upload your <code>reference.pdf</code> file via the file dialog that appears.</li>
+<li>In the “Files” window, you should now see a new folder named “clientFilesAssessment”. If you click on that folder, you should see the <code>reference.pdf</code> file inside. You can click on it to verify that it’s the correct file.</li>
 </ul>
-</section>
-<section id="next-steps" class="level2">
-<h2 class="anchored" data-anchor-id="next-steps">Next Steps</h2>
-<p>Once you have access, continue on to:</p>
+<p>Next, we need to give students access to the file in the assessment itself:</p>
 <ul>
-<li><a href="./web-interface.html"><strong>The PrairieLearn Web Interface</strong></a> — Build your first question and assessment using the web interface.</li>
-<li><a href="./github-repo.html"><strong>The PrairieLearn GitHub Repository Interface</strong></a> — Work with your course’s underlying files directly, including with AI assistance.</li>
-<li><a href="./additional-resources.html"><strong>Additional Resources</strong></a> — Official documentation and student-facing tutorials.</li>
+<li><p>Still in the “Files” tab for the assessment, click the <code>edit</code> button for the file <code>infoAssessment.json</code> to open it in an in-browser editor.</p></li>
+<li><p>We need to add one entry to the file: a <code>"text"</code> field containing a link to the file and any accompanying text we want. The <code>"text"</code> field must be valid HTML, and the file accessed via the URL <code>{{ client_files_assessment }}/reference.pdf</code> (or adjust for your file name). The <code>{{ client_files_assessment }}</code> is a placeholder that PrairieLearn will replace with the correct URL for the assessment’s files. For example:</p>
+<ul>
+<li>Suppose you want your “Quiz 1” assessment to allow access to a <code>reference.pdf</code> file you’ve created.</li>
+<li>When you open <code>infoAssessment.json</code>, you’ll see something like this:</li>
 </ul>
-<p>I recommend working through these pages in order, using the navigation on the left (or the “Next” link below).</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode json code-with-copy"><code class="sourceCode json"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">{</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="dt">"uuid"</span><span class="fu">:</span> <span class="st">"some unique identifier here"</span><span class="fu">,</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="dt">"type"</span><span class="fu">:</span> <span class="st">"Exam"</span><span class="fu">,</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="dt">"title"</span><span class="fu">:</span> <span class="st">"Quiz 1"</span><span class="fu">,</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="dt">"set"</span><span class="fu">:</span> <span class="st">"Quizzes"</span><span class="fu">,</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="er">...</span> <span class="er">(more</span> <span class="er">settings</span> <span class="er">omitted</span> <span class="er">for</span> <span class="er">brevity)</span> <span class="er">...</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="fu">}</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Add a new line for the “text” field. Anywhere is fine. For example, see below:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode json code-with-copy"><code class="sourceCode json"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">{</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="dt">"uuid"</span><span class="fu">:</span> <span class="st">"some unique identifier here"</span><span class="fu">,</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="dt">"type"</span><span class="fu">:</span> <span class="st">"Exam"</span><span class="fu">,</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="dt">"title"</span><span class="fu">:</span> <span class="st">"Quiz 1"</span><span class="fu">,</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="dt">"text"</span><span class="fu">:</span> <span class="st">"&lt;p&gt;&lt;a href=</span><span class="ch">\"</span><span class="st">{{ client_files_assessment }}/reference.pdf</span><span class="ch">\"</span><span class="st">&gt;Click here for the exam reference sheet&lt;/a&gt;. You may find it convenient to open this document in a new browser tab.&lt;/p&gt;"</span><span class="fu">,</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="dt">"set"</span><span class="fu">:</span> <span class="st">"Quizzes"</span><span class="fu">,</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="er">...</span> <span class="er">(more</span> <span class="er">settings</span> <span class="er">omitted</span> <span class="er">for</span> <span class="er">brevity)</span> <span class="er">...</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="fu">}</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Note the HTML syntax, the use of <code>"</code> and <code>\"</code>, and the <code>,</code> at the end. Such syntax is required. The following is just that line, which you can easily copy by hovering your mouse over the box and clicking the clipboard icon in the upper-right corner:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode json code-with-copy"><code class="sourceCode json"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="st">"text"</span><span class="er">:</span> <span class="st">"&lt;p&gt;&lt;a href=</span><span class="ch">\"</span><span class="st">{{ client_files_assessment }}/reference.pdf</span><span class="ch">\"</span><span class="st">&gt;Click here for the exam reference sheet&lt;/a&gt;. You may find it convenient to open this document in a new browser tab.&lt;/p&gt;"</span><span class="er">,</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
+<li><p>You may need to adjust the file name if yours is not called <code>reference.pdf</code>, and you may also wish to change the wording.</p></li>
+<li><p>Click the <code>Save</code> button when you are finished editing.</p></li>
+</ul>
+<p>With the changes above, students will see a link to the <code>reference.pdf</code> file when they open the assessment. I recommend you test this out with the “Student view without access restrictions” option to verify that it works as needed.</p>
+</section>
+<section id="allowing-students-to-add-a-custom-notes-page-to-your-assessment" class="level2">
+<h2 class="anchored" data-anchor-id="allowing-students-to-add-a-custom-notes-page-to-your-assessment">Allowing Students to Add a Custom Notes Page to Your Assessment</h2>
+<p>In some cases, rather than preparing a reference sheet yourself, you may want students to prepare their own reference sheet. However, please note: in the ETF, for reasons of exam security (especially when multiple courses’ exams are administered simultaneously), students are never allowed to bring in physical copies of their own reference sheets. Thus, if you want students to be able to use their own personally-prepared reference sheets during an exam, we need to set up PrairieLearn to allow this.</p>
+<p>Details coming soon!</p>
 
 
 </section>
@@ -642,10 +704,13 @@ Note
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
+      <a href="./index.html" class="pagination-link" aria-label="Introduction to PrairieLearn">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Introduction to PrairieLearn</span>
+      </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./web-interface.html" class="pagination-link" aria-label="Web Interface">
-        <span class="nav-page-text">Web Interface</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./github-repo.html" class="pagination-link" aria-label="Repository Interface">
+        <span class="nav-page-text">Repository Interface</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

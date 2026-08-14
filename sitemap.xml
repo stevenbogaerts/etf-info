@@ -1,7 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://stevenbogaerts.github.io/etf-info/web-interface.html</loc>
+    <lastmod>2026-08-14T12:05:47.224Z</lastmod>
+  </url>
+  <url>
+    <loc>https://stevenbogaerts.github.io/etf-info/github-repo.html</loc>
+    <lastmod>2026-08-14T12:21:24.006Z</lastmod>
+  </url>
+  <url>
+    <loc>https://stevenbogaerts.github.io/etf-info/additional-resources.html</loc>
+    <lastmod>2026-08-14T11:56:27.239Z</lastmod>
+  </url>
+  <url>
     <loc>https://stevenbogaerts.github.io/etf-info/index.html</loc>
-    <lastmod>2026-08-13T19:14:44.330Z</lastmod>
+    <lastmod>2026-08-14T12:17:42.025Z</lastmod>
   </url>
 </urlset>
