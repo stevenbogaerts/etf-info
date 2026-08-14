@@ -54,7 +54,7 @@
     "href": "web-interface.html#allowing-students-to-add-a-custom-notes-page-to-your-assessment",
     "title": "Web Interface",
     "section": "Allowing Students to Add a Custom Notes Page to Your Assessment",
-    "text": "Allowing Students to Add a Custom Notes Page to Your Assessment\n\n\n\n\n\n\nNoteAcknowledgment\n\n\n\nThank you to the University of California - San Diego, Triton Testing Center, for their documentation on this topic, which served as the basis for the documentation below.\n\n\nIn some cases, rather than preparing a reference sheet yourself, you may want students to prepare their own reference sheet. However, please note: in the ETF, for reasons of exam security (especially when multiple courses’ exams are administered simultaneously), students are never allowed to bring in physical copies of their own reference sheets. Thus, if you want students to be able to use their own personally-prepared reference sheets during an exam, we need to set up PrairieLearn to allow this.\nDetails coming soon!",
+    "text": "Allowing Students to Add a Custom Notes Page to Your Assessment\n\n\n\n\n\n\nNoteAcknowledgment\n\n\n\nThank you to the University of California - San Diego, Triton Testing Center, for their documentation on this topic, which served as the basis for the documentation below.\n\n\nIn some cases, rather than preparing a reference sheet yourself, you may want students to prepare their own respective reference sheets. However, please note: in the ETF, for reasons of exam security (especially when multiple courses’ exams are administered simultaneously), students are never allowed to bring in physical copies of their own reference sheets. Thus, if you want students to be able to use their own personally-prepared reference sheets during an exam, we need to set up PrairieLearn to allow this.\nDetails coming soon!",
     "crumbs": [
       "Web Interface"
     ]
@@ -114,7 +114,7 @@
     "href": "github-repo.html#resources-for-your-repo",
     "title": "Repository Interface",
     "section": "Resources for your Repo",
-    "text": "Resources for your Repo\nI recommend you download these useful PrairieLearn files and copy them into the root of your PrairieLearn repo. That is, after copying, your repo should have folders called serverFilesCourse and tools at the root (not inside some sub-folder), and your questions folder should have a templates folder inside of it. The templates folder contains several example questions. These templates show you or an AI agent what syntax is needed to create various question types. You may find it useful to refer to them in any prompts for creating questions.",
+    "text": "Resources for your Repo\nI recommend you download these useful PrairieLearn files and copy them into the root of your PrairieLearn repo. That is, after copying, your repo should have folders called serverFilesCourse and tools at the root (not inside some sub-folder), and your questions folder should have a templates folder inside of it. The templates folder contains several example questions. These templates show you or an AI agent what syntax is needed to create various types of content. You may find it useful to refer to them in any prompts for creating questions.",
     "crumbs": [
       "Repository Interface"
     ]
