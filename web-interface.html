@@ -205,7 +205,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#uploading-the-reference-sheet" id="toc-uploading-the-reference-sheet" class="nav-link" data-scroll-target="#uploading-the-reference-sheet">Uploading the Reference Sheet</a></li>
   <li><a href="#adding-a-link-to-the-reference-sheet-in-the-assessment" id="toc-adding-a-link-to-the-reference-sheet-in-the-assessment" class="nav-link" data-scroll-target="#adding-a-link-to-the-reference-sheet-in-the-assessment">Adding a Link to the Reference Sheet in the Assessment</a></li>
   </ul></li>
-  <li><a href="#allowing-students-to-add-a-custom-notes-page-to-your-assessment" id="toc-allowing-students-to-add-a-custom-notes-page-to-your-assessment" class="nav-link" data-scroll-target="#allowing-students-to-add-a-custom-notes-page-to-your-assessment">Allowing Students to Add a Custom Notes Page to Your Assessment</a></li>
+  <li><a href="#allowing-students-to-add-a-custom-notes-page-to-your-assessment" id="toc-allowing-students-to-add-a-custom-notes-page-to-your-assessment" class="nav-link" data-scroll-target="#allowing-students-to-add-a-custom-notes-page-to-your-assessment">Allowing Students to Add a Custom Notes Page to Your Assessment</a>
+  <ul class="collapse">
+  <li><a href="#file-upload-question" id="toc-file-upload-question" class="nav-link" data-scroll-target="#file-upload-question">Making a File Upload Question</a></li>
+  <li><a href="#making-a-file-upload-homework-assessment" id="toc-making-a-file-upload-homework-assessment" class="nav-link" data-scroll-target="#making-a-file-upload-homework-assessment">Making a File Upload Homework Assessment</a></li>
+  <li><a href="#reviewing-uploaded-sheets" id="toc-reviewing-uploaded-sheets" class="nav-link" data-scroll-target="#reviewing-uploaded-sheets">Reviewing Uploaded Sheets</a></li>
+  <li><a href="#configuring-the-exam-assessment-to-allow-access-to-uploaded-sheets" id="toc-configuring-the-exam-assessment-to-allow-access-to-uploaded-sheets" class="nav-link" data-scroll-target="#configuring-the-exam-assessment-to-allow-access-to-uploaded-sheets">Configuring the Exam Assessment to Allow Access to Uploaded Sheets</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -350,10 +356,71 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Thank you to the University of California - San Diego, Triton Testing Center, for their <a href="https://tritontesting.ucsd.edu/computer-based-testing/instructors/Digital-Note-Sheet-Method_CBTF_SP25-1.pdf#:~:text=Allowing%20access%20to%20student%20created%20digital%20notes,sample%20code%20for%20the%20question.html%20and%20the.">documentation</a> on this topic, which served as the basis for the documentation below.</p>
 </div>
 </div>
-<p>In some cases, rather than preparing a reference sheet yourself, you may want students to prepare their own respective reference sheets. However, please note: in the ETF, for reasons of exam security (especially when multiple courses’ exams are administered simultaneously), students are never allowed to bring in physical copies of their own reference sheets. Thus, if you want students to be able to use their own personally-prepared reference sheets during an exam, we need to set up PrairieLearn to allow this.</p>
-<p>Details coming soon!</p>
+<p>In some cases, rather than preparing a reference sheet yourself, you may want students to prepare their own respective reference sheets. However, please note: in the ETF, for reasons of exam security (especially when multiple courses’ exams are administered simultaneously), students are <em>never</em> allowed to bring in physical copies of their own reference sheets. Thus, if you want students to be able to use their own personally-prepared reference sheets during an exam, we need to set up PrairieLearn to allow this. The basic procedure is summarized below:</p>
+<ol type="1">
+<li>Make a file upload question, allowing students to upload their reference sheet.</li>
+<li>Make a special upload assessment (a homework assessment configured in a special way) that contains the file upload question. The assessment should close days before the exam window starts.</li>
+<li>Configure PrairieLearn to allow each student access to their uploaded sheet during the exam.</li>
+<li>When the special upload assessment closes, review the uploaded sheets to ensure they follow any course requirements.</li>
+</ol>
+<p>Details are provided in the following subsections.</p>
+<section id="file-upload-question" class="level3">
+<h3 class="anchored" data-anchor-id="file-upload-question">Making a File Upload Question</h3>
+<ul>
+<li>Click on “Questions” in the left sidebar, and choose “Add questions” -&gt; “Create new question” (<em>not</em> “Generate question with AI”).</li>
+<li>Give a title and QID, such as “Reference Sheet Upload” and “ref-sheet-upload”.</li>
+<li>With “PrairieLearn template” selected, choose the “File Upload” option.</li>
+<li>Click “Create question”.</li>
+<li>You will see the “Preview” tab for the question. Click on “Files”, and then the “Edit” button for <code>question.html</code>. Replace the entirety of its contents with the following (or adjust the wording / policies as needed): <code>html   &lt;pl-question-panel&gt;        &lt;p&gt; $\textbf{Instructions:}$&lt;/p&gt;        &lt;p&gt;Take a picture of your 1 page of handwritten notes. Save your notes in a file named: &lt;b&gt;personalnotes.png&lt;/b&gt; &lt;/p&gt;        &lt;p&gt;Upload or drag your &lt;b&gt;personalnotes.png&lt;/b&gt; file into the submission box. Click save and click show preview to view your notes in the submission panel. &lt;/p&gt;        &lt;p&gt;&lt;b&gt; Submit your notes file here: &lt;/b&gt; &lt;pl-file-upload file-names="personalnotes.png"&gt; &lt;/pl-file-upload&gt;     &lt;/pl-question-panel&gt;    &lt;pl-submission-panel&gt;        &lt;pl-file-preview&gt;&lt;/pl-file-preview&gt;    &lt;/pl-submission-panel&gt;</code></li>
+<li>Click “Save”.</li>
+</ul>
+</section>
+<section id="making-a-file-upload-homework-assessment" class="level3">
+<h3 class="anchored" data-anchor-id="making-a-file-upload-homework-assessment">Making a File Upload Homework Assessment</h3>
+<ul>
+<li><p>Click on “Assessments” in the left sidebar, and choose “Add assessment”.</p></li>
+<li><p>Give a title and short name that are reflective of the exam. For example, if this is for your Exam #1, you might use “Reference Sheet Upload for Exam 1” and “ref-sheet-upload-exam1”.</p></li>
+<li><p>Set the type to “Homework” and the set to whatever you’d like.</p></li>
+<li><p>You’ll now be on the “Questions” tab. Click “Add questions” add the file upload question from the <a href="#file-upload-question">previous step</a>. Press the blue disk icon button to save.</p></li>
+<li><p>Go to the “Settings” tab. In the “Student options” section, <strong><em>uncheck</em></strong> the box for “Allow personal notes” and hit “Save” at the bottom of the page.</p>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Warning
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>It is very important that “Allow personal notes” is <strong><em>unchecked</em></strong> and that you save this change. If the box is instead <em>checked</em>, students would be able to add other information to the homework assessment (and access it during the exam) that you would not be able to see.</p>
+</div>
+</div></li>
+<li><p>Go to the “Access” tab. Click the “Edit” button.</p></li>
+<li><p>Put a check in the “Date control” checkbox. Either let the homework be “Released” now, or choose “Scheduled for release” and set accordingly.</p></li>
+</ul>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>For additional exams in the course, you may reuse the same file upload <em>question</em> if you wish, but the file upload <em>assessment</em> will need to be created separately for each exam.</p>
+</div>
+</div>
+</section>
+<section id="reviewing-uploaded-sheets" class="level3">
+<h3 class="anchored" data-anchor-id="reviewing-uploaded-sheets">Reviewing Uploaded Sheets</h3>
+</section>
+<section id="configuring-the-exam-assessment-to-allow-access-to-uploaded-sheets" class="level3">
+<h3 class="anchored" data-anchor-id="configuring-the-exam-assessment-to-allow-access-to-uploaded-sheets">Configuring the Exam Assessment to Allow Access to Uploaded Sheets</h3>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->

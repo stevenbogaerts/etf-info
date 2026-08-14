@@ -114,6 +114,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Search"
   }
 }</script>
+<script src="site_libs/quarto-diagram/mermaid.min.js"></script>
+<script src="site_libs/quarto-diagram/mermaid-init.js"></script>
+<link href="site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 
 
 <link rel="stylesheet" href="styles.css">
@@ -287,15 +290,11 @@ Note
 <h2 class="anchored" data-anchor-id="keeping-everything-in-sync">Keeping Everything in Sync</h2>
 <p>We now have three copies of your course:</p>
 <ol type="1">
-<li>The local code (the local repo) on your computer</li>
+<li>The local code on your computer</li>
 <li>The remote code in your GitHub repo</li>
 <li>The code in the PrairieLearn web interface</li>
 </ol>
-<p>This I promise you: if you don’t keep these copies in sync, it will tear up your heart and your happiness will go bye bye bye. The syncing steps depend on how you adjust something for your course:</p>
-<ul>
-<li>Edit local code (1), push to the remote repo (2), and sync via the web interface (3)</li>
-<li>Edit via the web interface (3), push to the remote repo (happens automatically) (2), and pull to your local code (1)</li>
-</ul>
+<p>This I promise you: if you don’t keep these copies in sync, it will tear up your heart and your happiness will go bye bye bye. The syncing steps depend on whether you edit your local code or via the web interface, as described in the subsections below.</p>
 <div class="callout callout-style-default callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -309,10 +308,28 @@ Warning
 <p><strong>Avoid syncing conflicts:</strong> To keep things simple, don’t edit your content both locally and on the web interface between syncs. Rather, pick one place to work at a time and sync before switching.</p>
 </div>
 </div>
-<p>Details are provided in the subsections below.</p>
 <section id="if-you-edit-your-local-code" class="level3">
 <h3 class="anchored" data-anchor-id="if-you-edit-your-local-code">If You Edit Your Local Code</h3>
-<p>When you edit files in your local repo (e.g., with VS Code), you first need to “push” those changes back to the GitHub.com repo so that PrairieLearn can see them. The easiest way to do this is through VS Code’s built-in Source Control panel:</p>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">%%{init: {'themeVariables': {'edgeLabelBackground': '#FFFFFF', 'primaryTextColor': '#00274C'}}}%%
+flowchart LR
+    A["💻 ✏️ Edit&lt;br&gt;&lt;b&gt;Local Code&lt;/b&gt;&lt;br&gt;(your computer)"] --&gt;|push| B["☁️&lt;br&gt;&lt;b&gt;Remote Repo&lt;/b&gt;&lt;br&gt;(GitHub.com)"]
+    B --&gt;|sync| C["🌐&lt;br&gt;&lt;b&gt;Web Interface&lt;/b&gt;&lt;br&gt;(PrairieLearn)"]
+
+    classDef umNode fill:#00274C,stroke:#FFCB05,stroke-width:3px,color:#FFFFFF
+    class A,B,C umNode
+    linkStyle default stroke:#00274C,stroke-width:3px
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+<p>When you edit files in your local code (e.g., with VS Code), you first need to <em>push</em> those changes back to the GitHub.com repo so that PrairieLearn can see them. The easiest way to do this is through VS Code’s built-in Source Control panel:</p>
 <ol type="1">
 <li>Click the Source Control icon in the left-hand activity bar (it looks like three connected dots and is labeled “Source Control” when you hover over it; it often shows a number badge for changed files).</li>
 <li>You’ll see a list of your changed files. Hover over “Changes” and click the “+” icon to stage all of them (or stage individual files the same way).</li>
@@ -323,11 +340,30 @@ Warning
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> add .</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"Describe your changes here"</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> push</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Next, we need to tell the PL web interface to “reload” the course so that it sees the changes we just pushed. Click the “Sync” tab on the left side, and then the blue “Pull from remote git repository” button. When the process completes successfully, your course has been updated! You can verify this by looking at the changed items (e.g., questions, assessments) in the web interface.</p>
+<p>Next, we need to tell the PL web interface to <em>sync</em> the course so that it sees the changes we just pushed. Click the “Sync” tab on the left side, and then the blue “Pull from remote git repository” button. When the process completes successfully, your course has been updated! You can verify this by looking at the changed items (e.g., questions, assessments) in the web interface.</p>
 </section>
 <section id="if-you-edit-via-the-web-interface" class="level3">
 <h3 class="anchored" data-anchor-id="if-you-edit-via-the-web-interface">If You Edit Via the Web Interface</h3>
-<p>Similarly, if you make changes to your PrairieLearn course via the web interface, you need to “pull” those changes to your local repo so that your local files are up to date. The first step of this happens automatically: when you make changes in the web interface, those changes are automatically pushed to your GitHub.com repo. Thus, all that remains is to pull those changes to your local repo.</p>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">%%{init: {'themeVariables': {'edgeLabelBackground': '#FFFFFF', 'primaryTextColor': '#00274C'}}}%%
+flowchart LR
+    C["🌐 ✏️ Edit&lt;br&gt;&lt;b&gt;Web Interface&lt;/b&gt;&lt;br&gt;(PrairieLearn)"] --&gt;|auto-&lt;br&gt;sync| B["☁️&lt;br&gt;&lt;b&gt;Remote Repo&lt;/b&gt;&lt;br&gt;(GitHub.com)"]
+    B --&gt;|pull| A["💻&lt;br&gt;&lt;b&gt;Local Code&lt;/b&gt;&lt;br&gt;(your computer)"]
+
+    classDef umNode fill:#00274C,stroke:#FFCB05,stroke-width:3px,color:#FFFFFF
+    class A,B,C umNode
+    linkStyle default stroke:#00274C,stroke-width:3px
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+<p>Similarly, if you make changes to your PrairieLearn course via the web interface, we need to get those changes to your local code. The first step of this happens automatically: when you make changes in the web interface, those changes are <em>automatically synced</em> to your GitHub.com repo. Thus, all that remains is to pull those changes to your local repo.</p>
 <p>In VS Code, click the Source Control icon in the left-hand activity bar and click the “…” (More Actions) menu at the top, then choose “Pull” (or simply click the sync/refresh icon in the bottom status bar if you see one). Your local files will be updated to match what’s on GitHub.com.</p>
 <p>If you prefer the terminal, open a terminal in VS Code and run this command in your repo folder:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> pull</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
