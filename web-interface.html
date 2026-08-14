@@ -210,7 +210,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#file-upload-question" id="toc-file-upload-question" class="nav-link" data-scroll-target="#file-upload-question">Making a File Upload Question</a></li>
   <li><a href="#making-a-file-upload-homework-assessment" id="toc-making-a-file-upload-homework-assessment" class="nav-link" data-scroll-target="#making-a-file-upload-homework-assessment">Making a File Upload Homework Assessment</a></li>
   <li><a href="#reviewing-uploaded-sheets" id="toc-reviewing-uploaded-sheets" class="nav-link" data-scroll-target="#reviewing-uploaded-sheets">Reviewing Uploaded Sheets</a></li>
-  <li><a href="#configuring-the-exam-assessment-to-allow-access-to-uploaded-sheets" id="toc-configuring-the-exam-assessment-to-allow-access-to-uploaded-sheets" class="nav-link" data-scroll-target="#configuring-the-exam-assessment-to-allow-access-to-uploaded-sheets">Configuring the Exam Assessment to Allow Access to Uploaded Sheets</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -343,6 +342,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="allowing-students-to-add-a-custom-notes-page-to-your-assessment" class="level2">
 <h2 class="anchored" data-anchor-id="allowing-students-to-add-a-custom-notes-page-to-your-assessment">Allowing Students to Add a Custom Notes Page to Your Assessment</h2>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Warning
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>This section is still in testing and should not be relied upon until this message is removed!</p>
+</div>
+</div>
+<!-- TO DO: is this working? -->
 <div class="callout callout-style-simple callout-note callout-titled" title="Acknowledgment">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -362,27 +375,71 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Make a special upload assessment (a homework assessment configured in a special way) that contains the file upload question. The assessment should close days before the exam window starts.</li>
 <li>Configure PrairieLearn to allow each student access to their uploaded sheet during the exam.</li>
 <li>When the special upload assessment closes, review the uploaded sheets to ensure they follow any course requirements.</li>
+<li>Students can then take the exam with their respective uploaded files.</li>
 </ol>
 <p>Details are provided in the following subsections.</p>
 <section id="file-upload-question" class="level3">
 <h3 class="anchored" data-anchor-id="file-upload-question">Making a File Upload Question</h3>
 <ul>
-<li>Click on “Questions” in the left sidebar, and choose “Add questions” -&gt; “Create new question” (<em>not</em> “Generate question with AI”).</li>
-<li>Give a title and QID, such as “Reference Sheet Upload” and “ref-sheet-upload”.</li>
-<li>With “PrairieLearn template” selected, choose the “File Upload” option.</li>
-<li>Click “Create question”.</li>
-<li>You will see the “Preview” tab for the question. Click on “Files”, and then the “Edit” button for <code>question.html</code>. Replace the entirety of its contents with the following (or adjust the wording / policies as needed): <code>html   &lt;pl-question-panel&gt;        &lt;p&gt; $\textbf{Instructions:}$&lt;/p&gt;        &lt;p&gt;Take a picture of your 1 page of handwritten notes. Save your notes in a file named: &lt;b&gt;personalnotes.png&lt;/b&gt; &lt;/p&gt;        &lt;p&gt;Upload or drag your &lt;b&gt;personalnotes.png&lt;/b&gt; file into the submission box. Click save and click show preview to view your notes in the submission panel. &lt;/p&gt;        &lt;p&gt;&lt;b&gt; Submit your notes file here: &lt;/b&gt; &lt;pl-file-upload file-names="personalnotes.png"&gt; &lt;/pl-file-upload&gt;     &lt;/pl-question-panel&gt;    &lt;pl-submission-panel&gt;        &lt;pl-file-preview&gt;&lt;/pl-file-preview&gt;    &lt;/pl-submission-panel&gt;</code></li>
-<li>Click “Save”.</li>
+<li><p>Click on “Questions” in the left sidebar, and choose “Add questions” -&gt; “Create new question” (<em>not</em> “Generate question with AI”).</p></li>
+<li><p>Give a title and QID, such as “Reference Sheet Upload” and “ref-sheet-upload”.</p></li>
+<li><p>With “PrairieLearn template” selected, choose the “File Upload” option.</p></li>
+<li><p>Click “Create question”.</p></li>
+<li><p>You will see the “Preview” tab for the question. Click on “Files”, and then the “Edit” button for <code>question.html</code>. Replace the entirety of its contents with the following (or adjust the wording / policies as needed):</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">pl-question-panel</span><span class="dt">&gt;</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">p</span><span class="dt">&gt;</span> $\textbf{Instructions:}$<span class="dt">&lt;/</span><span class="kw">p</span><span class="dt">&gt;</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">p</span><span class="dt">&gt;</span>Take a picture of your 1 page of handwritten notes. Save your notes in a file named: <span class="dt">&lt;</span><span class="kw">b</span><span class="dt">&gt;</span>personalnotes.png<span class="dt">&lt;/</span><span class="kw">b</span><span class="dt">&gt;</span> <span class="dt">&lt;/</span><span class="kw">p</span><span class="dt">&gt;</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">p</span><span class="dt">&gt;</span>Upload or drag your <span class="dt">&lt;</span><span class="kw">b</span><span class="dt">&gt;</span>personalnotes.png<span class="dt">&lt;/</span><span class="kw">b</span><span class="dt">&gt;</span> file into the submission box. Click save and click show preview to view your notes in the submission panel. <span class="dt">&lt;/</span><span class="kw">p</span><span class="dt">&gt;</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">p</span><span class="dt">&gt;&lt;</span><span class="kw">b</span><span class="dt">&gt;</span> Submit your notes file here: <span class="dt">&lt;/</span><span class="kw">b</span><span class="dt">&gt;</span> </span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>       <span class="dt">&lt;</span><span class="kw">pl-file-upload</span><span class="ot"> file-names</span><span class="op">=</span><span class="st">"personalnotes.png"</span><span class="dt">&gt;</span> <span class="dt">&lt;/</span><span class="kw">pl-file-upload</span><span class="dt">&gt;</span> </span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;/</span><span class="kw">p</span><span class="dt">&gt;</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">pl-question-panel</span><span class="dt">&gt;</span></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">pl-submission-panel</span><span class="dt">&gt;</span></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">pl-file-preview</span><span class="dt">&gt;&lt;/</span><span class="kw">pl-file-preview</span><span class="dt">&gt;</span></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">pl-submission-panel</span><span class="dt">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
+<li><p>Click “Save”.</p></li>
 </ul>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>For additional exams in the course, you may reuse the same file upload <em>question</em> you’ve created here, if you wish.</p>
+</div>
+</div>
 </section>
 <section id="making-a-file-upload-homework-assessment" class="level3">
 <h3 class="anchored" data-anchor-id="making-a-file-upload-homework-assessment">Making a File Upload Homework Assessment</h3>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Before you can complete the steps below, you will need to (1) create the PrairieLearn assessment corresponding to your exam (though it need not be in its final form), and (2) obtain a PrairieTest exam UUID for your exam. Note that the Prairie<em>Test</em> <em>exam</em> UUID is different from the Prairie<em>Learn</em> <em>assessment</em> UUID. For details on where to get the PrairieTest exam UUID, see the ETF website.</p>
+</div>
+</div>
+<!-- TO DO: direct link -->
 <ul>
-<li><p>Click on “Assessments” in the left sidebar, and choose “Add assessment”.</p></li>
-<li><p>Give a title and short name that are reflective of the exam. For example, if this is for your Exam #1, you might use “Reference Sheet Upload for Exam 1” and “ref-sheet-upload-exam1”.</p></li>
-<li><p>Set the type to “Homework” and the set to whatever you’d like.</p></li>
-<li><p>You’ll now be on the “Questions” tab. Click “Add questions” add the file upload question from the <a href="#file-upload-question">previous step</a>. Press the blue disk icon button to save.</p></li>
-<li><p>Go to the “Settings” tab. In the “Student options” section, <strong><em>uncheck</em></strong> the box for “Allow personal notes” and hit “Save” at the bottom of the page.</p>
+<li>Make the assessment:
+<ul>
+<li>Click on “Assessments” in the left sidebar, and choose “Add assessment”.</li>
+<li>Give a title and short name that are reflective of the exam. For example, if this is for your Exam #1, you might use “Reference Sheet Upload for Exam 1” and “ref-sheet-upload-exam1”.</li>
+<li>Set the type to “Homework” and the set to whatever you’d like.</li>
+<li>You’ll now be on the “Questions” tab. Click “Add questions” and add the file upload question from the <a href="#file-upload-question">previous step</a>. Press the blue disk icon button to save.</li>
+</ul></li>
+<li>Disable personal notes:
+<ul>
+<li><p>Go to the “Settings” tab. In the “Student options” section, <strong><em>uncheck</em></strong> the box for “Allow personal notes”.</p>
 <div class="callout callout-style-default callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -396,9 +453,74 @@ Warning
 <p>It is very important that “Allow personal notes” is <strong><em>unchecked</em></strong> and that you save this change. If the box is instead <em>checked</em>, students would be able to add other information to the homework assessment (and access it during the exam) that you would not be able to see.</p>
 </div>
 </div></li>
+<li><p>Click “Save” at the bottom of the page.</p></li>
+</ul></li>
+<li>Configure the assessment’s worth:
+<ul>
+<li>The file upload assessment can be worth 0 or more points. You might choose a non-zero worth if you want to penalize students for uploading a disallowed file. Alternatively, you could simply delete any disallowed files after reviewing them, and not assign any points to the assessment.</li>
+<li>In any case, go to the “Questions” tab for the file upload assessment, and click “Edit” for the file upload question. In the right panel, set “Manual points” to whatever you wish.</li>
+<li>Click the disk icon button to save.</li>
+</ul></li>
+<li>Configure the assessment’s access:
+<ul>
 <li><p>Go to the “Access” tab. Click the “Edit” button.</p></li>
-<li><p>Put a check in the “Date control” checkbox. Either let the homework be “Released” now, or choose “Scheduled for release” and set accordingly.</p></li>
+<li><p>Put a check in the “Date control” checkbox. Either let the file upload task be “Released” immediately, or choose “Scheduled for release” and set the date/time accordingly.</p></li>
+<li><p>Select “Due on date” and pick a date/time sometime before the exam window starts. This will (1) give you / course staff time to review the uploaded sheets, and (2) prevent students from uploading new sheets after they are reviewed.</p></li>
+<li><p>In the “Integrations” section a bit further down, check the box next to “PrairieTest”, and enter the Exam UUID from PrairieTest for your exam. (Thus, both your actual exam assessment <em>and</em> this file upload assessment will be linked to the same PrairieTest exam.)</p></li>
+<li><p>In the “After completion” section, under “Question visibility after completion”, select “Show questions after completion”.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>You will be warned that this is an unusual setting for PrairieTest exams, but for the file upload assessment, you may safely ignore this warning.</p>
+</div>
+</div></li>
+<li><p>Click “Save” at the bottom of the page.</p></li>
+</ul></li>
 </ul>
+<p>Let’s verify that the assessment is configured correctly. Go to “Files”, and click “Edit” for <code>infoAssessment.json</code>. You should see something like the following:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode json code-with-copy"><code class="sourceCode json"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">{</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="dt">"uuid"</span><span class="fu">:</span> <span class="st">"PRAIRIELEARN-ASSESSMENT-UUID"</span><span class="fu">,</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  <span class="dt">"type"</span><span class="fu">:</span> <span class="st">"Homework"</span><span class="fu">,</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>  <span class="dt">"title"</span><span class="fu">:</span> <span class="st">"Any title, like Reference Sheet Upload for Exam 1"</span><span class="fu">,</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>  <span class="dt">"set"</span><span class="fu">:</span> <span class="st">"Any set name here"</span><span class="fu">,</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>  <span class="dt">"number"</span><span class="fu">:</span> <span class="st">"ANY-NUMBER"</span><span class="fu">,</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>  <span class="dt">"accessControl"</span><span class="fu">:</span> <span class="ot">[</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">{</span></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"dateControl"</span><span class="fu">:</span> <span class="fu">{</span></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>        <span class="dt">"release"</span><span class="fu">:</span> <span class="fu">{</span> <span class="dt">"date"</span><span class="fu">:</span> <span class="st">"RELEASE-DATE-TIME"</span> <span class="fu">},</span></span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>        <span class="dt">"due"</span><span class="fu">:</span> <span class="fu">{</span> <span class="dt">"date"</span><span class="fu">:</span> <span class="st">"DUE-DATE-TIME (days before the exam window begins)"</span> <span class="fu">}</span></span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>      <span class="fu">},</span></span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"integrations"</span><span class="fu">:</span> <span class="fu">{</span></span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>        <span class="dt">"prairieTest"</span><span class="fu">:</span> <span class="fu">{</span> <span class="dt">"exams"</span><span class="fu">:</span> <span class="ot">[</span><span class="fu">{</span> <span class="dt">"examUuid"</span><span class="fu">:</span> <span class="st">"PRAIRIETEST-EXAM-UUID"</span> <span class="fu">}</span><span class="ot">]</span> <span class="fu">}</span></span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>      <span class="fu">},</span></span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"afterComplete"</span><span class="fu">:</span> <span class="fu">{</span> <span class="dt">"questions"</span><span class="fu">:</span> <span class="fu">{</span> <span class="dt">"hidden"</span><span class="fu">:</span> <span class="kw">false</span> <span class="fu">}</span> <span class="fu">}</span></span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>    <span class="fu">}</span></span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a>  <span class="ot">]</span><span class="fu">,</span></span>
+<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a>  <span class="dt">"zones"</span><span class="fu">:</span> <span class="ot">[</span><span class="fu">{</span> <span class="dt">"questions"</span><span class="fu">:</span> <span class="ot">[</span><span class="fu">{</span> <span class="dt">"id"</span><span class="fu">:</span> <span class="st">"FILE-UPLOAD-QUESTION-QID"</span><span class="fu">,</span> <span class="dt">"manualPoints"</span><span class="fu">:</span> <span class="er">NUMBER-OF-MANUAL-POINTS</span> <span class="fu">}</span><span class="ot">]</span> <span class="fu">}</span><span class="ot">]</span><span class="fu">,</span></span>
+<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a>  <span class="dt">"allowPersonalNotes"</span><span class="fu">:</span> <span class="kw">false</span></span>
+<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a><span class="fu">}</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>If anything in <code>infoAssessment.json</code> does not match the above (with your choices filled in), go back and check the settings and/or edit the json by hand.</p>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Warning
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Recall that the PrairieTest exam UUID (“PRAIRIETEST-EXAM-UUID”) is different from the PrairieLearn assessment UUID (“PRAIRIELEARN-ASSESSMENT-UUID”). Be sure you have the correct PrairieTest exam UUID in the <code>infoAssessment.json</code> file. Visit the ETF website for details.</p>
+</div>
+</div>
+<!-- TO DO: direct link -->
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -409,15 +531,33 @@ Tip
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>For additional exams in the course, you may reuse the same file upload <em>question</em> if you wish, but the file upload <em>assessment</em> will need to be created separately for each exam.</p>
+<p>For additional exams in the course, you may <strong><em>not</em></strong> reuse the file upload <em>assessment</em> you’ve created here. Each exam needs a different file upload assessment.</p>
 </div>
 </div>
 </section>
 <section id="reviewing-uploaded-sheets" class="level3">
 <h3 class="anchored" data-anchor-id="reviewing-uploaded-sheets">Reviewing Uploaded Sheets</h3>
-</section>
-<section id="configuring-the-exam-assessment-to-allow-access-to-uploaded-sheets" class="level3">
-<h3 class="anchored" data-anchor-id="configuring-the-exam-assessment-to-allow-access-to-uploaded-sheets">Configuring the Exam Assessment to Allow Access to Uploaded Sheets</h3>
+<p>After the file upload assessment closes (“DUE-DATE-TIME” in the example above), the students’ uploads may need to be manually reviewed to ensure they follow course policies (e.g., handwritten, one page, etc.). Follow these steps:</p>
+<ul>
+<li><p>Click on “Assessments” in the left sidebar, and click on the file upload assessment you created for the exam.</p></li>
+<li><p>Click on the “Manual grading” tab, and click on the question (e.g., “Reference Sheet Upload”).</p></li>
+<li><p>Click on each instance to view the submission. You can assign points in the “Manual Points” field on the right, provide feedback if desired, and click “Grade”.</p></li>
+<li><p>You also have the option of deleting a student’s upload if it does not meet course requirements. To do this, click the “Delete” button in the top-right of where the uploaded file is displayed when grading manually.</p>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Warning
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Students will <strong><em>not</em></strong> be automatically notified if their upload is deleted. Thus, you may wish to notify affected students.</p>
+</div>
+</div></li>
+</ul>
+<p>With the above steps complete, students will be able to access their uploaded reference sheets during the exam, and you will have ensured that they follow course policies.</p>
 
 
 </section>
