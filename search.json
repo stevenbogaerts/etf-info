@@ -64,7 +64,7 @@
     "href": "github-repo.html",
     "title": "Repository Interface",
     "section": "",
-    "text": "I recommend you work on understanding the web interface before reading this page. In fact, it is possible to work with PrairieLearn only via the web interface. However, consider the following questions:\nIf you answered “yes” to any of the above, I strongly recommend you learn how to work directory with your PrairieLearn GitHub repository (“repo”), as described on this page.",
+    "text": "I recommend you work on understanding the web interface before reading this page. In fact, it is possible to work with PrairieLearn only via the web interface. However, consider the following questions:\nIf you answered “yes” to any of the above, I strongly recommend you learn how to work directly with your PrairieLearn GitHub repository (“repo”), as described on this page.",
     "crumbs": [
       "Repository Interface"
     ]
@@ -142,51 +142,61 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "Introduction to PrairieLearn",
+    "title": "First Steps",
     "section": "",
     "text": "This is a quick-start guide for faculty members at University of Michigan - Ann Arbor on using PrairieLearn and giving exams at the Engineering Testing Facility (ETF).\nThis page provides brief information on PrairieLearn, PrairieTest, and how to get access to PrairieLearn.",
     "crumbs": [
-      "Introduction to PrairieLearn"
+      "First Steps"
     ]
   },
   {
     "objectID": "index.html#what-is-prairielearn",
     "href": "index.html#what-is-prairielearn",
-    "title": "Introduction to PrairieLearn",
+    "title": "First Steps",
     "section": "What is PrairieLearn?",
     "text": "What is PrairieLearn?\nPrairieLearn is an online learning and assessment platform useful for practice, homework, quizzes, and exams. Some notable features include:\n\nGreat flexibility in question types and randomization of question details\nSupport for automatic and manual grading\nEasy-to-use web interface, plus the opportunity to integrate with agentic AI workflows",
     "crumbs": [
-      "Introduction to PrairieLearn"
+      "First Steps"
     ]
   },
   {
-    "objectID": "index.html#what-are-prairietest-and-the-etf",
-    "href": "index.html#what-are-prairietest-and-the-etf",
-    "title": "Introduction to PrairieLearn",
-    "section": "What are PrairieTest and the ETF?",
-    "text": "What are PrairieTest and the ETF?\nPrairieTest is a system that uses PrairieLearn content to deliver and support exams. The Engineering Testing Facility (ETF) at U-M is the testing center that uses PrairieTest to deliver exams. Faculty members can reserve with the ETF, design their exams in PrairieLearn, and then the ETF will deliver the exam to students.\nThis Quick-Start Guide is about PrairieLearn, not about PrairieTest nor the ETF. For more information on those resources, visit the ETF website.",
+    "objectID": "index.html#giving-an-exam-with-prairielearn",
+    "href": "index.html#giving-an-exam-with-prairielearn",
+    "title": "First Steps",
+    "section": "Giving an Exam with PrairieLearn",
+    "text": "Giving an Exam with PrairieLearn\nYou can use PrairieLearn independently for homework, practice, and exams you administer yourself. For example, you might:\n\nHave students bring a laptop to class and use PrairieLearn for an assessment\nHave students use any computer lab desktop (not locked down) to take an assessment\n\nThe assessment could be available only within a strict time window (e.g., during a class period) or could be available longer as a take-home exam.\nOf course, the above options vary in terms of exam security and environmental control. At U-M Ann Arbor, if you wish to give exams in a more tightly-controlled environment, you’ll need the Engineering Testing Facility (ETF). The ETF uses PrairieTest to administer exams, which integrates with your PrairieLearn content.\nThis Quick-Start Guide is about PrairieLearn, not about PrairieTest nor the ETF. For more information on those resources, visit the ETF website.",
     "crumbs": [
-      "Introduction to PrairieLearn"
+      "First Steps"
+    ]
+  },
+  {
+    "objectID": "index.html#how-much-work-is-it-to-prepare-prairielearn-materials",
+    "href": "index.html#how-much-work-is-it-to-prepare-prairielearn-materials",
+    "title": "First Steps",
+    "section": "How Much Work Is It to Prepare PrairieLearn Materials?",
+    "text": "How Much Work Is It to Prepare PrairieLearn Materials?\nThis varies widely, of course. Some things to consider:\n\nConverting Canvas questions: If you already have questions in Canvas, there is a handy Canvas import tool that can help a lot. You will still need to verify each question, though.\nUsing AI: You can save tremendous amounts of time by using AI with the repository interface. I strongly recommend working through this entire Quick-Start Guide and taking the time to be comfortable with this workflow.\nUsing existing text questions: If you have questions in a text format already (ideally plain text like a .txt file, but potentially other formats as well), you could convert them one at a time by pasting into the the web interface’s AI question generator, or convert in larger sets via AI and the repository interface.\nConsidering question complexity: Time needed depends on how complex your questions are. Questions with helpful randomization take longer to create and fully verify.\nCreating exams: If you’re giving exams in the ETF, then your first time creating exams will take longer than you may be accustomed to. This is because an asynchronous exam should ideally have a large enough question pool that exam content does not easily leak out.\n\nDepending on how much time you have before you need the content, you may want to start with a smaller pilot (e.g., a single homework assignment, or a couple homework assignments and one quiz). To create an entire course worth of PrairieLearn content can take at a bare minimum a couple dozen hours from existing simple content, up to hundreds of hours for all new / highly complex content. Once your content is built, it is highly reusable, with very modest incremental cost for any further development, and can serve as a great resource for your students for years to come.",
+    "crumbs": [
+      "First Steps"
     ]
   },
   {
     "objectID": "index.html#access",
     "href": "index.html#access",
-    "title": "Introduction to PrairieLearn",
-    "section": "Getting Access to PrairieLearn and PrairieTest / the U-M ETF",
-    "text": "Getting Access to PrairieLearn and PrairieTest / the U-M ETF\n\nRequest a PrairieLearn course: For each course you intend to use with PrairieLearn, you need a “PrairieLearn course” to be created for you, if you don’t already have one. Go to the PrairieLearn site and click “Free sign up” in the top-right corner. Login by clicking the “University of Michigan” button down below, not via “Sign in with Google”. Follow the steps presented to request your course.\nGet a GitHub.com account: GitHub is a web-based platform for managing software development projects. Eventually, it will play an integral role in your PrairieLearn workflow. If you don’t already have an account, go to GitHub.com and click the “Sign up” button in the top-right corner. Follow the steps presented to create your account.\nAccess Your GitHub PrairieLearn Repository: When your PrairieLearn course is created, you will receive an email with an invitation to access your course’s GitHub repository (a collection of files related to your PrairieLearn course). Accept the invitation and connect it to your GitHub account.\nGet in touch with the ETF Staff: If you intend to use PrairieLearn for exams, you will need to request access to PrairieTest and the U-M ETF. If you haven’t already, please contact the ETF staff for details.",
+    "title": "First Steps",
+    "section": "Getting Access to PrairieLearn and the U-M ETF",
+    "text": "Getting Access to PrairieLearn and the U-M ETF\n\nRequest a PrairieLearn course: For each course you intend to use with PrairieLearn, you need a “PrairieLearn course” to be created for you, if you don’t already have one. Go to the PrairieLearn site and click “Free sign up” in the top-right corner. Login by clicking the “University of Michigan” button down below, not via “Sign in with Google”. Follow the steps presented to request your course.\nGet in touch with the ETF Staff: If you wish to use the ETF for exams, be certain to reach out to the ETF staff if you haven’t already. \nGet a GitHub.com account: GitHub is a web-based platform for managing software development projects. Eventually, it will play an integral role in your PrairieLearn workflow. If you don’t already have an account, go to GitHub.com and click the “Sign up” button in the top-right corner. Follow the steps presented to create your account.\nAccess Your GitHub PrairieLearn Repository: When your PrairieLearn course is created, you will receive an email with an invitation to access your course’s GitHub repository (a collection of files related to your PrairieLearn course). Accept the invitation and connect it to your GitHub account.",
     "crumbs": [
-      "Introduction to PrairieLearn"
+      "First Steps"
     ]
   },
   {
     "objectID": "index.html#next-steps",
     "href": "index.html#next-steps",
-    "title": "Introduction to PrairieLearn",
+    "title": "First Steps",
     "section": "Next Steps",
     "text": "Next Steps\nOnce you have access, continue on to:\n\nThe PrairieLearn Web Interface — Build your first question and assessment using the web interface.\nThe PrairieLearn GitHub Repository Interface — Work with your course’s underlying files directly, including with AI assistance.\nAdditional Resources — Official documentation and student-facing tutorials.\n\nI recommend working through these pages in order, using the navigation on the left (or the “Next” link below).",
     "crumbs": [
-      "Introduction to PrairieLearn"
+      "First Steps"
     ]
   }
 ]
