@@ -11,3 +11,11 @@ h3 {
   padding-left: 0.5em;
 }
 
+/* Border around Mermaid flowchart edge labels */
+.edgeLabel .labelBkg {
+  background-color: #FFFFFF !important; /* mermaid defaults to 50% opacity */
+  border: 1.5px solid #00274C; /* UM primary blue */
+  border-radius: 4px;
+  padding: 2px 6px;
+}
+

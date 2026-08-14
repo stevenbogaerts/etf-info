@@ -48,24 +48,30 @@ Now, you can edit these files directly in your IDE, and also ask AI to do it for
 
 We now have three copies of your course:
 
-1. The local code (the local repo) on your computer
+1. The local code on your computer
 2. The remote code in your GitHub repo
 3. The code in the PrairieLearn web interface
 
-This I promise you: if you don't keep these copies in sync, it will tear up your heart and your happiness will go bye bye bye. The syncing steps depend on how you adjust something for your course:
-
-- Edit local code (1), push to the remote repo (2), and sync via the web interface (3)
-- Edit via the web interface (3), push to the remote repo (happens automatically) (2), and pull to your local code (1)
+This I promise you: if you don't keep these copies in sync, it will tear up your heart and your happiness will go bye bye bye. The syncing steps depend on whether you edit your local code or via the web interface, as described in the subsections below.
 
 ::: {.callout-warning}
 **Avoid syncing conflicts:** To keep things simple, don't edit your content both locally and on the web interface between syncs. Rather, pick one place to work at a time and sync before switching.
 :::
 
-Details are provided in the subsections below.
-
 ### If You Edit Your Local Code
 
-When you edit files in your local repo (e.g., with VS Code), you first need to "push" those changes back to the GitHub.com repo so that PrairieLearn can see them. The easiest way to do this is through VS Code's built-in Source Control panel:
+```{mermaid}
+%%{init: {'themeVariables': {'edgeLabelBackground': '#FFFFFF', 'primaryTextColor': '#00274C'}}}%%
+flowchart LR
+    A["💻 ✏️ Edit<br><b>Local Code</b><br>(your computer)"] -->|push| B["☁️<br><b>Remote Repo</b><br>(GitHub.com)"]
+    B -->|sync| C["🌐<br><b>Web Interface</b><br>(PrairieLearn)"]
+
+    classDef umNode fill:#00274C,stroke:#FFCB05,stroke-width:3px,color:#FFFFFF
+    class A,B,C umNode
+    linkStyle default stroke:#00274C,stroke-width:3px
+```
+
+When you edit files in your local code (e.g., with VS Code), you first need to _push_ those changes back to the GitHub.com repo so that PrairieLearn can see them. The easiest way to do this is through VS Code's built-in Source Control panel:
 
 1. Click the Source Control icon in the left-hand activity bar (it looks like three connected dots and is labeled "Source Control" when you hover over it; it often shows a number badge for changed files).
 2. You'll see a list of your changed files. Hover over "Changes" and click the "+" icon to stage all of them (or stage individual files the same way).
@@ -80,11 +86,22 @@ git commit -m "Describe your changes here"
 git push
 ```
 
-Next, we need to tell the PL web interface to "reload" the course so that it sees the changes we just pushed. Click the "Sync" tab on the left side, and then the blue "Pull from remote git repository" button. When the process completes successfully, your course has been updated! You can verify this by looking at the changed items (e.g., questions, assessments) in the web interface.
+Next, we need to tell the PL web interface to _sync_ the course so that it sees the changes we just pushed. Click the "Sync" tab on the left side, and then the blue "Pull from remote git repository" button. When the process completes successfully, your course has been updated! You can verify this by looking at the changed items (e.g., questions, assessments) in the web interface.
 
 ### If You Edit Via the Web Interface
 
-Similarly, if you make changes to your PrairieLearn course via the web interface, you need to "pull" those changes to your local repo so that your local files are up to date. The first step of this happens automatically: when you make changes in the web interface, those changes are automatically pushed to your GitHub.com repo. Thus, all that remains is to pull those changes to your local repo.
+```{mermaid}
+%%{init: {'themeVariables': {'edgeLabelBackground': '#FFFFFF', 'primaryTextColor': '#00274C'}}}%%
+flowchart LR
+    C["🌐 ✏️ Edit<br><b>Web Interface</b><br>(PrairieLearn)"] -->|auto-<br>sync| B["☁️<br><b>Remote Repo</b><br>(GitHub.com)"]
+    B -->|pull| A["💻<br><b>Local Code</b><br>(your computer)"]
+
+    classDef umNode fill:#00274C,stroke:#FFCB05,stroke-width:3px,color:#FFFFFF
+    class A,B,C umNode
+    linkStyle default stroke:#00274C,stroke-width:3px
+```
+
+Similarly, if you make changes to your PrairieLearn course via the web interface, we need to get those changes to your local code. The first step of this happens automatically: when you make changes in the web interface, those changes are _automatically synced_ to your GitHub.com repo. Thus, all that remains is to pull those changes to your local repo.
 
 In VS Code, click the Source Control icon in the left-hand activity bar and click the "..." (More Actions) menu at the top, then choose "Pull" (or simply click the sync/refresh icon in the bottom status bar if you see one). Your local files will be updated to match what's on GitHub.com.
 
@@ -96,4 +113,4 @@ git pull
 
 ## Resources for your Repo
 
-I recommend you download these [useful PrairieLearn files](files/pl_for_UM.zip) and copy them into the root of your PrairieLearn repo. That is, after copying, your repo should have folders called `serverFilesCourse` and `tools` at the root (not inside some sub-folder), and your questions folder should have a templates folder inside of it. The templates folder contains several example questions. These templates show you or an AI agent what syntax is needed to create various question types. You may find it useful to refer to them in any prompts for creating questions.
+I recommend you download these [useful PrairieLearn files](files/pl_for_UM.zip) and copy them into the root of your PrairieLearn repo. That is, after copying, your repo should have folders called `serverFilesCourse` and `tools` at the root (not inside some sub-folder), and your questions folder should have a templates folder inside of it. The templates folder contains several example questions. These templates show you or an AI agent what syntax is needed to create various types of content. You may find it useful to refer to them in any prompts for creating questions.
