@@ -79,10 +79,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-d0ae9245876894da5ac7e18953ecc5cc.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-787e033c7b6f65c9dfccb6078e5d2d34.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-8d1bc96b83220268079b2ebe6f1f1d92.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-8b249e7b944fba07705ae2a04a891eed.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-8d1bc96b83220268079b2ebe6f1f1d92.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -186,8 +190,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#tools-to-install" id="toc-tools-to-install" class="nav-link active" data-scroll-target="#tools-to-install">Tools to Install</a></li>
   <li><a href="#cloning-your-repo" id="toc-cloning-your-repo" class="nav-link" data-scroll-target="#cloning-your-repo">Cloning Your Repo</a></li>
   <li><a href="#opening-and-exploring-your-repo" id="toc-opening-and-exploring-your-repo" class="nav-link" data-scroll-target="#opening-and-exploring-your-repo">Opening and Exploring Your Repo</a></li>
-  <li><a href="#making-changes-to-your-local-code-and-sending-to-the-remote-prairielearn-repo" id="toc-making-changes-to-your-local-code-and-sending-to-the-remote-prairielearn-repo" class="nav-link" data-scroll-target="#making-changes-to-your-local-code-and-sending-to-the-remote-prairielearn-repo">Making Changes to Your Local Code, and Sending to the Remote PrairieLearn Repo</a></li>
-  <li><a href="#making-changes-on-the-prairielearn-web-interface-and-pulling-to-your-local-repo" id="toc-making-changes-on-the-prairielearn-web-interface-and-pulling-to-your-local-repo" class="nav-link" data-scroll-target="#making-changes-on-the-prairielearn-web-interface-and-pulling-to-your-local-repo">Making Changes on the PrairieLearn Web Interface, and Pulling to Your Local Repo</a></li>
+  <li><a href="#keeping-everything-in-sync" id="toc-keeping-everything-in-sync" class="nav-link" data-scroll-target="#keeping-everything-in-sync">Keeping Everything in Sync</a>
+  <ul class="collapse">
+  <li><a href="#if-you-edit-your-local-code" id="toc-if-you-edit-your-local-code" class="nav-link" data-scroll-target="#if-you-edit-your-local-code">If You Edit Your Local Code</a></li>
+  <li><a href="#if-you-edit-via-the-web-interface" id="toc-if-you-edit-via-the-web-interface" class="nav-link" data-scroll-target="#if-you-edit-via-the-web-interface">If You Edit Via the Web Interface</a></li>
+  </ul></li>
   <li><a href="#resources-for-your-repo" id="toc-resources-for-your-repo" class="nav-link" data-scroll-target="#resources-for-your-repo">Resources for your Repo</a></li>
   </ul>
 </nav>
@@ -229,7 +236,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>I recommend you work on understanding the <a href="./web-interface.html">web interface</a> before reading this page. In fact, it is possible to work with PrairieLearn <em>only</em> via the web interface. However, consider the following questions:</p>
 <ul>
 <li>Will you create hundreds of questions in PrairieLearn?</li>
-<li>Would you like some of your questions to be significantly more complex than the <a href="web-interface.html#question">example question</a> you made via the web interface?</li>
+<li>Would you like some of your questions to be significantly more complex than the <a href="./web-interface.html#question">example question</a> you made via the web interface?</li>
 <li>Would you like to be able to leverage agentic AI in your question development? That is, are you interested in using prompts like the (abbreviated) examples below:
 <ul>
 <li><strong>Bulk Generation</strong>: Generate 10 questions similar to Lecture 7 examples and add them to a new assessment.</li>
@@ -262,7 +269,7 @@ Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>You can use VS Code for free, but if you want AI assistance with more than minimal usage, you’ll need a subscription. For example, for my usage with PrairieLearn, I find the $20/month Claude Code subscription sufficient and <em>highly</em> useful.</p>
+<p>You can use VS Code for free, but if you want AI assistance with more than minimal usage, you’ll need a subscription. For example, at time of writing, for my usage with PrairieLearn, I find the $20/month Claude Code subscription sufficient and <em>highly</em> useful.</p>
 </div>
 </div>
 </section>
@@ -274,29 +281,21 @@ Note
 <h2 class="anchored" data-anchor-id="opening-and-exploring-your-repo">Opening and Exploring Your Repo</h2>
 <p>Open your Repo in your IDE. For example, if you’re using VS Code, click on “File” in the top menu, then “Open Folder”. Navigate to the folder where you cloned your repo and open it. You should see a list of files and folders in the left-hand panel.</p>
 <p>Explore the folder structure a bit, and open the files you see. You should recognize some of the files you saw in the web interface. For example, in the <code>questions</code> folder, there should be a subfolder for each question you created, and inside each of those subfolders are the files that define the question: info.json, question.html, and server.py. Similarly, note the <code>assessments</code> folder contents.</p>
-<p>Now, you can edit these files directly in your IDE, and also ask AI do it for you.</p>
+<p>Now, you can edit these files directly in your IDE, and also ask AI to do it for you.</p>
 </section>
-<section id="making-changes-to-your-local-code-and-sending-to-the-remote-prairielearn-repo" class="level2">
-<h2 class="anchored" data-anchor-id="making-changes-to-your-local-code-and-sending-to-the-remote-prairielearn-repo">Making Changes to Your Local Code, and Sending to the Remote PrairieLearn Repo</h2>
-<p>When you edit files in your local repo, you need to “push” those changes back to the GitHub.com repo so that PrairieLearn can see them. The easiest way to do this is through VS Code’s built-in Source Control panel:</p>
+<section id="keeping-everything-in-sync" class="level2">
+<h2 class="anchored" data-anchor-id="keeping-everything-in-sync">Keeping Everything in Sync</h2>
+<p>We now have three copies of your course:</p>
 <ol type="1">
-<li>Click the Source Control icon in the left-hand activity bar (it looks like three connected dots and is labeled “Source Control” when you hover over it; it often shows a number badge for changed files).</li>
-<li>You’ll see a list of your changed files. Hover over “Changes” and click the “+” icon to stage all of them (or stage individual files the same way).</li>
-<li>Type a short message describing what you changed (e.g., “Added new question about linear equations”) in the message box at the top.</li>
-<li>Click the blue “Commit” button, then click “Sync Changes” (or “Push”) to send your changes to GitHub.com.</li>
+<li>The local code (the local repo) on your computer</li>
+<li>The remote code in your GitHub repo</li>
+<li>The code in the PrairieLearn web interface</li>
 </ol>
-<p>If you prefer the terminal, open a terminal in VS Code (Terminal menu, “New Terminal”) and run these three commands in your repo folder, in order:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> add .</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"Describe your changes here"</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> push</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Finally, we need to tell the PL web interface to “reload” the course so that it sees the changes we just pushed. Click the “Sync” tab on the left side, and then the blue “Pull from remote git repository” button. When the process completes successfully, your course has been updated! You can verify this by looking at the changed items (e.g., questions, assessments) in the web interface.</p>
-</section>
-<section id="making-changes-on-the-prairielearn-web-interface-and-pulling-to-your-local-repo" class="level2">
-<h2 class="anchored" data-anchor-id="making-changes-on-the-prairielearn-web-interface-and-pulling-to-your-local-repo">Making Changes on the PrairieLearn Web Interface, and Pulling to Your Local Repo</h2>
-<p>Similarly, if you make changes to your PrairieLearn course via the web interface, you need to “pull” those changes to your local repo so that your local files are up to date. First, in the PrairieLearn web interface, click the “Sync” tab and then the blue “Push to remote git repository” button, so that your web-based changes are saved to GitHub.com.</p>
-<p>Then, in VS Code, click the Source Control icon in the left-hand activity bar and click the “…” (More Actions) menu at the top, then choose “Pull” (or simply click the sync/refresh icon in the bottom status bar if you see one). Your local files will be updated to match what’s on GitHub.com.</p>
-<p>If you prefer the terminal, open a terminal in VS Code and run this command in your repo folder:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> pull</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>This I promise you: if you don’t keep these copies in sync, it will tear up your heart and your happiness will go bye bye bye. The syncing steps depend on how you adjust something for your course:</p>
+<ul>
+<li>Edit local code (1), push to the remote repo (2), and sync via the web interface (3)</li>
+<li>Edit via the web interface (3), push to the remote repo (happens automatically) (2), and pull to your local code (1)</li>
+</ul>
 <div class="callout callout-style-default callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -307,9 +306,32 @@ Warning
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p><strong>Avoid syncing conflicts:</strong> Don’t edit the same question or assessment both locally and in the web interface between syncs – pick one place to work at a time, and sync before switching.</p>
+<p><strong>Avoid syncing conflicts:</strong> To keep things simple, don’t edit your content both locally and on the web interface between syncs. Rather, pick one place to work at a time and sync before switching.</p>
 </div>
 </div>
+<p>Details are provided in the subsections below.</p>
+<section id="if-you-edit-your-local-code" class="level3">
+<h3 class="anchored" data-anchor-id="if-you-edit-your-local-code">If You Edit Your Local Code</h3>
+<p>When you edit files in your local repo (e.g., with VS Code), you first need to “push” those changes back to the GitHub.com repo so that PrairieLearn can see them. The easiest way to do this is through VS Code’s built-in Source Control panel:</p>
+<ol type="1">
+<li>Click the Source Control icon in the left-hand activity bar (it looks like three connected dots and is labeled “Source Control” when you hover over it; it often shows a number badge for changed files).</li>
+<li>You’ll see a list of your changed files. Hover over “Changes” and click the “+” icon to stage all of them (or stage individual files the same way).</li>
+<li>Type a short message describing what you changed (e.g., “Added new question about linear equations”) in the message box at the top.</li>
+<li>Click the blue “Commit” button, then click “Sync Changes” (or “Push”) to send your changes to GitHub.com.</li>
+</ol>
+<p>If you prefer the terminal, open a terminal in VS Code (Terminal menu, “New Terminal”) and run these three commands in your repo folder, in order:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> add .</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"Describe your changes here"</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> push</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Next, we need to tell the PL web interface to “reload” the course so that it sees the changes we just pushed. Click the “Sync” tab on the left side, and then the blue “Pull from remote git repository” button. When the process completes successfully, your course has been updated! You can verify this by looking at the changed items (e.g., questions, assessments) in the web interface.</p>
+</section>
+<section id="if-you-edit-via-the-web-interface" class="level3">
+<h3 class="anchored" data-anchor-id="if-you-edit-via-the-web-interface">If You Edit Via the Web Interface</h3>
+<p>Similarly, if you make changes to your PrairieLearn course via the web interface, you need to “pull” those changes to your local repo so that your local files are up to date. The first step of this happens automatically: when you make changes in the web interface, those changes are automatically pushed to your GitHub.com repo. Thus, all that remains is to pull those changes to your local repo.</p>
+<p>In VS Code, click the Source Control icon in the left-hand activity bar and click the “…” (More Actions) menu at the top, then choose “Pull” (or simply click the sync/refresh icon in the bottom status bar if you see one). Your local files will be updated to match what’s on GitHub.com.</p>
+<p>If you prefer the terminal, open a terminal in VS Code and run this command in your repo folder:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> pull</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
 </section>
 <section id="resources-for-your-repo" class="level2">
 <h2 class="anchored" data-anchor-id="resources-for-your-repo">Resources for your Repo</h2>
@@ -732,6 +754,25 @@ Warning
   </div>
 </nav>
 </div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>Maintained by Steven Bogaerts, ETF Faculty Advisor</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item">
+    <a class="nav-link" href="https://github.com/stevenbogaerts/etf-info">
+<p>Source on GitHub</p>
+</a>
+  </li>  
+</ul>
+    </div>
+  </div>
+</footer>
 
 
 
