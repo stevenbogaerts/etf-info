@@ -75,6 +75,62 @@ When you're ready to make an exam to be administered in the ETF, you'll make an 
 
 If you have quizzes on Canvas that you'd like to import into PrairieLearn, there is a convenient way to do that. For details, visit the official documentation on [Importing content from other platforms](https://docs.prairielearn.com/importingContent/).
 
+### Adding a Standard Notes Page to Your Assessment
+
+PrairieLearn enables you to add files to an assessment that students will be allowed to access. For example, suppose you have a `reference.pdf` file you want students to be able to access during the exam. First, we need to provide the file to PrairieLearn:
+
+- In the left sidebar, choose "Assessments" and click on the assessment you want to add the file to.
+- Click on the "Files" tab and hit the "Add new client files" button.
+- Upload your `reference.pdf` file via the file dialog that appears.
+- In the "Files" window, you should now see a new folder named "clientFilesAssessment". If you click on that folder, you should see the `reference.pdf` file inside. You can click on it to verify that it's the correct file.
+
+Next, we need to give students access to the file in the assessment itself:
+
+- Still in the "Files" tab for the assessment, click the `edit` button for the file `infoAssessment.json` to open it in an in-browser editor.
+- We need to add one entry to the file: a `"text"` field containing a link to the file and any accompanying text we want. The `"text"` field must be valid HTML, and the file accessed via the URL `{{{ client_files_assessment }}}/reference.pdf` (or adjust for your file name). The `{{{ client_files_assessment }}}` is a placeholder that PrairieLearn will replace with the correct URL for the assessment's files. For example:
+    - Suppose you want your "Quiz 1" assessment to allow access to a `reference.pdf` file you've created.
+    - When you open `infoAssessment.json`, you'll see something like this:
+
+    ```json
+    {
+    "uuid": "some unique identifier here",
+    "type": "Exam",
+    "title": "Quiz 1",
+    "set": "Quizzes",
+    ... (more settings omitted for brevity) ...
+    }
+    ```
+
+    Add a new line for the "text" field. Anywhere is fine. For example, see below:
+
+    ```json
+    {
+    "uuid": "some unique identifier here",
+    "type": "Exam",
+    "title": "Quiz 1",
+    "text": "<p><a href=\"{{ client_files_assessment }}/reference.pdf\">Click here for the exam reference sheet</a>. You may find it convenient to open this document in a new browser tab.</p>",  
+    "set": "Quizzes",
+    ... (more settings omitted for brevity) ...
+    }
+    ```
+
+    Note the HTML syntax, the use of `"` and `\"`, and the `,` at the end. Such syntax is required. The following is just that line, which you can easily copy by hovering your mouse over the box and clicking the clipboard icon in the upper-right corner:
+
+    ```json
+    "text": "<p><a href=\"{{ client_files_assessment }}/reference.pdf\">Click here for the exam reference sheet</a>. You may find it convenient to open this document in a new browser tab.</p>",
+    ```
+
+- You may need to adjust the file name if yours is not called `reference.pdf`, and you may also wish to change the wording.
+- Click the `Save` button when you are finished editing.
+
+With the changes above, students will see a link to the `reference.pdf` file when they open the assessment. I recommend you test this out with the "Student view without access restrictions" option to verify that it works as needed.
+
+### Allowing Students to Add a Custom Notes Page to Your Assessment
+
+In some cases, rather than preparing a reference sheet yourself, you may want students to prepare their own reference sheet. However, please note: in the ETF, for reasons of exam security (especially when multiple courses' exams are administered simultaneously), students are never allowed to bring in physical copies of their own reference sheets. Thus, if you want students to be able to use their own personally-prepared reference sheets during an exam, we need to set up PrairieLearn to allow this.
+
+Details coming soon!
+
 ## Additional Resources
 
 - [Official PrairieLearn Documentation](https://docs.prairielearn.com/) - With the brief introduction above, you might now consider visiting the official PrairieLearn documentation to skim/read as you please. I recommend you look around just to get a general idea of what details are available.
