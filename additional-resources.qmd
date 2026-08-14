@@ -1,0 +1,12 @@
+---
+title: "Additional Resources"
+---
+
+You may find the following resources useful:
+
+- [Official PrairieLearn Documentation](https://docs.prairielearn.com/)
+    - [Getting Started](https://docs.prairielearn.com/getting-started/) - a more detailed walkthrough of the ideas covered in this guide.
+- You are welcome to use / copy / adapt the following student-facing resources for your own courses:
+    - [EECS 183 PrairieLearn Tutorial](https://py183.eecs.umich.edu/tutorials/prairielearn/prairielearn.html)
+    - [EECS 183 PrairieTest Tutorial](https://py183.eecs.umich.edu/tutorials/prairietest/prairietest.html)
+    - [EECS 183 Exam Details](https://py183.eecs.umich.edu/docs/exams.html)

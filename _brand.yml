@@ -1,0 +1,6 @@
+color:
+  palette:
+    um-blue: "#00274C"
+    um-maize: "#FFCB05"
+  primary: um-blue
+  secondary: um-maize

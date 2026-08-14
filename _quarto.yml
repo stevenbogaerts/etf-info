@@ -1,11 +1,27 @@
 project:
   type: website
   render:
-    - "index.qmd"
+    - "*.qmd"
 
 website:
-  title: "Quick-Start Guide to PrairieLearn and the ETF"
+  title: "Quick-Start Guide to PrairieLearn"
   favicon: images/favicon.png
+  page-navigation: true
+  bread-crumbs: false
+  sidebar:
+    style: docked
+    search: true
+    contents:
+      - index.qmd
+      - web-interface.qmd
+      - github-repo.qmd
+      - additional-resources.qmd
+  page-footer:
+    left: "Maintained by Steven Bogaerts, ETF Faculty Advisor"
+    right:
+      - text: "Source on GitHub"
+        href: https://github.com/stevenbogaerts/etf-info
+    border: true
 
 format:
   html:

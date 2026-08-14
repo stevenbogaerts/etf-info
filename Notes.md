@@ -24,7 +24,7 @@ https://stevenbogaerts.github.io/etf-info/
 The Canvas import tool is kept in the [main PrairieLearn GitHub repo](https://github.com/PrairieLearn/PrairieLearn/tree/master/contrib/question_converters/canvas), not to be confused with your own _course_ PrairieLearn repo.
 -->
 
-There is a tool for converting questions from Canvas into PrairieLearn. The tool operates on one Canvas quiz at a time. There is no web interface for this tool. Rather, it requires use of your PrairieLearn GitHub repo, so be certain you've followed the steps in the [PrairieLearn GitHub Repository Interface](#repo) section above.
+There is a tool for converting questions from Canvas into PrairieLearn. The tool operates on one Canvas quiz at a time. There is no web interface for this tool. Rather, it requires use of your PrairieLearn GitHub repo, so be certain you've followed the steps in the [PrairieLearn GitHub Repository Interface](web-interface.html) page first.
 
 Next, please note the following from the [official Canvas conversion tool documentation](https://github.com/PrairieLearn/PrairieLearn/tree/master/contrib/question_converters/canvas):
 
@@ -133,7 +133,7 @@ The conversion tool only works for published Canvas courses. If your course is n
 
 ### Running the Canvas Import Tool
 
-If you still have your terminal window open from the previous section, you can continue there. Otherwise, choose Terminal > New Terminal in VS Code. After a delay of couple seconds, the terminal prompt should say `(myenv)` at the beginning of the line, indicating that your virtual environment is active. If it doesn't, then you activate it with the command `myenv\Scripts\activate` (Windows) or `source myenv/bin/activate` (Mac).
+If you still have your terminal window open from the steps above, you can continue there. Otherwise, choose Terminal > New Terminal in VS Code. After a delay of couple seconds, the terminal prompt should say `(myenv)` at the beginning of the line, indicating that your virtual environment is active. If it doesn't, then you activate it with the command `myenv\Scripts\activate` (Windows) or `source myenv/bin/activate` (Mac).
 
 We're ready to run the tool! In the terminal window, with the `myenv` virtual environment active, we'll need to enter the command `python quiz2pl.py . courseInstance`. Note:
 
