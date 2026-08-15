@@ -26,7 +26,7 @@ Only minimal JSON and HTML knowledge is needed, if any. For Python, more can be 
 
 ## Making Your First Assessment
 
-In PrairieLearn, an "assessment" is a collection of questions that students will answer. There are two types of assessments, "Homework" and "Exam". The type determines some default settings, but these can be adjusted anytime. When you're ready to make an exam to be administered in the ETF, you'll make an assessment of type "Exam" and then follow ETF procedures. <!-- TO DO link -->
+In PrairieLearn, an "assessment" is a collection of questions that students will answer. There are two types of assessments, "Homework" and "Exam". The type determines some default settings, but these can be adjusted anytime. When you're ready to make an exam to be administered in the ETF, you'll make an assessment of type "Exam" and then follow [ETF](https://etf.engin.umich.edu/) procedures.
 
 ### Creating an Empty Assessment
 
@@ -159,9 +159,8 @@ For additional exams in the course, you may reuse the same file upload _question
 ### Making a File Upload Homework Assessment
 
 ::: {.callout-note}
-Before you can complete the steps below, you will need to (1) create the PrairieLearn assessment corresponding to your exam (though it need not be in its final form), and (2) obtain a PrairieTest exam UUID for your exam. Note that the Prairie*Test* *exam* UUID is different from the Prairie*Learn* *assessment* UUID. For details on where to get the PrairieTest exam UUID, see the ETF website.
+Before you can complete the steps below, you will need to (1) create the PrairieLearn assessment corresponding to your exam (though it need not be in its final form), and (2) obtain a PrairieTest exam UUID for your exam. Note that the Prairie*Test* *exam* UUID is different from the Prairie*Learn* *assessment* UUID. For details on where to get the PrairieTest exam UUID, see the [ETF website](https://etf.engin.umich.edu/).
 :::
-<!-- TO DO: direct link -->
 
 - Make the assessment:
     - Click on "Assessments" in the left sidebar, and choose "Add assessment".
@@ -222,9 +221,8 @@ Let's verify that the assessment is configured correctly. Go to "Files", and cli
 If anything in `infoAssessment.json` does not match the above (with your choices filled in), go back and check the settings and/or edit the json by hand.
 
 ::: {.callout-warning}
-Recall that the PrairieTest exam UUID ("PRAIRIETEST-EXAM-UUID") is different from the PrairieLearn assessment UUID ("PRAIRIELEARN-ASSESSMENT-UUID"). Be sure you have the correct PrairieTest exam UUID in the `infoAssessment.json` file. Visit the ETF website for details.
+Recall that the PrairieTest exam UUID ("PRAIRIETEST-EXAM-UUID") is different from the PrairieLearn assessment UUID ("PRAIRIELEARN-ASSESSMENT-UUID"). Be sure you have the correct PrairieTest exam UUID in the `infoAssessment.json` file. Visit the [ETF website](https://etf.engin.umich.edu/) for details.
 :::
-<!-- TO DO: direct link -->
 
 ::: {.callout-tip}
 For additional exams in the course, you may ***not*** reuse the file upload _assessment_ you've created here. Each exam needs a different file upload assessment.

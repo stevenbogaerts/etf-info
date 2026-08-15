@@ -30,9 +30,8 @@ The assessment could be available only within a strict time window (e.g., during
 Of course, the above options vary in terms of exam security and environmental control. At U-M Ann Arbor, if you wish to give exams in a more tightly-controlled environment, you'll need the Engineering Testing Facility (ETF). The ETF uses Prairie*Test* to administer exams, which integrates with your Prairie*Learn* content.
 
 ::: {.callout-note}
-This Quick-Start Guide is about PrairieLearn, not about PrairieTest nor the ETF. For more information on those resources, visit the ETF website.
+This Quick-Start Guide is about PrairieLearn, not about PrairieTest nor the ETF. For more information on those resources, visit the [ETF website](https://etf.engin.umich.edu/).
 :::
-<!-- TO DO website link? -->
 
 ## How Much Work Is It to Prepare PrairieLearn Materials?
 
@@ -49,7 +48,7 @@ Depending on how much time you have before you need the content, you may want to
 ## Getting Access to PrairieLearn and the U-M ETF {#access}
 
 - **Request a PrairieLearn course**: For each course you intend to use with PrairieLearn, you need a "PrairieLearn course" to be created for you, if you don't already have one. Go to the [PrairieLearn site](https://www.prairielearn.com) and click "Free sign up" in the top-right corner. Login by clicking the "University of Michigan" button down below, ***not*** via "Sign in with Google". Follow the steps presented to request your course.
-- **Get in touch with the ETF Staff**: If you wish to use the ETF for exams, be certain to reach out to the ETF staff if you haven't already. <!-- TO DO: direct link -->
+- **Get in touch with the ETF Staff**: If you wish to use the ETF for exams, be certain to reach out to the [ETF](https://etf.engin.umich.edu/) if you haven't already.
 - **Get a GitHub.com account**: GitHub is a web-based platform for managing software development projects. Eventually, it will play an integral role in your PrairieLearn workflow. If you don't already have an account, go to [GitHub.com](https://github.com) and click the "Sign up" button in the top-right corner. Follow the steps presented to create your account.
 - **Access Your GitHub PrairieLearn Repository**: When your PrairieLearn course is created, you will receive an email with an invitation to access your course's GitHub _repository_ (a collection of files related to your PrairieLearn course). Accept the invitation and connect it to your GitHub account.
 
