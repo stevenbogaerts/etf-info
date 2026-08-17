@@ -50,7 +50,7 @@ When you're done exploring it, go back to the regular view (upper-right corner, 
 
 If you have quizzes on Canvas that you'd like to import into PrairieLearn, there is a convenient way to do that. For details, visit the official documentation on [Importing content from other platforms](https://docs.prairielearn.com/importingContent/).
 
-## Adding a Standard Notes Page to Your Assessment
+## Adding a Standard Notes Page to Your Assessment {#standard-sheet}
 
 PrairieLearn enables you to add files to an assessment that students will be allowed to access. This could be a reference / formula / "cheat" sheet, for example.
 
@@ -106,7 +106,7 @@ Next, we need to give students access to the file in the assessment itself:
 
 With the changes above, students will see a link to the `reference.pdf` file when they open the assessment. I recommend you test this out with the "Student view without access restrictions" option to verify that it works as needed.
 
-## Allowing Students to Add a Custom Notes Page to Your Assessment
+## Allowing Students to Add a Custom Notes Page to Your Assessment {#custom-sheet}
 
 ::: {.callout-warning}
 This section is still in testing and should not be relied upon until this message is removed!

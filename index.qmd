@@ -2,11 +2,7 @@
 title: "First Steps"
 ---
 
-This is a quick-start guide for faculty members at University of Michigan - Ann Arbor on using PrairieLearn.
-
-::: {.callout-note}
-Given the large range of faculty member backgrounds in the concepts discussed here, this documentation does not attempt to be one-size-fits-all nor comprehensive. Rather, this is provided to point faculty members to a few key ideas to get started quickly. The [official PrairieLearn documentation](https://docs.prairielearn.com/), web searches, and AI questions are all good resources for more information. I (as the ETF faculty advisor) am also happy to assist U-M faculty members on these topics.
-:::
+This website is a quick-start guide for faculty members at University of Michigan - Ann Arbor on using PrairieLearn.
 
 This page provides brief information on PrairieLearn, PrairieTest, and how to get access to PrairieLearn.
 
@@ -61,3 +57,8 @@ Once you have access, continue on to:
 - [**Additional Resources**](additional-resources.qmd) — Official documentation and student-facing tutorials.
 
 I recommend working through these pages in order, using the navigation on the left or the link below.
+
+## Contact
+
+- [etf-advisor@umich.edu](mailto:etf-advisor@umich.edu) - for questions on Prairie*Learn*, including but not limited to the contents of this Quick-Start Guide
+- [etf-support@umich.edu](mailto:etf-support@umich.edu) - for questions on Prairie*Test* and the ETF

@@ -11,3 +11,8 @@ You may find the following resources useful:
     - [EECS 183 PrairieLearn Tutorial](https://py183.eecs.umich.edu/tutorials/prairielearn/prairielearn.html)
     - [EECS 183 PrairieTest Tutorial](https://py183.eecs.umich.edu/tutorials/prairietest/prairietest.html)
     - [EECS 183 Exam Details](https://py183.eecs.umich.edu/docs/exams.html)
+
+Contact info:
+
+- [etf-advisor@umich.edu](mailto:etf-advisor@umich.edu) - for questions on Prairie*Learn*
+- [etf-support@umich.edu](mailto:etf-support@umich.edu) - for questions on Prairie*Test* and the ETF
