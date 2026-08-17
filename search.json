@@ -124,7 +124,7 @@
     "href": "additional-resources.html",
     "title": "Additional Resources",
     "section": "",
-    "text": "You may find the following resources useful:\n\nOfficial PrairieLearn Documentation\n\nGetting Started - a more detailed walkthrough of the ideas covered in this guide.\nCase Studies - links to research papers on various topics related to pedagogical best practices with PrairieLearn\n\nYou are welcome to use / copy / adapt the following student-facing resources for your own courses:\n\nEECS 183 PrairieLearn Tutorial\nEECS 183 PrairieTest Tutorial\nEECS 183 Exam Details",
+    "text": "You may find the following resources useful:\n\nOfficial PrairieLearn Documentation\n\nGetting Started - a more detailed walkthrough of the ideas covered in this guide.\nCase Studies - links to research papers on various topics related to pedagogical best practices with PrairieLearn\n\nYou are welcome to use / copy / adapt the following student-facing resources for your own courses:\n\nEECS 183 PrairieLearn Tutorial\nEECS 183 PrairieTest Tutorial\nEECS 183 Exam Details\n\n\nContact info:\n\netf-advisor@umich.edu - for questions on PrairieLearn\netf-support@umich.edu - for questions on PrairieTest and the ETF",
     "crumbs": [
       "Additional Resources"
     ]
@@ -134,7 +134,7 @@
     "href": "index.html",
     "title": "First Steps",
     "section": "",
-    "text": "This is a quick-start guide for faculty members at University of Michigan - Ann Arbor on using PrairieLearn.\nThis page provides brief information on PrairieLearn, PrairieTest, and how to get access to PrairieLearn.",
+    "text": "This website is a quick-start guide for faculty members at University of Michigan - Ann Arbor on using PrairieLearn.\nThis page provides brief information on PrairieLearn, PrairieTest, and how to get access to PrairieLearn.",
     "crumbs": [
       "First Steps"
     ]
@@ -185,6 +185,16 @@
     "title": "First Steps",
     "section": "Next Steps",
     "text": "Next Steps\nOnce you have access, continue on to:\n\nThe PrairieLearn Web Interface — Build your first question and assessment using the web interface.\nThe PrairieLearn GitHub Repository Interface — Work with your course’s underlying files directly, including with AI assistance.\nAdditional Resources — Official documentation and student-facing tutorials.\n\nI recommend working through these pages in order, using the navigation on the left or the link below.",
+    "crumbs": [
+      "First Steps"
+    ]
+  },
+  {
+    "objectID": "index.html#contact",
+    "href": "index.html#contact",
+    "title": "First Steps",
+    "section": "Contact",
+    "text": "Contact\n\netf-advisor@umich.edu - for questions on PrairieLearn, including but not limited to the contents of this Quick-Start Guide\netf-support@umich.edu - for questions on PrairieTest and the ETF",
     "crumbs": [
       "First Steps"
     ]
