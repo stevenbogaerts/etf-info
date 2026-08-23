@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Steven Bogaerts">
-<meta name="dcterms.date" content="2026-08-14">
+<meta name="dcterms.date" content="2026-08-23">
 
 <title>Repository Interface – Quick-Start Guide to PrairieLearn</title>
 <style>
@@ -190,7 +190,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#tools-to-install" id="toc-tools-to-install" class="nav-link active" data-scroll-target="#tools-to-install">Tools to Install</a></li>
+  <li><a href="#tools-to-install" id="toc-tools-to-install" class="nav-link active" data-scroll-target="#tools-to-install">Tools to Install</a>
+  <ul class="collapse">
+  <li><a href="#git" id="toc-git" class="nav-link" data-scroll-target="#git">Git</a></li>
+  <li><a href="#python" id="toc-python" class="nav-link" data-scroll-target="#python">Python</a></li>
+  <li><a href="#an-integrated-development-environment-and-ai-agent" id="toc-an-integrated-development-environment-and-ai-agent" class="nav-link" data-scroll-target="#an-integrated-development-environment-and-ai-agent">An Integrated Development Environment and AI Agent</a></li>
+  </ul></li>
   <li><a href="#cloning-your-repo" id="toc-cloning-your-repo" class="nav-link" data-scroll-target="#cloning-your-repo">Cloning Your Repo</a></li>
   <li><a href="#opening-and-exploring-your-repo" id="toc-opening-and-exploring-your-repo" class="nav-link" data-scroll-target="#opening-and-exploring-your-repo">Opening and Exploring Your Repo</a></li>
   <li><a href="#keeping-everything-in-sync" id="toc-keeping-everything-in-sync" class="nav-link" data-scroll-target="#keeping-everything-in-sync">Keeping Everything in Sync</a>
@@ -224,7 +229,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">August 14, 2026</p>
+      <p class="date">August 23, 2026</p>
     </div>
   </div>
   
@@ -254,35 +259,143 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul></li>
 </ul>
 <p>If you answered “yes” to any of the above, I strongly recommend you learn how to work directly with your PrairieLearn GitHub repository (“repo”), as described on this page.</p>
-<section id="tools-to-install" class="level2">
-<h2 class="anchored" data-anchor-id="tools-to-install">Tools to Install</h2>
-<p>First, you’ll need to install a few things (if you don’t already have them installed):</p>
-<ul>
-<li><a href="https://git-scm.com/install/">Git</a></li>
-<li><a href="https://www.python.org/downloads/">Python</a></li>
-</ul>
-<p>Next, you will need an integrated development environment (IDE). If you’re already familiar with a particular IDE and know how to (1) use the terminal and (2) use agentic workflows with code, then stick with what you know. Otherwise, I recommend using <a href="https://code.visualstudio.com/">VS Code</a> with an AI extension (e.g., <a href="https://code.claude.com/docs/en/vs-code">Claude Code</a>).</p>
-<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Note
+Tip
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>You can use VS Code for free, but if you want AI assistance with more than minimal usage, you’ll need a subscription. For example, at time of writing, for my usage with PrairieLearn, I find the $20/month Claude Code subscription sufficient and <em>highly</em> useful.</p>
+<p>I know that for some people, the idea of working with a GitHub repository feels intimidating, like it’s just for experienced programmers and one wrong move might break something. I’ll offer two points of reassurance!</p>
+<p>First, the handful of GitHub actions you’ll actually use here are simple to learn, and nothing is fragile or permanent. Any mistakes are easy to undo.</p>
+<p>Second, using the tools on this page is not the same as coding, and with AI, no coding is required for PrairieLearn at all. Please also know that as the faculty advisor to the ETF, I’m happy to help you get set up. I want to help remove roadblocks so you can achieve your goals. Feel free to reach out anytime at etf-advisor@umich.edu.</p>
 </div>
 </div>
+<section id="tools-to-install" class="level2">
+<h2 class="anchored" data-anchor-id="tools-to-install">Tools to Install</h2>
+<p>First, you’ll need to install a few things, just as a one-time setup.</p>
+<section id="git" class="level3">
+<h3 class="anchored" data-anchor-id="git">Git</h3>
+<p>For our purposes, think of Git as a small set of programs that enable you to interact with GitHub.com outside of a web browser. Installation depends on whether your computer is running Windows or macOS.</p>
+<section id="windows-users" class="level4">
+<h4 class="anchored" data-anchor-id="windows-users">Windows Users</h4>
+<p>Go to the <a href="https://git-scm.com/install/windows">git-scm.com Windows page</a> and download the “x64 version of Git for Windows”. I recommend you choose the first option, labeled “x64 version of Git for Windows”, unless you know you need something else. Download the file and run it to install Git.</p>
+</section>
+<section id="macos-users" class="level4">
+<h4 class="anchored" data-anchor-id="macos-users">macOS Users</h4>
+<p>There are brief instructions at <a href="https://git-scm.com/install/mac">git-scm.com macOS page</a> that some may find helpful, but for most users, I recommend you follow the more detailed version below instead.</p>
+<ol type="1">
+<li><p>Press <kbd>Cmd</kbd>+<kbd>Space</kbd>, type “Terminal”, and press <kbd>Enter</kbd>. This opens a special program called the <em>terminal</em>, with which we can give special instructions to your computer. If you’ve never used the terminal before, that’s ok! The one-time instructions below walk you through it step by step.</p></li>
+<li><p>In the terminal, type or paste the following command:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">xcode-select</span> <span class="at">--install</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<ul>
+<li>Note that there is a single dash between “xcode” and “select”, a space after “select”, and a double dash before “install”.</li>
+</ul></li>
+<li><p>Press <kbd>Enter</kbd> so that the command above is run.</p></li>
+<li><p>A window will pop up, asking you about installing “command line developer tools” (including Git). Choose to install the tools, and agree to the license.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If instead you see a message saying the command line tools are already installed, then you can skip the remaining steps.</p>
+</div>
+</div></li>
+<li><p>Installation runs in the background and may take a few minutes. You can leave the window as-is until it finishes.</p></li>
+<li><p>When the installation is complete, you can verify that the installation worked by entering the following command in the terminal and hitting <kbd>Enter</kbd>:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> <span class="at">--version</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>You should see a version number printed in the terminal, which indicates that Git is installed and working correctly.</p></li>
+<li><p>When the installation is complete, you can close the window.</p></li>
+</ol>
+</section>
+</section>
+<section id="python" class="level3">
+<h3 class="anchored" data-anchor-id="python">Python</h3>
+<p>Python is a programming language. As I promised before, you won’t have to write any code to develop PrairieLearn questions. Your computer will need Python installed, though. To do this, go to the <a href="https://www.python.org/downloads/">Python downloads page</a> and download the latest version of Python for your operating system. Run the installer and follow the prompts to install Python; <strong><em>on Windows</em></strong>, be sure to check the box that says “Add Python to PATH” before installing.</p>
+</section>
+<section id="an-integrated-development-environment-and-ai-agent" class="level3">
+<h3 class="anchored" data-anchor-id="an-integrated-development-environment-and-ai-agent">An Integrated Development Environment and AI Agent</h3>
+<p>Next, you will need an integrated development environment (IDE). An IDE is a special program that makes it easier to work with code. We’ll use an AI agent inside of an IDE to work with your PrairieLearn repo on your behalf.</p>
+<p>If you already have experience with IDEs and AI agent integration, then stick with what you know. Otherwise, I recommend using VS Code with Claude Code.</p>
+<section id="installing-vs-code" class="level4">
+<h4 class="anchored" data-anchor-id="installing-vs-code">Installing VS Code</h4>
+<p>Go to the <a href="https://code.visualstudio.com/">VS Code downloads page</a> and download the installer for your operating system (Windows or macOS). Run the installer and accept the defaults.</p>
+</section>
+<section id="setting-up-claude-code" class="level4">
+<h4 class="anchored" data-anchor-id="setting-up-claude-code">Setting Up Claude Code</h4>
+<p>Claude Code is an AI extension for VS Code. Once installed, it can read, write, and edit files in your repo directly, following your instructions.</p>
+<p>If you want AI assistance with more than minimal usage, you’ll need a subscription. There are two ways U-M faculty members might choose to pursue this:</p>
+<ul>
+<li><strong>Personal subscription</strong>: Follow the setup instructions in the <a href="https://code.claude.com/docs/en/vs-code">Claude Code documentation for VS Code</a>. This walks you through installing the extension and signing in with a Claude.ai account. Anecdotally, at time of writing, I’ve found the $20/month subscription to be sufficient and highly worthwhile for PrairieLearn development.</li>
+<li><strong>U-M GPT Toolkit</strong>: Use Claude Code through the <a href="https://its.umich.edu/computing/ai/claude-code-gpt-toolkit">U-M GPT Toolkit</a>, with usage-based pricing billed through the university rather than a personal subscription. See the link for setup details.</li>
+</ul>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>You may also be aware that U-M provides free access to several AI models (including Claude) through a <a href="https://umgpt.umich.edu/">chat-only interface</a>. That’s a fine way to get a feel for AI-assisted question writing at no cost, but note that it can’t directly edit files in your repo the way an IDE-integrated AI agent can. So it won’t support the more advanced, hands-off workflows described earlier on this page (bulk generation, scope verification, and similar), where the AI is directly reading and editing your repo’s files rather than you copying content back and forth by hand.</p>
+</div>
+</div>
+</section>
+</section>
 </section>
 <section id="cloning-your-repo" class="level2">
 <h2 class="anchored" data-anchor-id="cloning-your-repo">Cloning Your Repo</h2>
-<p>As briefly mentioned above, your PrairieLearn course (including questions and assessments) is stored in the GitHub repo that you gained access to when your course was created. This basically means that your course is stored “in the cloud”. We need to get a local copy of it; this is called “cloning” the repo. Follow these <a href="https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository">instructions to clone a repo</a>.</p>
+<p>As briefly mentioned above, your PrairieLearn course (including questions and assessments) is stored in the GitHub repo that you gained access to when your course was created. This basically means that your course is stored “in the cloud”. We need to get a local copy of it; this is called “cloning” the repo.</p>
+<ol type="1">
+<li><p>Open VS Code.</p></li>
+<li><p>Open the Command Palette (<kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>P</kbd> on Windows, <kbd>Cmd</kbd>+<kbd>Shift</kbd>+<kbd>P</kbd> on Mac), type “Git: Clone”, and press <kbd>Enter</kbd>.</p></li>
+<li><p>Choose “Clone from GitHub”. The first time you do this, VS Code will open your browser and ask you to sign in to GitHub.com and authorize VS Code. Approve this.</p></li>
+<li><p>Back in VS Code, a list of your GitHub repositories will appear (or you can search for it by name). Select your PrairieLearn course’s repository.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If you don’t see your PrairieLearn course’s repository in the list, you may not have accepted the invitation email sent when your PrairieLearn course was created (see <a href="./index.html#access">Getting Access</a>). Email <a href="mailto:support@prairielearn.com">support@prairielearn.com</a> to request a new invitation.</p>
+</div>
+</div></li>
+<li><p>Choose a folder on your computer where you’d like to keep your PrairieLearn files.</p></li>
+<li><p>Choose to open the repository when prompted.</p></li>
+</ol>
+<p>Your course files are now on your computer, and open in VS Code.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If you prefer the terminal, open a terminal in VS Code and run this command, replacing the example URL with your own repository’s URL (found by clicking the green “Code” button on your repository’s page on GitHub.com, under the “HTTPS” tab):</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone https://github.com/YOUR-ORGANIZATION/YOUR-REPOSITORY.git</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div>
 </section>
 <section id="opening-and-exploring-your-repo" class="level2">
 <h2 class="anchored" data-anchor-id="opening-and-exploring-your-repo">Opening and Exploring Your Repo</h2>
-<p>Open your Repo in your IDE. For example, if you’re using VS Code, click on “File” in the top menu, then “Open Folder”. Navigate to the folder where you cloned your repo and open it. You should see a list of files and folders in the left-hand panel.</p>
+<p>Open your Repo in your IDE. For example, if you’re using VS Code, start it, click on “File” in the top menu, then “Open Folder”. Navigate to the folder where you cloned your repo and open it. You should see a list of files and folders in the left-hand panel.</p>
 <p>Explore the folder structure a bit, and open the files you see. You should recognize some of the files you saw in the web interface. For example, in the <code>questions</code> folder, there should be a subfolder for each question you created, and inside each of those subfolders are the files that define the question: info.json, question.html, and server.py. Similarly, note the <code>assessments</code> folder contents.</p>
 <p>Now, you can edit these files directly in your IDE, and also ask AI to do it for you.</p>
 </section>
@@ -337,9 +450,9 @@ flowchart LR
 <li>Click the blue “Commit” button, then click “Sync Changes” (or “Push”) to send your changes to GitHub.com.</li>
 </ol>
 <p>If you prefer the terminal, open a terminal in VS Code (Terminal menu, “New Terminal”) and run these three commands in your repo folder, in order:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> add .</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"Describe your changes here"</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> push</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> add .</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"Describe your changes here"</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> push</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Next, we need to tell the PL web interface to <em>sync</em> the course so that it sees the changes we just pushed. Click the “Sync” tab on the left side, and then the blue “Pull from remote git repository” button. When the process completes successfully, your course has been updated! You can verify this by looking at the changed items (e.g., questions, assessments) in the web interface.</p>
 </section>
 <section id="if-you-edit-via-the-web-interface" class="level3">
@@ -366,7 +479,7 @@ flowchart LR
 <p>Similarly, if you make changes to your PrairieLearn course via the web interface, we need to get those changes to your local code. The first step of this happens automatically: when you make changes in the web interface, those changes are <em>automatically synced</em> to your GitHub.com repo. Thus, all that remains is to pull those changes to your local repo.</p>
 <p>In VS Code, click the Source Control icon in the left-hand activity bar and click the “…” (More Actions) menu at the top, then choose “Pull” (or simply click the sync/refresh icon in the bottom status bar if you see one). Your local files will be updated to match what’s on GitHub.com.</p>
 <p>If you prefer the terminal, open a terminal in VS Code and run this command in your repo folder:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> pull</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> pull</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 </section>
 <section id="resources-for-your-repo" class="level2">
