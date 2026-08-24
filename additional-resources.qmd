@@ -11,7 +11,8 @@ You may find the following resources useful:
     - [EECS 183 PrairieLearn Tutorial](https://py183.eecs.umich.edu/tutorials/prairielearn/prairielearn.html)
     - [EECS 183 PrairieTest Tutorial](https://py183.eecs.umich.edu/tutorials/prairietest/prairietest.html)
     - [EECS 183 Exam Details](https://py183.eecs.umich.edu/docs/exams.html)
-- For further examples of question generation, you may find this [Engineering Education Innovation day presentation](https://drive.google.com/drive/u/0/folders/15-LHxlP8fdFuVQwbnK4clguFPSfcxAfV) by Laura Alford and Steven Bogaerts to be useful. It includes illustration of question generation through both the [web interface](web-interface.qmd) and the [repository interface](github-repo.qmd).
+- Several question types are illustrated in the assessments of this [demo course](https://us.prairielearn.com/pl/course_instance/197326/assessments).
+- For further examples of question generation, you may find useful this [Engineering Education Innovation day presentation](https://drive.google.com/drive/folders/1Cem9CCpgCb1zEnu-cQtDEVyIUjDvIEt4?usp=drive_link) by Laura Alford and Steven Bogaerts. It includes illustration of question generation through both the web interface and the repository interface. You can also find a [video recording of the presentation](https://eei.engin.umich.edu/eei-days-2026/session-list-2026/). 
 
 Contact info:
 
