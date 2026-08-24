@@ -1,0 +1,200 @@
+---
+title: "Reference Sheets"
+---
+
+This page explains how to give students access to a reference/formula/"cheat" sheet during an assessment. If you don't want to allow this, you may safely skip to the next page on the [repository interface](github-repo.qmd).
+
+The sections below explain how to add a standard reference sheet that you provide, and how to allow students to upload their own reference sheets. The latter is still in testing, so please use with caution. <!-- TO DO update when it's working -->
+
+## Adding a Standard Notes Page to Your Assessment {#standard-sheet}
+
+PrairieLearn enables you to add files to an assessment that students will be allowed to access. This could be a reference / formula / "cheat" sheet, for example.
+
+### Uploading the Reference Sheet
+
+Suppose you have a `reference.pdf` file you want students to be able to access during the exam. First, we need to provide the file to PrairieLearn:
+
+- In the left sidebar, choose "Assessments" and click on the assessment you want to add the file to.
+- Click on the "Files" tab and hit the "Add new client files" button.
+- Upload your `reference.pdf` file via the file dialog that appears.
+- In the "Files" window, you should now see a new folder named "clientFilesAssessment". If you click on that folder, you should see the `reference.pdf` file inside. You can click on it to verify that it's the correct file.
+
+### Adding a Link to the Reference Sheet in the Assessment
+
+Next, we need to give students access to the file in the assessment itself:
+
+- Still in the "Files" tab for the assessment, click the `edit` button for the file `infoAssessment.json` to open it in an in-browser editor.
+- We need to add one entry to the file: a `"text"` field containing a link to the file and any accompanying text we want. The `"text"` field must be valid HTML, and the file accessed via the URL `{{{ client_files_assessment }}}/reference.pdf` (or adjust for your file name). The `{{{ client_files_assessment }}}` is a placeholder that PrairieLearn will replace with the correct URL for the assessment's files. For example:
+    - Suppose you want your "Quiz 1" assessment to allow access to a `reference.pdf` file you've created.
+    - When you open `infoAssessment.json`, you'll see something like this:
+
+    ```json
+    {
+    "uuid": "some unique identifier here",
+    "type": "Exam",
+    "title": "Quiz 1",
+    "set": "Quizzes",
+    ... (more settings omitted for brevity) ...
+    }
+    ```
+
+    Add a new line for the "text" field. Anywhere is fine. For example, see below:
+
+    ```json
+    {
+    "uuid": "some unique identifier here",
+    "type": "Exam",
+    "title": "Quiz 1",
+    "text": "<p><a href=\"{{ client_files_assessment }}/reference.pdf\">Click here for the exam reference sheet</a>. You may find it convenient to open this document in a new browser tab.</p>",
+    "set": "Quizzes",
+    ... (more settings omitted for brevity) ...
+    }
+    ```
+
+    Note the HTML syntax, the use of `"` and `\"`, and the `,` at the end. Such syntax is required. The following is just that line, which you can easily copy by hovering your mouse over the box and clicking the clipboard icon in the upper-right corner:
+
+    ```json
+    "text": "<p><a href=\"{{ client_files_assessment }}/reference.pdf\">Click here for the exam reference sheet</a>. You may find it convenient to open this document in a new browser tab.</p>",
+    ```
+
+- You may need to adjust the file name if yours is not called `reference.pdf`, and you may also wish to change the wording.
+- Click the `Save` button when you are finished editing.
+
+With the changes above, students will see a link to the `reference.pdf` file when they open the assessment. I recommend you test this out with the "Student view without access restrictions" option to verify that it works as needed.
+
+## Allowing Students to Add a Custom Notes Page to Your Assessment {#custom-sheet}
+
+::: {.callout-warning}
+This section is still in testing and should not be relied upon until this message is removed!
+:::
+
+<!-- TO DO: is this working? -->
+
+::: {.callout-note appearance="simple" title="Acknowledgment"}
+Thank you to the University of California - San Diego, Triton Testing Center, for their [documentation](https://tritontesting.ucsd.edu/computer-based-testing/instructors/Digital-Note-Sheet-Method_CBTF_SP25-1.pdf) on this topic, which served as the basis for the documentation below.
+:::
+
+In some cases, rather than preparing a reference sheet yourself, you may want students to prepare their own respective reference sheets. However, please note: in the ETF, for reasons of exam security (especially when multiple courses' exams are administered simultaneously), students are _never_ allowed to bring in physical copies of their own reference sheets. Thus, if you want students to be able to use their own personally-prepared reference sheets during an exam, we need to set up PrairieLearn to allow this. The basic procedure is summarized below:
+
+1. Make a file upload question, allowing students to upload their reference sheet.
+2. Make a special upload assessment (a homework assessment configured in a special way) that contains the file upload question. The assessment should close days before the exam window starts.
+3. Configure PrairieLearn to allow each student access to their uploaded sheet during the exam.
+4. When the special upload assessment closes, review the uploaded sheets to ensure they follow any course requirements.
+5. Students can then take the exam with their respective uploaded files.
+
+Details are provided in the following subsections.
+
+### Making a File Upload Question {#file-upload-question}
+
+- Click on "Questions" in the left sidebar, and choose "Add questions" -> "Create new question" (_not_ "Generate question with AI").
+- Give a title and QID, such as "Reference Sheet Upload" and "ref-sheet-upload".
+- With "PrairieLearn template" selected, choose the "File Upload" option.
+- Click "Create question".
+- You will see the "Preview" tab for the question. Click on "Files", and then the "Edit" button for `question.html`. Replace the entirety of its contents with the following (or adjust the wording / policies as needed):
+
+    ```html
+    <pl-question-panel>
+        <p> $\textbf{Instructions:}$</p>
+        <p>Take a picture of your 1 page of handwritten notes. Save your notes in a file named: <b>personalnotes.png</b> </p>
+        <p>Upload or drag your <b>personalnotes.png</b> file into the submission box. Click save and click show preview to view your notes in the submission panel. </p>
+        <p><b> Submit your notes file here: </b>
+           <pl-file-upload file-names="personalnotes.png"> </pl-file-upload>
+        </p>
+    </pl-question-panel>
+    <pl-submission-panel>
+        <pl-file-preview></pl-file-preview>
+    </pl-submission-panel>
+    ```
+
+- Click "Save".
+
+::: {.callout-tip}
+For additional exams in the course, you may reuse the same file upload _question_ you've created here, if you wish.
+:::
+
+### Making a File Upload Homework Assessment
+
+::: {.callout-note}
+Before you can complete the steps below, you will need to (1) create the PrairieLearn assessment corresponding to your exam (though it need not be in its final form), and (2) obtain a PrairieTest exam UUID for your exam. Note that the Prairie*Test* *exam* UUID is different from the Prairie*Learn* *assessment* UUID. For details on where to get the PrairieTest exam UUID, see the [ETF website](https://etf.engin.umich.edu/).
+:::
+
+- Make the assessment:
+    - Click on "Assessments" in the left sidebar, and choose "Add assessment".
+    - Give a title and short name that are reflective of the exam. For example, if this is for your Exam #1, you might use "Reference Sheet Upload for Exam 1" and "ref-sheet-upload-exam1".
+    - Set the type to "Homework" and the set to whatever you'd like.
+    - You'll now be on the "Questions" tab. Click "Add questions" and add the file upload question from the [previous step](#file-upload-question). Press the blue disk icon button to save.
+- Disable personal notes:
+    - Go to the "Settings" tab. In the "Student options" section, ***uncheck*** the box for "Allow personal notes".
+
+      ::: {.callout-warning}
+      It is very important that "Allow personal notes" is ***unchecked*** and that you save this change. If the box is instead _checked_, students would be able to add other information to the homework assessment (and access it during the exam) that you would not be able to see.
+      :::
+
+    - Click "Save" at the bottom of the page.
+- Configure the assessment's worth:
+    - The file upload assessment can be worth 0 or more points. You might choose a non-zero worth if you want to penalize students for uploading a disallowed file. Alternatively, you could simply delete any disallowed files after reviewing them, and not assign any points to the assessment.
+    - In any case, go to the "Questions" tab for the file upload assessment, and click "Edit" for the file upload question. In the right panel, set "Manual points" to whatever you wish.
+    - Click the disk icon button to save.
+- Configure the assessment's access:
+    - Go to the "Access" tab. Click the "Edit" button.
+    - Put a check in the "Date control" checkbox. Either let the file upload task be "Released" immediately, or choose "Scheduled for release" and set the date/time accordingly.
+    - Select "Due on date" and pick a date/time sometime before the exam window starts. This will (1) give you / course staff time to review the uploaded sheets, and (2) prevent students from uploading new sheets after they are reviewed.
+    - In the "Integrations" section a bit further down, check the box next to "PrairieTest", and enter the Exam UUID from PrairieTest for your exam. (Thus, both your actual exam assessment _and_ this file upload assessment will be linked to the same PrairieTest exam.)
+    - In the "After completion" section, under "Question visibility after completion", select "Show questions after completion".
+
+      ::: {.callout-note}
+      You will be warned that this is an unusual setting for PrairieTest exams, but for the file upload assessment, you may safely ignore this warning.
+      :::
+
+    - Click "Save" at the bottom of the page.
+
+Let's verify that the assessment is configured correctly. Go to "Files", and click "Edit" for `infoAssessment.json`. You should see something like the following:
+
+```json
+{
+  "uuid": "PRAIRIELEARN-ASSESSMENT-UUID",
+  "type": "Homework",
+  "title": "Any title, like Reference Sheet Upload for Exam 1",
+  "set": "Any set name here",
+  "number": "ANY-NUMBER",
+  "accessControl": [
+    {
+      "dateControl": {
+        "release": { "date": "RELEASE-DATE-TIME" },
+        "due": { "date": "DUE-DATE-TIME (days before the exam window begins)" }
+      },
+      "integrations": {
+        "prairieTest": { "exams": [{ "examUuid": "PRAIRIETEST-EXAM-UUID" }] }
+      },
+      "afterComplete": { "questions": { "hidden": false } }
+    }
+  ],
+  "zones": [{ "questions": [{ "id": "FILE-UPLOAD-QUESTION-QID", "manualPoints": NUMBER-OF-MANUAL-POINTS }] }],
+  "allowPersonalNotes": false
+}
+```
+
+If anything in `infoAssessment.json` does not match the above (with your choices filled in), go back and check the settings and/or edit the json by hand.
+
+::: {.callout-warning}
+Recall that the PrairieTest exam UUID ("PRAIRIETEST-EXAM-UUID") is different from the PrairieLearn assessment UUID ("PRAIRIELEARN-ASSESSMENT-UUID"). Be sure you have the correct PrairieTest exam UUID in the `infoAssessment.json` file. Visit the [ETF website](https://etf.engin.umich.edu/) for details.
+:::
+
+::: {.callout-tip}
+For additional exams in the course, you may ***not*** reuse the file upload _assessment_ you've created here. Each exam needs a different file upload assessment.
+:::
+
+### Reviewing Uploaded Sheets
+
+After the file upload assessment closes ("DUE-DATE-TIME" in the example above), the students' uploads may need to be manually reviewed to ensure they follow course policies (e.g., handwritten, one page, etc.). Follow these steps:
+
+- Click on "Assessments" in the left sidebar, and click on the file upload assessment you created for the exam.
+- Click on the "Manual grading" tab, and click on the question (e.g., "Reference Sheet Upload").
+- Click on each instance to view the submission. You can assign points in the "Manual Points" field on the right, provide feedback if desired, and click "Grade".
+- You also have the option of deleting a student's upload if it does not meet course requirements. To do this, click the "Delete" button in the top-right of where the uploaded file is displayed when grading manually.
+
+  ::: {.callout-warning}
+  Students will ***not*** be automatically notified if their upload is deleted. Thus, you may wish to notify affected students.
+  :::
+
+With the above steps complete, students will be able to access their uploaded reference sheets during the exam, and you will have ensured that they follow course policies.

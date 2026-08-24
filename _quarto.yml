@@ -14,6 +14,7 @@ website:
     contents:
       - index.qmd
       - web-interface.qmd
+      - reference-sheets.qmd
       - github-repo.qmd
       - additional-resources.qmd
   page-footer:

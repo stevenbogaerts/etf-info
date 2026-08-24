@@ -53,10 +53,11 @@ Depending on how much time you have before you need the content, you may want to
 Once you have access, continue on to:
 
 - [**The PrairieLearn Web Interface**](web-interface.qmd) — Build your first question and assessment using the web interface.
+- [**Reference Sheets**](reference-sheets.qmd) — Let students access reference/formula/"cheat" sheets during an assessment.
 - [**The PrairieLearn GitHub Repository Interface**](github-repo.qmd) — Work with your course's underlying files directly, including with AI assistance.
 - [**Additional Resources**](additional-resources.qmd) — Official documentation and student-facing tutorials.
 
-I recommend working through these pages in order, using the navigation on the left or the link below.
+I recommend working through these pages in order, using the navigation in the left sidebar or the link below.
 
 ## Contact
 
