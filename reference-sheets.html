@@ -1,0 +1,951 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.9.37">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Steven Bogaerts">
+<meta name="dcterms.date" content="2026-08-24">
+
+<title>Reference Sheets – Quick-Start Guide to PrairieLearn</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./github-repo.html" rel="next">
+<link href="./web-interface.html" rel="prev">
+<link href="./images/favicon.png" rel="icon" type="image/png">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-d0ae9245876894da5ac7e18953ecc5cc.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-8d1bc96b83220268079b2ebe6f1f1d92.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-8b249e7b944fba07705ae2a04a891eed.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-8d1bc96b83220268079b2ebe6f1f1d92.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="nav-sidebar docked quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <a class="flex-grow-1 no-decor" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+          <h1 class="quarto-secondary-nav-title">Reference Sheets</h1>
+        </a>     
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Quick-Start Guide to PrairieLearn</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">First Steps</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./web-interface.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Web Interface</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./reference-sheets.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Reference Sheets</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./github-repo.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Repository Interface</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./additional-resources.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Additional Resources</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#standard-sheet" id="toc-standard-sheet" class="nav-link active" data-scroll-target="#standard-sheet">Adding a Standard Notes Page to Your Assessment</a>
+  <ul class="collapse">
+  <li><a href="#uploading-the-reference-sheet" id="toc-uploading-the-reference-sheet" class="nav-link" data-scroll-target="#uploading-the-reference-sheet">Uploading the Reference Sheet</a></li>
+  <li><a href="#adding-a-link-to-the-reference-sheet-in-the-assessment" id="toc-adding-a-link-to-the-reference-sheet-in-the-assessment" class="nav-link" data-scroll-target="#adding-a-link-to-the-reference-sheet-in-the-assessment">Adding a Link to the Reference Sheet in the Assessment</a></li>
+  </ul></li>
+  <li><a href="#custom-sheet" id="toc-custom-sheet" class="nav-link" data-scroll-target="#custom-sheet">Allowing Students to Add a Custom Notes Page to Your Assessment</a>
+  <ul class="collapse">
+  <li><a href="#file-upload-question" id="toc-file-upload-question" class="nav-link" data-scroll-target="#file-upload-question">Making a File Upload Question</a></li>
+  <li><a href="#making-a-file-upload-homework-assessment" id="toc-making-a-file-upload-homework-assessment" class="nav-link" data-scroll-target="#making-a-file-upload-homework-assessment">Making a File Upload Homework Assessment</a></li>
+  <li><a href="#reviewing-uploaded-sheets" id="toc-reviewing-uploaded-sheets" class="nav-link" data-scroll-target="#reviewing-uploaded-sheets">Reviewing Uploaded Sheets</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title d-none d-lg-block">Reference Sheets</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p><a href="https://eecs.engin.umich.edu/people/bogaerts-steven/">Steven Bogaerts</a> </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">August 24, 2026</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>This page explains how to give students access to a reference/formula/“cheat” sheet during an assessment. If you don’t want to allow this, you may safely skip to the next page on the <a href="./github-repo.html">repository interface</a>.</p>
+<p>The sections below explain how to add a standard reference sheet that you provide, and how to allow students to upload their own reference sheets. The latter is still in testing, so please use with caution. <!-- TO DO update when it's working --></p>
+<section id="standard-sheet" class="level2">
+<h2 class="anchored" data-anchor-id="standard-sheet">Adding a Standard Notes Page to Your Assessment</h2>
+<p>PrairieLearn enables you to add files to an assessment that students will be allowed to access. This could be a reference / formula / “cheat” sheet, for example.</p>
+<section id="uploading-the-reference-sheet" class="level3">
+<h3 class="anchored" data-anchor-id="uploading-the-reference-sheet">Uploading the Reference Sheet</h3>
+<p>Suppose you have a <code>reference.pdf</code> file you want students to be able to access during the exam. First, we need to provide the file to PrairieLearn:</p>
+<ul>
+<li>In the left sidebar, choose “Assessments” and click on the assessment you want to add the file to.</li>
+<li>Click on the “Files” tab and hit the “Add new client files” button.</li>
+<li>Upload your <code>reference.pdf</code> file via the file dialog that appears.</li>
+<li>In the “Files” window, you should now see a new folder named “clientFilesAssessment”. If you click on that folder, you should see the <code>reference.pdf</code> file inside. You can click on it to verify that it’s the correct file.</li>
+</ul>
+</section>
+<section id="adding-a-link-to-the-reference-sheet-in-the-assessment" class="level3">
+<h3 class="anchored" data-anchor-id="adding-a-link-to-the-reference-sheet-in-the-assessment">Adding a Link to the Reference Sheet in the Assessment</h3>
+<p>Next, we need to give students access to the file in the assessment itself:</p>
+<ul>
+<li><p>Still in the “Files” tab for the assessment, click the <code>edit</code> button for the file <code>infoAssessment.json</code> to open it in an in-browser editor.</p></li>
+<li><p>We need to add one entry to the file: a <code>"text"</code> field containing a link to the file and any accompanying text we want. The <code>"text"</code> field must be valid HTML, and the file accessed via the URL <code>{{ client_files_assessment }}/reference.pdf</code> (or adjust for your file name). The <code>{{ client_files_assessment }}</code> is a placeholder that PrairieLearn will replace with the correct URL for the assessment’s files. For example:</p>
+<ul>
+<li>Suppose you want your “Quiz 1” assessment to allow access to a <code>reference.pdf</code> file you’ve created.</li>
+<li>When you open <code>infoAssessment.json</code>, you’ll see something like this:</li>
+</ul>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode json code-with-copy"><code class="sourceCode json"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">{</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="dt">"uuid"</span><span class="fu">:</span> <span class="st">"some unique identifier here"</span><span class="fu">,</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="dt">"type"</span><span class="fu">:</span> <span class="st">"Exam"</span><span class="fu">,</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="dt">"title"</span><span class="fu">:</span> <span class="st">"Quiz 1"</span><span class="fu">,</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="dt">"set"</span><span class="fu">:</span> <span class="st">"Quizzes"</span><span class="fu">,</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="er">...</span> <span class="er">(more</span> <span class="er">settings</span> <span class="er">omitted</span> <span class="er">for</span> <span class="er">brevity)</span> <span class="er">...</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="fu">}</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Add a new line for the “text” field. Anywhere is fine. For example, see below:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode json code-with-copy"><code class="sourceCode json"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">{</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="dt">"uuid"</span><span class="fu">:</span> <span class="st">"some unique identifier here"</span><span class="fu">,</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="dt">"type"</span><span class="fu">:</span> <span class="st">"Exam"</span><span class="fu">,</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="dt">"title"</span><span class="fu">:</span> <span class="st">"Quiz 1"</span><span class="fu">,</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="dt">"text"</span><span class="fu">:</span> <span class="st">"&lt;p&gt;&lt;a href=</span><span class="ch">\"</span><span class="st">{{ client_files_assessment }}/reference.pdf</span><span class="ch">\"</span><span class="st">&gt;Click here for the exam reference sheet&lt;/a&gt;. You may find it convenient to open this document in a new browser tab.&lt;/p&gt;"</span><span class="fu">,</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="dt">"set"</span><span class="fu">:</span> <span class="st">"Quizzes"</span><span class="fu">,</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="er">...</span> <span class="er">(more</span> <span class="er">settings</span> <span class="er">omitted</span> <span class="er">for</span> <span class="er">brevity)</span> <span class="er">...</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="fu">}</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Note the HTML syntax, the use of <code>"</code> and <code>\"</code>, and the <code>,</code> at the end. Such syntax is required. The following is just that line, which you can easily copy by hovering your mouse over the box and clicking the clipboard icon in the upper-right corner:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode json code-with-copy"><code class="sourceCode json"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="st">"text"</span><span class="er">:</span> <span class="st">"&lt;p&gt;&lt;a href=</span><span class="ch">\"</span><span class="st">{{ client_files_assessment }}/reference.pdf</span><span class="ch">\"</span><span class="st">&gt;Click here for the exam reference sheet&lt;/a&gt;. You may find it convenient to open this document in a new browser tab.&lt;/p&gt;"</span><span class="er">,</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
+<li><p>You may need to adjust the file name if yours is not called <code>reference.pdf</code>, and you may also wish to change the wording.</p></li>
+<li><p>Click the <code>Save</code> button when you are finished editing.</p></li>
+</ul>
+<p>With the changes above, students will see a link to the <code>reference.pdf</code> file when they open the assessment. I recommend you test this out with the “Student view without access restrictions” option to verify that it works as needed.</p>
+</section>
+</section>
+<section id="custom-sheet" class="level2">
+<h2 class="anchored" data-anchor-id="custom-sheet">Allowing Students to Add a Custom Notes Page to Your Assessment</h2>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Warning
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>This section is still in testing and should not be relied upon until this message is removed!</p>
+</div>
+</div>
+<!-- TO DO: is this working? -->
+<div class="callout callout-style-simple callout-note callout-titled" title="Acknowledgment">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Acknowledgment
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Thank you to the University of California - San Diego, Triton Testing Center, for their <a href="https://tritontesting.ucsd.edu/computer-based-testing/instructors/Digital-Note-Sheet-Method_CBTF_SP25-1.pdf">documentation</a> on this topic, which served as the basis for the documentation below.</p>
+</div>
+</div>
+<p>In some cases, rather than preparing a reference sheet yourself, you may want students to prepare their own respective reference sheets. However, please note: in the ETF, for reasons of exam security (especially when multiple courses’ exams are administered simultaneously), students are <em>never</em> allowed to bring in physical copies of their own reference sheets. Thus, if you want students to be able to use their own personally-prepared reference sheets during an exam, we need to set up PrairieLearn to allow this. The basic procedure is summarized below:</p>
+<ol type="1">
+<li>Make a file upload question, allowing students to upload their reference sheet.</li>
+<li>Make a special upload assessment (a homework assessment configured in a special way) that contains the file upload question. The assessment should close days before the exam window starts.</li>
+<li>Configure PrairieLearn to allow each student access to their uploaded sheet during the exam.</li>
+<li>When the special upload assessment closes, review the uploaded sheets to ensure they follow any course requirements.</li>
+<li>Students can then take the exam with their respective uploaded files.</li>
+</ol>
+<p>Details are provided in the following subsections.</p>
+<section id="file-upload-question" class="level3">
+<h3 class="anchored" data-anchor-id="file-upload-question">Making a File Upload Question</h3>
+<ul>
+<li><p>Click on “Questions” in the left sidebar, and choose “Add questions” -&gt; “Create new question” (<em>not</em> “Generate question with AI”).</p></li>
+<li><p>Give a title and QID, such as “Reference Sheet Upload” and “ref-sheet-upload”.</p></li>
+<li><p>With “PrairieLearn template” selected, choose the “File Upload” option.</p></li>
+<li><p>Click “Create question”.</p></li>
+<li><p>You will see the “Preview” tab for the question. Click on “Files”, and then the “Edit” button for <code>question.html</code>. Replace the entirety of its contents with the following (or adjust the wording / policies as needed):</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">pl-question-panel</span><span class="dt">&gt;</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">p</span><span class="dt">&gt;</span> $\textbf{Instructions:}$<span class="dt">&lt;/</span><span class="kw">p</span><span class="dt">&gt;</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">p</span><span class="dt">&gt;</span>Take a picture of your 1 page of handwritten notes. Save your notes in a file named: <span class="dt">&lt;</span><span class="kw">b</span><span class="dt">&gt;</span>personalnotes.png<span class="dt">&lt;/</span><span class="kw">b</span><span class="dt">&gt;</span> <span class="dt">&lt;/</span><span class="kw">p</span><span class="dt">&gt;</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">p</span><span class="dt">&gt;</span>Upload or drag your <span class="dt">&lt;</span><span class="kw">b</span><span class="dt">&gt;</span>personalnotes.png<span class="dt">&lt;/</span><span class="kw">b</span><span class="dt">&gt;</span> file into the submission box. Click save and click show preview to view your notes in the submission panel. <span class="dt">&lt;/</span><span class="kw">p</span><span class="dt">&gt;</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">p</span><span class="dt">&gt;&lt;</span><span class="kw">b</span><span class="dt">&gt;</span> Submit your notes file here: <span class="dt">&lt;/</span><span class="kw">b</span><span class="dt">&gt;</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>       <span class="dt">&lt;</span><span class="kw">pl-file-upload</span><span class="ot"> file-names</span><span class="op">=</span><span class="st">"personalnotes.png"</span><span class="dt">&gt;</span> <span class="dt">&lt;/</span><span class="kw">pl-file-upload</span><span class="dt">&gt;</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;/</span><span class="kw">p</span><span class="dt">&gt;</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">pl-question-panel</span><span class="dt">&gt;</span></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">pl-submission-panel</span><span class="dt">&gt;</span></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">pl-file-preview</span><span class="dt">&gt;&lt;/</span><span class="kw">pl-file-preview</span><span class="dt">&gt;</span></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">pl-submission-panel</span><span class="dt">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
+<li><p>Click “Save”.</p></li>
+</ul>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>For additional exams in the course, you may reuse the same file upload <em>question</em> you’ve created here, if you wish.</p>
+</div>
+</div>
+</section>
+<section id="making-a-file-upload-homework-assessment" class="level3">
+<h3 class="anchored" data-anchor-id="making-a-file-upload-homework-assessment">Making a File Upload Homework Assessment</h3>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Before you can complete the steps below, you will need to (1) create the PrairieLearn assessment corresponding to your exam (though it need not be in its final form), and (2) obtain a PrairieTest exam UUID for your exam. Note that the Prairie<em>Test</em> <em>exam</em> UUID is different from the Prairie<em>Learn</em> <em>assessment</em> UUID. For details on where to get the PrairieTest exam UUID, see the <a href="https://etf.engin.umich.edu/">ETF website</a>.</p>
+</div>
+</div>
+<ul>
+<li>Make the assessment:
+<ul>
+<li>Click on “Assessments” in the left sidebar, and choose “Add assessment”.</li>
+<li>Give a title and short name that are reflective of the exam. For example, if this is for your Exam #1, you might use “Reference Sheet Upload for Exam 1” and “ref-sheet-upload-exam1”.</li>
+<li>Set the type to “Homework” and the set to whatever you’d like.</li>
+<li>You’ll now be on the “Questions” tab. Click “Add questions” and add the file upload question from the <a href="#file-upload-question">previous step</a>. Press the blue disk icon button to save.</li>
+</ul></li>
+<li>Disable personal notes:
+<ul>
+<li><p>Go to the “Settings” tab. In the “Student options” section, <strong><em>uncheck</em></strong> the box for “Allow personal notes”.</p>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Warning
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>It is very important that “Allow personal notes” is <strong><em>unchecked</em></strong> and that you save this change. If the box is instead <em>checked</em>, students would be able to add other information to the homework assessment (and access it during the exam) that you would not be able to see.</p>
+</div>
+</div></li>
+<li><p>Click “Save” at the bottom of the page.</p></li>
+</ul></li>
+<li>Configure the assessment’s worth:
+<ul>
+<li>The file upload assessment can be worth 0 or more points. You might choose a non-zero worth if you want to penalize students for uploading a disallowed file. Alternatively, you could simply delete any disallowed files after reviewing them, and not assign any points to the assessment.</li>
+<li>In any case, go to the “Questions” tab for the file upload assessment, and click “Edit” for the file upload question. In the right panel, set “Manual points” to whatever you wish.</li>
+<li>Click the disk icon button to save.</li>
+</ul></li>
+<li>Configure the assessment’s access:
+<ul>
+<li><p>Go to the “Access” tab. Click the “Edit” button.</p></li>
+<li><p>Put a check in the “Date control” checkbox. Either let the file upload task be “Released” immediately, or choose “Scheduled for release” and set the date/time accordingly.</p></li>
+<li><p>Select “Due on date” and pick a date/time sometime before the exam window starts. This will (1) give you / course staff time to review the uploaded sheets, and (2) prevent students from uploading new sheets after they are reviewed.</p></li>
+<li><p>In the “Integrations” section a bit further down, check the box next to “PrairieTest”, and enter the Exam UUID from PrairieTest for your exam. (Thus, both your actual exam assessment <em>and</em> this file upload assessment will be linked to the same PrairieTest exam.)</p></li>
+<li><p>In the “After completion” section, under “Question visibility after completion”, select “Show questions after completion”.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>You will be warned that this is an unusual setting for PrairieTest exams, but for the file upload assessment, you may safely ignore this warning.</p>
+</div>
+</div></li>
+<li><p>Click “Save” at the bottom of the page.</p></li>
+</ul></li>
+</ul>
+<p>Let’s verify that the assessment is configured correctly. Go to “Files”, and click “Edit” for <code>infoAssessment.json</code>. You should see something like the following:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode json code-with-copy"><code class="sourceCode json"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">{</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="dt">"uuid"</span><span class="fu">:</span> <span class="st">"PRAIRIELEARN-ASSESSMENT-UUID"</span><span class="fu">,</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  <span class="dt">"type"</span><span class="fu">:</span> <span class="st">"Homework"</span><span class="fu">,</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>  <span class="dt">"title"</span><span class="fu">:</span> <span class="st">"Any title, like Reference Sheet Upload for Exam 1"</span><span class="fu">,</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>  <span class="dt">"set"</span><span class="fu">:</span> <span class="st">"Any set name here"</span><span class="fu">,</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>  <span class="dt">"number"</span><span class="fu">:</span> <span class="st">"ANY-NUMBER"</span><span class="fu">,</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>  <span class="dt">"accessControl"</span><span class="fu">:</span> <span class="ot">[</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">{</span></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"dateControl"</span><span class="fu">:</span> <span class="fu">{</span></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>        <span class="dt">"release"</span><span class="fu">:</span> <span class="fu">{</span> <span class="dt">"date"</span><span class="fu">:</span> <span class="st">"RELEASE-DATE-TIME"</span> <span class="fu">},</span></span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>        <span class="dt">"due"</span><span class="fu">:</span> <span class="fu">{</span> <span class="dt">"date"</span><span class="fu">:</span> <span class="st">"DUE-DATE-TIME (days before the exam window begins)"</span> <span class="fu">}</span></span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>      <span class="fu">},</span></span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"integrations"</span><span class="fu">:</span> <span class="fu">{</span></span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>        <span class="dt">"prairieTest"</span><span class="fu">:</span> <span class="fu">{</span> <span class="dt">"exams"</span><span class="fu">:</span> <span class="ot">[</span><span class="fu">{</span> <span class="dt">"examUuid"</span><span class="fu">:</span> <span class="st">"PRAIRIETEST-EXAM-UUID"</span> <span class="fu">}</span><span class="ot">]</span> <span class="fu">}</span></span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>      <span class="fu">},</span></span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"afterComplete"</span><span class="fu">:</span> <span class="fu">{</span> <span class="dt">"questions"</span><span class="fu">:</span> <span class="fu">{</span> <span class="dt">"hidden"</span><span class="fu">:</span> <span class="kw">false</span> <span class="fu">}</span> <span class="fu">}</span></span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>    <span class="fu">}</span></span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a>  <span class="ot">]</span><span class="fu">,</span></span>
+<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a>  <span class="dt">"zones"</span><span class="fu">:</span> <span class="ot">[</span><span class="fu">{</span> <span class="dt">"questions"</span><span class="fu">:</span> <span class="ot">[</span><span class="fu">{</span> <span class="dt">"id"</span><span class="fu">:</span> <span class="st">"FILE-UPLOAD-QUESTION-QID"</span><span class="fu">,</span> <span class="dt">"manualPoints"</span><span class="fu">:</span> <span class="er">NUMBER-OF-MANUAL-POINTS</span> <span class="fu">}</span><span class="ot">]</span> <span class="fu">}</span><span class="ot">]</span><span class="fu">,</span></span>
+<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a>  <span class="dt">"allowPersonalNotes"</span><span class="fu">:</span> <span class="kw">false</span></span>
+<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a><span class="fu">}</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>If anything in <code>infoAssessment.json</code> does not match the above (with your choices filled in), go back and check the settings and/or edit the json by hand.</p>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Warning
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Recall that the PrairieTest exam UUID (“PRAIRIETEST-EXAM-UUID”) is different from the PrairieLearn assessment UUID (“PRAIRIELEARN-ASSESSMENT-UUID”). Be sure you have the correct PrairieTest exam UUID in the <code>infoAssessment.json</code> file. Visit the <a href="https://etf.engin.umich.edu/">ETF website</a> for details.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>For additional exams in the course, you may <strong><em>not</em></strong> reuse the file upload <em>assessment</em> you’ve created here. Each exam needs a different file upload assessment.</p>
+</div>
+</div>
+</section>
+<section id="reviewing-uploaded-sheets" class="level3">
+<h3 class="anchored" data-anchor-id="reviewing-uploaded-sheets">Reviewing Uploaded Sheets</h3>
+<p>After the file upload assessment closes (“DUE-DATE-TIME” in the example above), the students’ uploads may need to be manually reviewed to ensure they follow course policies (e.g., handwritten, one page, etc.). Follow these steps:</p>
+<ul>
+<li><p>Click on “Assessments” in the left sidebar, and click on the file upload assessment you created for the exam.</p></li>
+<li><p>Click on the “Manual grading” tab, and click on the question (e.g., “Reference Sheet Upload”).</p></li>
+<li><p>Click on each instance to view the submission. You can assign points in the “Manual Points” field on the right, provide feedback if desired, and click “Grade”.</p></li>
+<li><p>You also have the option of deleting a student’s upload if it does not meet course requirements. To do this, click the “Delete” button in the top-right of where the uploaded file is displayed when grading manually.</p>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Warning
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Students will <strong><em>not</em></strong> be automatically notified if their upload is deleted. Thus, you may wish to notify affected students.</p>
+</div>
+</div></li>
+</ul>
+<p>With the above steps complete, students will be able to access their uploaded reference sheets during the exam, and you will have ensured that they follow course policies.</p>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/stevenbogaerts\.github\.io\/etf-info\/");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./web-interface.html" class="pagination-link" aria-label="Web Interface">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Web Interface</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./github-repo.html" class="pagination-link" aria-label="Repository Interface">
+        <span class="nav-page-text">Repository Interface</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>Maintained by <a href="https://eecs.engin.umich.edu/people/bogaerts-steven/">Steven Bogaerts</a>, ETF Faculty Advisor<br><a href="mailto:etf-advisor@umich.edu">etf-advisor@umich.edu</a></p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item">
+    <a class="nav-link" href="https://github.com/stevenbogaerts/etf-info">
+<p>Source on GitHub</p>
+</a>
+  </li>  
+</ul>
+    </div>
+  </div>
+</footer>
+
+
+
+
+</body></html>
