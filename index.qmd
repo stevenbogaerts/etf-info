@@ -35,7 +35,7 @@ This varies widely, of course. Some things to consider:
 
 - **Converting Canvas questions**: If you already have questions in Canvas, there is a handy [Canvas import tool](https://docs.prairielearn.com/importingContent/) that can help a lot. You will still need to verify each question, though.
 - **Using AI**: You can save tremendous amounts of time by using AI with the [repository interface](github-repo.qmd). I strongly recommend working through this entire Quick-Start Guide and taking the time to be comfortable with this workflow.
-- **Using existing text questions**: You may already have a lot of questions in a text format (e.g., `.txt`, `.tex`, or even structured formats like `.docx`). You could convert them one at a time by pasting into the [web interface](web-interface.qmd)'s AI question generator, or convert in larger sets via AI and the [repository interface](github-repo.qmd) (highly recommended).
+- **Using existing text questions**: You may already have a lot of questions in a text format (e.g., `.txt`, `.tex`, or even structured formats like `.docx`). You could convert them one at a time by pasting into the [web interface](web-interface.qmd)'s AI question generator, or convert in larger sets via AI and the [repository interface](github-repo.qmd).
 - **Considering question complexity**: Time needed depends on how complex your questions are. Questions with helpful randomization take longer to create and fully verify.
 - **Creating exams**: If you're planning to give exams in the ETF, then your first time creating exams will likely take longer than you are accustomed to. This is because an asynchronous exam should ideally have a large enough question pool that exam content does not easily leak out.
 

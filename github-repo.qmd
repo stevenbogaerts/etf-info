@@ -19,26 +19,110 @@ I recommend you work on understanding the [web interface](web-interface.qmd) bef
 
 If you answered "yes" to any of the above, I strongly recommend you learn how to work directly with your PrairieLearn GitHub repository ("repo"), as described on this page.
 
+::: {.callout-tip}
+I know that for some people, the idea of working with a GitHub repository feels intimidating, like it's just for experienced programmers and one wrong move might break something. I'll offer two points of reassurance!
+
+First, the handful of GitHub actions you'll actually use here are simple to learn, and nothing is fragile or permanent. Any mistakes are easy to undo.
+
+Second, using the tools on this page is not the same as coding, and with AI, no coding is required for PrairieLearn at all. Please also know that as the faculty advisor to the ETF, I'm happy to help you get set up. I want to help remove roadblocks so you can achieve your goals. Feel free to reach out anytime at etf-advisor@umich.edu.
+:::
+
 ## Tools to Install
 
-First, you'll need to install a few things (if you don't already have them installed):
+First, you'll need to install a few things, just as a one-time setup.
 
-- [Git](https://git-scm.com/install/)
-- [Python](https://www.python.org/downloads/)
+### Git
 
-Next, you will need an integrated development environment (IDE). If you're already familiar with a particular IDE and know how to (1) use the terminal and (2) use agentic workflows with code, then stick with what you know. Otherwise, I recommend using [VS Code](https://code.visualstudio.com/) with an AI extension (e.g., [Claude Code](https://code.claude.com/docs/en/vs-code)).
+For our purposes, think of Git as a small set of programs that enable you to interact with GitHub.com outside of a web browser. Installation depends on whether your computer is running Windows or macOS.
 
-::: {.callout-note}
-You can use VS Code for free, but if you want AI assistance with more than minimal usage, you'll need a subscription. For example, at time of writing, for my usage with PrairieLearn, I find the $20/month Claude Code subscription sufficient and _highly_ useful.
+#### Windows Users
+
+Go to the [git-scm.com Windows page](https://git-scm.com/install/windows) and download the "x64 version of Git for Windows". I recommend you choose the first option, labeled "x64 version of Git for Windows", unless you know you need something else. Download the file and run it to install Git.
+
+#### macOS Users
+
+There are brief instructions at [git-scm.com macOS page](https://git-scm.com/install/mac) that some may find helpful, but for most users, I recommend you follow the more detailed version below instead.
+
+1. Press <kbd>Cmd</kbd>+<kbd>Space</kbd>, type "Terminal", and press <kbd>Enter</kbd>. This opens a special program called the _terminal_, with which we can give special instructions to your computer. If you've never used the terminal before, that's ok! The one-time instructions below walk you through it step by step.
+2. In the terminal, type or paste the following command:
+
+    ```bash
+    xcode-select --install
+    ```
+    - Note that there is a single dash between "xcode" and "select", a space after "select", and a double dash before "install".
+3. Press <kbd>Enter</kbd> so that the command above is run.
+4. A window will pop up, asking you about installing "command line developer tools" (including Git). Choose to install the tools, and agree to the license.
+
+   ::: {.callout-tip}
+   If instead you see a message saying the command line tools are already installed, then you can skip the remaining steps.
+   :::
+
+5. Installation runs in the background and may take a few minutes. You can leave the window as-is until it finishes.
+6. When the installation is complete, you can verify that the installation worked by entering the following command in the terminal and hitting <kbd>Enter</kbd>:
+
+    ```bash
+    git --version
+    ```
+
+    You should see a version number printed in the terminal, which indicates that Git is installed and working correctly.
+7. When the installation is complete, you can close the window.
+
+### Python
+
+Python is a programming language. As I promised before, you won't have to write any code to develop PrairieLearn questions. Your computer will need Python installed, though. To do this, go to the [Python downloads page](https://www.python.org/downloads/) and download the latest version of Python for your operating system. Run the installer and follow the prompts to install Python; ***on Windows***, be sure to check the box that says "Add Python to PATH" before installing.
+
+### An Integrated Development Environment and AI Agent
+
+Next, you will need an integrated development environment (IDE). An IDE is a special program that makes it easier to work with code. We'll use an AI agent inside of an IDE to work with your PrairieLearn repo on your behalf.
+
+If you already have experience with IDEs and AI agent integration, then stick with what you know. Otherwise, I recommend using VS Code with Claude Code.
+
+#### Installing VS Code
+
+Go to the [VS Code downloads page](https://code.visualstudio.com/) and download the installer for your operating system (Windows or macOS). Run the installer and accept the defaults.
+
+#### Setting Up Claude Code
+
+Claude Code is an AI extension for VS Code. Once installed, it can read, write, and edit files in your repo directly, following your instructions.
+
+If you want AI assistance with more than minimal usage, you'll need a subscription. There are two ways U-M faculty members might choose to pursue this:
+
+- **Personal subscription**: Follow the setup instructions in the [Claude Code documentation for VS Code](https://code.claude.com/docs/en/vs-code). This walks you through installing the extension and signing in with a Claude.ai account. Anecdotally, at time of writing, I've found the $20/month subscription to be sufficient and highly worthwhile for PrairieLearn development.
+- **U-M GPT Toolkit**: Use Claude Code through the [U-M GPT Toolkit](https://its.umich.edu/computing/ai/claude-code-gpt-toolkit), with usage-based pricing billed through the university rather than a personal subscription. See the link for setup details.
+
+::: {.callout-tip}
+You may be aware that U-M also provides free access to several AI models (including Claude) through a [chat-only interface](https://umgpt.umich.edu/). That's a fine way to get a feel for AI-assisted question writing at no cost, but note that it can't directly edit files in your repo the way an IDE-integrated AI agent can. So it won't support the more advanced, hands-off workflows described earlier on this page (bulk generation, scope verification, and similar), where the AI is directly reading and editing your repo's files rather than you copying content back and forth by hand.
 :::
 
 ## Cloning Your Repo
 
-As briefly mentioned above, your PrairieLearn course (including questions and assessments) is stored in the GitHub repo that you gained access to when your course was created. This basically means that your course is stored "in the cloud". We need to get a local copy of it; this is called "cloning" the repo. Follow these [instructions to clone a repo](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository).
+As briefly mentioned above, your PrairieLearn course (including questions and assessments) is stored in the GitHub repo that you gained access to when your course was created. This basically means that your course is stored "in the cloud". We need to get a local copy of it; this is called "cloning" the repo.
+
+1. Open VS Code.
+2. Open the Command Palette (<kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>P</kbd> on Windows, <kbd>Cmd</kbd>+<kbd>Shift</kbd>+<kbd>P</kbd> on Mac), type "Git: Clone", and press <kbd>Enter</kbd>.
+3. Choose "Clone from GitHub". The first time you do this, VS Code will open your browser and ask you to sign in to GitHub.com and authorize VS Code. Approve this.
+4. Back in VS Code, a list of your GitHub repositories will appear (or you can search for it by name). Select your PrairieLearn course's repository.
+
+   ::: {.callout-tip}
+   If you don't see your PrairieLearn course's repository in the list, you may not have accepted the invitation email sent when your PrairieLearn course was created (see [Getting Access](index.qmd#access)). Email [support@prairielearn.com](mailto:support@prairielearn.com) to request a new invitation.
+   :::
+
+5. Choose a folder on your computer where you'd like to keep your PrairieLearn files.
+6. Choose to open the repository when prompted.
+
+Your course files are now on your computer, and open in VS Code.
+
+::: {.callout-tip}
+If you prefer the terminal, open a terminal in VS Code and run this command, replacing the example URL with your own repository's URL (found by clicking the green "Code" button on your repository's page on GitHub.com, under the "HTTPS" tab):
+
+```bash
+git clone https://github.com/YOUR-ORGANIZATION/YOUR-REPOSITORY.git
+```
+:::
 
 ## Opening and Exploring Your Repo
 
-Open your Repo in your IDE. For example, if you're using VS Code, click on "File" in the top menu, then "Open Folder". Navigate to the folder where you cloned your repo and open it. You should see a list of files and folders in the left-hand panel.
+Open your Repo in your IDE. For example, if you're using VS Code, start it, click on "File" in the top menu, then "Open Folder". Navigate to the folder where you cloned your repo and open it. You should see a list of files and folders in the left-hand panel.
 
 Explore the folder structure a bit, and open the files you see. You should recognize some of the files you saw in the web interface. For example, in the `questions` folder, there should be a subfolder for each question you created, and inside each of those subfolders are the files that define the question: info.json, question.html, and server.py. Similarly, note the `assessments` folder contents.
 
