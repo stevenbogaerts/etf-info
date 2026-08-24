@@ -9,7 +9,7 @@
 <meta name="author" content="Steven Bogaerts">
 <meta name="dcterms.date" content="2026-08-24">
 
-<title>Web Interface – Quick-Start Guide to PrairieLearn</title>
+<title>Making Content via the Web Interface – Quick-Start Guide to PrairieLearn</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -94,7 +94,7 @@ ul.task-list li input[type="checkbox"] {
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
         <a class="flex-grow-1 no-decor" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-          <h1 class="quarto-secondary-nav-title">Web Interface</h1>
+          <h1 class="quarto-secondary-nav-title">Making Content via the Web Interface</h1>
         </a>     
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
@@ -127,19 +127,19 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./web-interface.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Web Interface</span></a>
+ <span class="menu-text">Making Content via the Web Interface</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./reference-sheets.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Reference Sheets</span></a>
+ <span class="menu-text">Allowing a Reference Sheet in an Exam</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./github-repo.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Repository Interface</span></a>
+ <span class="menu-text">Making Content via the Repository Interface</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -168,9 +168,11 @@ ul.task-list li input[type="checkbox"] {
   <ul class="collapse">
   <li><a href="#creating-an-empty-assessment" id="toc-creating-an-empty-assessment" class="nav-link" data-scroll-target="#creating-an-empty-assessment">Creating an Empty Assessment</a></li>
   <li><a href="#adding-questions-to-the-assessment" id="toc-adding-questions-to-the-assessment" class="nav-link" data-scroll-target="#adding-questions-to-the-assessment">Adding Questions to the Assessment</a></li>
+  <li><a href="#configuring-student-access" id="toc-configuring-student-access" class="nav-link" data-scroll-target="#configuring-student-access">Configuring Student Access</a></li>
   <li><a href="#exploring-the-assessment" id="toc-exploring-the-assessment" class="nav-link" data-scroll-target="#exploring-the-assessment">Exploring the Assessment</a></li>
   </ul></li>
   <li><a href="#importing-content-from-canvas" id="toc-importing-content-from-canvas" class="nav-link" data-scroll-target="#importing-content-from-canvas">Importing Content from Canvas</a></li>
+  <li><a href="#next-steps" id="toc-next-steps" class="nav-link" data-scroll-target="#next-steps">Next Steps</a></li>
   </ul>
 </nav>
     </div>
@@ -179,7 +181,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block">Web Interface</h1>
+<h1 class="title d-none d-lg-block">Making Content via the Web Interface</h1>
 </div>
 
 
@@ -213,16 +215,39 @@ ul.task-list li input[type="checkbox"] {
 <h2 class="anchored" data-anchor-id="question">Making Your First PrairieLearn Question</h2>
 <section id="entering-an-ai-prompt" class="level3">
 <h3 class="anchored" data-anchor-id="entering-an-ai-prompt">Entering an AI Prompt</h3>
-<p>Log in to the <a href="https://us.prairielearn.com/">PrairieLearn course site</a> and navigate to your course. Click on “Questions” in the left-hand navigation menu. Then click the “Add questions” drop-down and choose “Generate question with AI”. Enter whatever details of a question you’d like. For a simple first example, you might consider: “Show a randomly generated linear equation and a random x value. Students must enter (short-answer) the resulting y value.” The AI will process for a bit and then generate a question you can try out in the “Preview” tab.</p>
+<p>Log in to the <a href="https://us.prairielearn.com/">PrairieLearn course site</a> and navigate to your course. Click on “Questions” in the left sidebar. Then click the “Add questions” drop-down and choose “Generate question with AI”, as shown below:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/web_gen_with_AI.png" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="The &quot;Add questions&quot; dropdown menu, open to show three options: &quot;Create new question,&quot; &quot;Generate question with AI,&quot; and &quot;Import questions.&quot;" width="200"></p>
+</figure>
+</div>
+<p>You should then see the option to type your prompt:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/web_enter_prompt.png" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="The &quot;Generate question with AI&quot; page, showing a text box for entering a prompt."></p>
+</figure>
+</div>
+<p>Enter whatever details of a question you’d like. For a simple first example, you might consider: “Show a randomly generated linear equation and a random x value. Students must enter (short-answer) the resulting y value.” Click “Create question”. The AI will process for a bit (in the right panel of the page) and then generate a question you can try out in the “Preview” tab on the left, as shown below:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/web_AI_output.png" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="The &quot;Preview&quot; tab of a generated question, showing draft #5, a linear-equation question with an answer box for the y value, alongside a chat panel where the AI describes the server.py and question.html files it created and validated."></p>
+</figure>
+</div>
 </section>
 <section id="adjusting-the-question-with-ai" class="level3">
 <h3 class="anchored" data-anchor-id="adjusting-the-question-with-ai">Adjusting the Question with AI</h3>
-<p>With the initial draft question generated, you can chat with the AI to adjust it as needed. When you are satisfied with the question, click “Finalize question”. Give it a title (student-facing) and a QID (question ID). The QID must be unique within your course. Click “Finalize question” again.</p>
+<p>With the initial draft question generated, you can chat with the AI in the “Ask anything…” box, to adjust the question as needed. When you are satisfied with the question, click “Finalize question”. Give it a title (student-facing) and a QID (question ID). The QID must be unique within your course. Click “Finalize question” again.</p>
 </section>
 <section id="changing-the-question-after-creation" class="level3">
 <h3 class="anchored" data-anchor-id="changing-the-question-after-creation">Changing the Question After Creation</h3>
-<p>Click on the questions tab, and click the link for the question you just made. It will open in the “Preview” tab, where you can try it out again. Click on the “Settings” tab for the question and note what’s available.</p>
-<p>Next, check out the “Files” tab. You’ll see that there are three files that fully define everything about your question: how it’s presented to students, how any randomness is handled, how it’s graded, etc. Each file can be edited by clicking the “Edit” button next to it. Be certain that you click the “Save” button when you’re finished with any edits. The files use special formats (JSON, HTML, and Python), but don’t worry, you can manage just fine without any experience in these formats.</p>
+<p>Click on the “Questions” tab in the left sidebar, and click the link for the question you just made. It will open in the “Preview” tab, where you can try it out again. Click on the “Settings” tab for the question and note what options are available.</p>
+<p>Next, check out the “Files” tab. You’ll see that there are three files that fully define everything about your question: how it’s presented to students, how any randomness is handled, how it’s graded, etc.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/web_files.png" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="The &quot;Files&quot; tab of a generated question, showing the three files that define the question."></p>
+</figure>
+</div>
+<p>Each file can be edited by clicking the “Edit” button next to it. Be certain that you click the “Save” button when you’re finished with any edits. The files use special formats (JSON, HTML, and Python), but don’t worry, you can manage just fine without any experience in these formats.</p>
 <p>Consider the three files:</p>
 <ul>
 <li><code>info.json</code> - defines basic settings for the question, in JSON format.
@@ -256,13 +281,30 @@ ul.task-list li input[type="checkbox"] {
 <p>In PrairieLearn, an “assessment” is a collection of questions that students will answer. There are two types of assessments, “Homework” and “Exam”. The type determines some default settings, but these can be adjusted anytime. When you’re ready to make an exam to be administered in the ETF, you’ll make an assessment of type “Exam” and then follow <a href="https://etf.engin.umich.edu/">ETF</a> procedures.</p>
 <section id="creating-an-empty-assessment" class="level3">
 <h3 class="anchored" data-anchor-id="creating-an-empty-assessment">Creating an Empty Assessment</h3>
-<p>To make your first assessment, click on “Assessments” in the left-hand navigation menu. Then click the “Add assessment” button. Let’s give it the title “Homework 1”, short name “hw1”, set the type to “Homework”, and the “set” to whatever you’d like. (You can also edit the available assessment sets in Course Settings, Assessment Sets.) Press the “Create” button.</p>
+<p>To make your first assessment, click on “Assessments” in the left sidebar. Then click the “Add assessment” button. Let’s give it the title “Homework 1”, short name “hw1”, set the type to “Homework”, and the “set” to whatever you’d like. (You can also edit the available assessment sets in Course Settings, Assessment Sets.) Press the “Create” button.</p>
 </section>
 <section id="adding-questions-to-the-assessment" class="level3">
 <h3 class="anchored" data-anchor-id="adding-questions-to-the-assessment">Adding Questions to the Assessment</h3>
-<p>You’ll see your new assessment’s page. There are no questions in it yet, so click “Add questions”. You’ll see “Zone 1”. In the right panel, you can click your question (not the blue underlined link, but the box around the question) to add it to the assessment.</p>
-<p>Hit the blue disk icon button (labeled “Save” on hover) to save, and you’ll be back in your Assessment.</p>
-<p>Go back to the Questions page and make a few more questions, so that you have a few to try out the assessment functionality with. Then add them to your assessment.</p>
+<p>You’ll see your new assessment’s page:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/web_assessment_empty.png" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="The empty assessment page, showing no questions yet."></p>
+</figure>
+</div>
+<p>There are no questions in it yet, so click “+ Add questions”. You’ll see “Zone 1” in the left panel, and a list of your questions in the right panel. Find the question you wish to add, using the search box if needed:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/web_add_question.png" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="Adding a question to the assessment. The left panel shows Zone 1, and the right panel shows the desired question, found with a search box."></p>
+</figure>
+</div>
+<p>Click on the box around the question (not the blue underlined link itself) to add it to the assessment. Hit the blue disk icon button (labeled “Save” on hover) to save, and you’ll be back in your Assessment main page.</p>
+<p>Go back to the Questions page and make a few more questions, so that you have a few to try out the assessment functionality with. Then add them to your assessment. You can add as many questions as you like, and you can also adjust the order of questions by dragging and dropping them in the left panel of the “+ Add questions” page.</p>
+</section>
+<section id="configuring-student-access" class="level3">
+<h3 class="anchored" data-anchor-id="configuring-student-access">Configuring Student Access</h3>
+<p>Next, we need to configure when and how students access the assessment. The steps for this depend on whether the assessment is an exam to be taken in the ETF, or any task for outside of the ETF (homework, take-home exam, etc.).</p>
+<p>For exams to be taken in the ETF, you will need to follow <a href="https://etf.engin.umich.edu/">ETF</a> procedures. This page will be updated with a more direct link soon, once it’s ready. <!-- TO DO update with link --></p>
+<p>For other kinds of assessments, click on the “Access” tab of the assessment. Feel free to explore the options available, and also note the <a href="https://docs.prairielearn.com/assessment/accessControl/">full PrairieLearn documentation</a> on access settings.</p>
 </section>
 <section id="exploring-the-assessment" class="level3">
 <h3 class="anchored" data-anchor-id="exploring-the-assessment">Exploring the Assessment</h3>
@@ -274,7 +316,11 @@ ul.task-list li input[type="checkbox"] {
 <section id="importing-content-from-canvas" class="level2">
 <h2 class="anchored" data-anchor-id="importing-content-from-canvas">Importing Content from Canvas</h2>
 <p>If you have quizzes on Canvas that you’d like to import into PrairieLearn, there is a convenient way to do that. For details, visit the official documentation on <a href="https://docs.prairielearn.com/importingContent/">Importing content from other platforms</a>.</p>
-<p>Next, see the <a href="./reference-sheets.html">Reference Sheets</a> page for letting students access reference sheets during an assessment, or move on to the <a href="./github-repo.html">repository interface</a> if you’re ready to work with PrairieLearn via a Git repository.</p>
+</section>
+<section id="next-steps" class="level2">
+<h2 class="anchored" data-anchor-id="next-steps">Next Steps</h2>
+<p>For further examples of question generation, you may find this <a href="https://drive.google.com/drive/u/0/folders/15-LHxlP8fdFuVQwbnK4clguFPSfcxAfV">Engineering Education Innovation day presentation</a> by Laura Alford and Steven Bogaerts to be useful. It includes illustration of question generation through both the <a href="./web-interface.html">web interface</a> and the <a href="./github-repo.html">repository interface</a>.</p>
+<p>Next, see the <a href="./reference-sheets.html">Allowing a Reference Sheet in an Exam</a> page for letting students access reference sheets during an assessment, or move on to the <a href="./github-repo.html">Making Content via the Repository Interface</a> page if you’re ready to work with PrairieLearn via a Git repository.</p>
 
 
 </section>
@@ -687,8 +733,8 @@ ul.task-list li input[type="checkbox"] {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./reference-sheets.html" class="pagination-link" aria-label="Reference Sheets">
-        <span class="nav-page-text">Reference Sheets</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./reference-sheets.html" class="pagination-link" aria-label="Allowing a Reference Sheet in an Exam">
+        <span class="nav-page-text">Allowing a Reference Sheet in an Exam</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
