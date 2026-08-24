@@ -4,7 +4,17 @@ title: "First Steps"
 
 This website is a quick-start guide for faculty members at University of Michigan - Ann Arbor on using PrairieLearn.
 
-This page provides brief information on PrairieLearn, PrairieTest, and how to get access to PrairieLearn.
+## Website Overview
+
+The site is organized as follows:
+
+- **First Steps** (this page) — Get acquianted with PrairieLearn and PrairieTest, and gain access.
+- [**Making Content via the Web Interface**](web-interface.qmd) — Build questions and assessments by interacting with your PrairieLearn course through a web browser.
+- [**Allowing a Reference Sheet in an Exam**](reference-sheets.qmd) — Let students access reference/formula/"cheat" sheets during an assessment.
+- [**Making Content via the Repository Interface**](github-repo.qmd) — Work with your course's underlying files directly, including with AI assistance.
+- [**Additional Resources**](additional-resources.qmd) — Official documentation and student-facing tutorials.
+
+I recommend working through these pages in order, using the navigation in the left sidebar or the navigation links at the bottom of each page.
 
 ## What is PrairieLearn?
 
@@ -50,14 +60,7 @@ Depending on how much time you have before you need the content, you may want to
 
 ## Next Steps
 
-Once you have access, continue on to:
-
-- [**The PrairieLearn Web Interface**](web-interface.qmd) — Build your first question and assessment using the web interface.
-- [**Reference Sheets**](reference-sheets.qmd) — Let students access reference/formula/"cheat" sheets during an assessment.
-- [**The PrairieLearn GitHub Repository Interface**](github-repo.qmd) — Work with your course's underlying files directly, including with AI assistance.
-- [**Additional Resources**](additional-resources.qmd) — Official documentation and student-facing tutorials.
-
-I recommend working through these pages in order, using the navigation in the left sidebar or the link below.
+Once you have access, continue on to [**Making Content via the Web Interface**](web-interface.qmd) to build your first question and assessment.
 
 ## Contact
 

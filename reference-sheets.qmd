@@ -1,5 +1,5 @@
 ---
-title: "Reference Sheets"
+title: "Allowing a Reference Sheet in an Exam"
 ---
 
 This page explains how to give students access to a reference/formula/"cheat" sheet during an assessment. If you don't want to allow this, you may safely skip to the next page on the [repository interface](github-repo.qmd).

@@ -11,6 +11,12 @@ h3 {
   padding-left: 0.5em;
 }
 
+/* Blockquotes default to the brand's maize secondary color, which is hard to
+   read on a white background */
+.blockquote {
+  color: black;
+}
+
 /* Border around Mermaid flowchart edge labels */
 .edgeLabel .labelBkg {
   background-color: #FFFFFF !important; /* mermaid defaults to 50% opacity */

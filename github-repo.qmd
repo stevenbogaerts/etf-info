@@ -1,5 +1,5 @@
 ---
-title: "Repository Interface"
+title: "Making Content via the Repository Interface"
 ---
 
 I recommend you work on understanding the [web interface](web-interface.qmd) before reading this page. In fact, it is possible to work with PrairieLearn _only_ via the web interface. However, consider the following questions:
@@ -198,3 +198,7 @@ git pull
 ## Resources for your Repo
 
 I recommend you download these [useful PrairieLearn files](files/pl_for_UM.zip) and copy them into the root of your PrairieLearn repo. That is, after copying, your repo should have folders called `serverFilesCourse` and `tools` at the root (not inside some sub-folder), and your questions folder should have a templates folder inside of it. The templates folder contains several example questions. These templates show you or an AI agent what syntax is needed to create various types of content. You may find it useful to refer to them in any prompts for creating questions.
+
+## Next Steps
+
+For further examples of question generation, you may find this [Engineering Education Innovation day presentation](https://drive.google.com/drive/u/0/folders/15-LHxlP8fdFuVQwbnK4clguFPSfcxAfV) by Laura Alford and Steven Bogaerts to be useful. It includes illustration of question generation through both the [web interface](web-interface.qmd) and the [repository interface](github-repo.qmd).
