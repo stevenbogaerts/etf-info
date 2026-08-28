@@ -95,16 +95,22 @@ Details are provided in the following subsections.
     ```html
     <pl-question-panel>
         <p> $\textbf{Instructions:}$</p>
-        <p>Take a picture of your 1 page of handwritten notes. Save your notes in a file named: <b>personalnotes.png</b> </p>
-        <p>Upload or drag your <b>personalnotes.png</b> file into the submission box. Click save and click show preview to view your notes in the submission panel. </p>
+        <p>Take a picture or scan of your 1 page of handwritten notes and save it as a PDF.</p>
+        <p>Upload or drag your PDF file into the submission box below (any file name is fine, as long as it ends in <b>.pdf</b>). Click save and click show preview to view your notes in the submission panel. </p>
         <p><b> Submit your notes file here: </b>
-           <pl-file-upload file-names="personalnotes.png"> </pl-file-upload>
+           <pl-file-upload file-patterns="*.pdf"> </pl-file-upload>
         </p>
     </pl-question-panel>
     <pl-submission-panel>
         <pl-file-preview></pl-file-preview>
     </pl-submission-panel>
     ```
+
+    ::: {.callout-tip}
+    You are not required to use PDF. If you'd rather accept a different file type, such as an image, change the pattern accordingly, e.g. `file-patterns="*.png, *.jpg"` to accept PNG or JPG images, and update the instructions in the question text to match.
+    :::
+
+    This uses `file-patterns="*.pdf"` rather than a fixed `file-names` value, so students can submit a PDF under whatever file name they like, rather than being forced to rename it to something exact.
 
 - Click "Save".
 
@@ -132,13 +138,23 @@ Before you can complete the steps below, you will need to (1) create the Prairie
 
     - Click "Save" at the bottom of the page.
 - Configure the assessment's worth:
-    - The file upload assessment can be worth 0 or more points. You might choose a non-zero worth if you want to penalize students for uploading a disallowed file. Alternatively, you could simply delete any disallowed files after reviewing them, and not assign any points to the assessment.
-    - In any case, go to the "Questions" tab for the file upload assessment, and click "Edit" for the file upload question. In the right panel, set "Manual points" to whatever you wish.
+    - You might consider making the file upload assessment worth 0 points, and making the upload itself optional (i.e., don't require a submission). Under this approach, a student who doesn't submit a sheet simply won't have one available during the exam — there's no need to penalize them for it separately. To do so, go to the "Questions" tab for the file upload assessment, and click "Edit" for the file upload question. In the right panel, set "Manual points" to `0`.
+
+      ::: {.callout-tip}
+      If you'd rather assign points to this assessment (for example, to penalize a student who uploads a file that violates course policy), you can instead set "Manual points" to a non-zero value here. In that case, you would assign points during the [review step below](#reviewing-uploaded-sheets) based on whether the sheet follows your requirements.
+      :::
+
     - Click the disk icon button to save.
+
 - Configure the assessment's access:
     - Go to the "Access" tab. Click the "Edit" button.
     - Put a check in the "Date control" checkbox. Either let the file upload task be "Released" immediately, or choose "Scheduled for release" and set the date/time accordingly.
     - Select "Due on date" and pick a date/time sometime before the exam window starts. This will (1) give you / course staff time to review the uploaded sheets, and (2) prevent students from uploading new sheets after they are reviewed.
+
+      ::: {.callout-tip}
+      You might consider advertising an earlier "soft" deadline to students than the actual due date you set here (e.g., in your syllabus or an announcement) — something like "submit by Friday if you want a guarantee that we'll review it before the exam." Students who upload after that soft deadline, but before the actual due date above, can still submit, but you make no promise their sheet will be reviewed in time. This gives you and your staff breathing room without needing to reject late-but-before-the-real-deadline uploads outright.
+      :::
+
     - In the "Integrations" section a bit further down, check the box next to "PrairieTest", and enter the Exam UUID from PrairieTest for your exam. (Thus, both your actual exam assessment _and_ this file upload assessment will be linked to the same PrairieTest exam.)
     - Note that there are two related options we need to keep straight now. There's "After completion" in the "Integrations" section, and then a bit further down there's a separate section called "After completion" with a "Question visibility after completion" option.
     - Starting with the "After completion" option in the "Integrations" section, select "Show questions and score". This setting will allow students to see the question, and therefore their uploaded sheet, while their exam reservation is still active, i.e., during the exam itself. This is the setting that actually makes the sheet available during the exam.
