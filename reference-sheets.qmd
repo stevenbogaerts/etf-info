@@ -140,8 +140,9 @@ Before you can complete the steps below, you will need to (1) create the Prairie
     - Put a check in the "Date control" checkbox. Either let the file upload task be "Released" immediately, or choose "Scheduled for release" and set the date/time accordingly.
     - Select "Due on date" and pick a date/time sometime before the exam window starts. This will (1) give you / course staff time to review the uploaded sheets, and (2) prevent students from uploading new sheets after they are reviewed.
     - In the "Integrations" section a bit further down, check the box next to "PrairieTest", and enter the Exam UUID from PrairieTest for your exam. (Thus, both your actual exam assessment _and_ this file upload assessment will be linked to the same PrairieTest exam.)
-    - Still within that PrairieTest exam entry, find the setting for what students see **while their reservation is still active** (i.e., during the exam itself), and select "Show questions and score". This is the setting that actually controls whether the uploaded sheet is visible *during* the exam — it is a different setting from the general "After completion" section below.
-    - In the "After completion" section, under "Question visibility after completion", select "Show questions after completion".
+    - Note that there are two related options we need to keep straight now. There's "After completion" in the "Integrations" section, and then a bit further down there's a separate section called "After completion" with a "Question visibility after completion" option.
+    - Starting with the "After completion" option in the "Integrations" section, select "Show questions and score". This setting will allow students to see the question, and therefore their uploaded sheet, while their exam reservation is still active, i.e., during the exam itself. This is the setting that actually makes the sheet available during the exam.
+    - Next, for the "Question visibility after completion" option further below, select "Show questions after completion". This setting will allow the student to review their uploaded sheet after the exam reservation has ended entirely (e.g., if a student needs to look back at what they submitted once the exam is over). It has no effect on what's visible *during* the exam; that's controlled solely by the setting above.
 
       ::: {.callout-note}
       You will be warned that this is an unusual setting for PrairieTest exams, but for the file upload assessment, you may safely ignore this warning. This top-level setting only controls visibility *after* the exam reservation ends, not during it — it does not replace the per-exam setting above.
@@ -165,14 +166,7 @@ Let's verify that the assessment is configured correctly. Go to "Files", and cli
         "due": { "date": "DUE-DATE-TIME (days before the exam window begins)" }
       },
       "integrations": {
-        "prairieTest": {
-          "exams": [
-            {
-              "examUuid": "PRAIRIETEST-EXAM-UUID",
-              "afterComplete": { "questions": { "hidden": false } }
-            }
-          ]
-        }
+        "prairieTest": { "exams": [{ "examUuid": "PRAIRIETEST-EXAM-UUID" }] }
       },
       "afterComplete": { "questions": { "hidden": false } }
     }
@@ -183,10 +177,6 @@ Let's verify that the assessment is configured correctly. Go to "Files", and cli
 ```
 
 If anything in `infoAssessment.json` does not match the above (with your choices filled in), go back and check the settings and/or edit the json by hand.
-
-::: {.callout-note}
-Note there are two separate `afterComplete` settings above, and both are needed: the one nested inside `integrations.prairieTest.exams` controls whether the sheet is visible **during** the exam (while the student's PrairieTest reservation is active), while the outer, top-level `afterComplete` controls visibility only **after** the reservation ends. Omitting the nested one is the most common mistake here — without it, students will not be able to see their sheet during the exam itself.
-:::
 
 ::: {.callout-warning}
 Recall that the PrairieTest exam UUID ("PRAIRIETEST-EXAM-UUID") is different from the PrairieLearn assessment UUID ("PRAIRIELEARN-ASSESSMENT-UUID"). Be sure you have the correct PrairieTest exam UUID in the `infoAssessment.json` file. Visit the [ETF website](https://etf.engin.umich.edu/) for details.
@@ -209,4 +199,4 @@ After the file upload assessment closes ("DUE-DATE-TIME" in the example above), 
   Students will ***not*** be automatically notified if their upload is deleted. Thus, you may wish to notify affected students.
   :::
 
-With the above steps complete, students will be able to access their uploaded reference sheets during the exam, and you will have ensured that they follow course policies.
+With the above steps complete, students will be able to access their uploaded reference sheets during the exam, and you will have ensured that they follow course policies. To actually view their sheet during the exam, a student clicks "Assessments" in the left sidebar just as they would for any other assessment; because the file upload assessment is linked to the same PrairieTest exam, it will appear in their list alongside the real exam while their reservation is active. Clicking on it takes them to the "Reference Sheet Upload" question, where their previously submitted file is displayed (via the `pl-file-preview` element from [Making a File Upload Question](#file-upload-question)) for them to view. Since this happens while their exam reservation is active, students will be able to switch between this page and their exam as needed.
