@@ -90,7 +90,7 @@ Details are provided in the following subsections.
 - Give a title and QID, such as "Reference Sheet Upload" and "ref-sheet-upload".
 - With "PrairieLearn template" selected, choose the "File Upload" option.
 - Click "Create question".
-- You will see the "Preview" tab for the question. Click on "Files", and then the "Edit" button for `question.html`. Replace the entirety of its contents with the following (or adjust the wording / policies as needed):
+- You will see the "Preview" tab for the question. Click on "Files", and then the "Edit" button for `question.html`. Replace the entirety of its contents with the following (or adjust the wording / policies as needed) and click "Save":
 
     ```html
     <pl-question-panel>
@@ -106,13 +106,9 @@ Details are provided in the following subsections.
     </pl-submission-panel>
     ```
 
-    ::: {.callout-tip}
-    You are not required to use PDF. If you'd rather accept a different file type, such as an image, change the pattern accordingly, e.g. `file-patterns="*.png, *.jpg"` to accept PNG or JPG images, and update the instructions in the question text to match.
-    :::
-
-    This uses `file-patterns="*.pdf"` rather than a fixed `file-names` value, so students can submit a PDF under whatever file name they like, rather than being forced to rename it to something exact.
-
-- Click "Save".
+::: {.callout-tip}
+You are not required to use PDF. If you'd rather accept a different file type, such as an image, change the pattern accordingly, e.g. `file-patterns="*.png, *.jpg"` to accept PNG or JPG images, and update the instructions in the question text to match.
+:::
 
 ::: {.callout-tip}
 For additional exams in the course, you may reuse the same file upload _question_ you've created here, if you wish.
