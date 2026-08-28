@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Steven Bogaerts">
-<meta name="dcterms.date" content="2026-08-24">
+<meta name="dcterms.date" content="2026-08-28">
 
 <title>Allowing a Reference Sheet in an Exam – Quick-Start Guide to PrairieLearn</title>
 <style>
@@ -229,7 +229,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">August 24, 2026</p>
+      <p class="date">August 28, 2026</p>
     </div>
   </div>
   
@@ -338,15 +338,17 @@ Warning
 <li><p>You will see the “Preview” tab for the question. Click on “Files”, and then the “Edit” button for <code>question.html</code>. Replace the entirety of its contents with the following (or adjust the wording / policies as needed):</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">pl-question-panel</span><span class="dt">&gt;</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">p</span><span class="dt">&gt;</span> $\textbf{Instructions:}$<span class="dt">&lt;/</span><span class="kw">p</span><span class="dt">&gt;</span></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">p</span><span class="dt">&gt;</span>Take a picture of your 1 page of handwritten notes. Save your notes in a file named: <span class="dt">&lt;</span><span class="kw">b</span><span class="dt">&gt;</span>personalnotes.png<span class="dt">&lt;/</span><span class="kw">b</span><span class="dt">&gt;</span> <span class="dt">&lt;/</span><span class="kw">p</span><span class="dt">&gt;</span></span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">p</span><span class="dt">&gt;</span>Upload or drag your <span class="dt">&lt;</span><span class="kw">b</span><span class="dt">&gt;</span>personalnotes.png<span class="dt">&lt;/</span><span class="kw">b</span><span class="dt">&gt;</span> file into the submission box. Click save and click show preview to view your notes in the submission panel. <span class="dt">&lt;/</span><span class="kw">p</span><span class="dt">&gt;</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">p</span><span class="dt">&gt;</span>Take a picture or scan of your 1 page of handwritten notes and save it as a PDF.<span class="dt">&lt;/</span><span class="kw">p</span><span class="dt">&gt;</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">p</span><span class="dt">&gt;</span>Upload or drag your PDF file into the submission box below (any file name is fine, as long as it ends in <span class="dt">&lt;</span><span class="kw">b</span><span class="dt">&gt;</span>.pdf<span class="dt">&lt;/</span><span class="kw">b</span><span class="dt">&gt;</span>). Click save and click show preview to view your notes in the submission panel. <span class="dt">&lt;/</span><span class="kw">p</span><span class="dt">&gt;</span></span>
 <span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">p</span><span class="dt">&gt;&lt;</span><span class="kw">b</span><span class="dt">&gt;</span> Submit your notes file here: <span class="dt">&lt;/</span><span class="kw">b</span><span class="dt">&gt;</span></span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>       <span class="dt">&lt;</span><span class="kw">pl-file-upload</span><span class="ot"> file-names</span><span class="op">=</span><span class="st">"personalnotes.png"</span><span class="dt">&gt;</span> <span class="dt">&lt;/</span><span class="kw">pl-file-upload</span><span class="dt">&gt;</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>       <span class="dt">&lt;</span><span class="kw">pl-file-upload</span><span class="ot"> file-patterns</span><span class="op">=</span><span class="st">"*.pdf"</span><span class="dt">&gt;</span> <span class="dt">&lt;/</span><span class="kw">pl-file-upload</span><span class="dt">&gt;</span></span>
 <span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;/</span><span class="kw">p</span><span class="dt">&gt;</span></span>
 <span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">pl-question-panel</span><span class="dt">&gt;</span></span>
 <span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">pl-submission-panel</span><span class="dt">&gt;</span></span>
 <span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">pl-file-preview</span><span class="dt">&gt;&lt;/</span><span class="kw">pl-file-preview</span><span class="dt">&gt;</span></span>
-<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">pl-submission-panel</span><span class="dt">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">pl-submission-panel</span><span class="dt">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>::: {.callout-tip} You are not required to use PDF. If you’d rather accept a different file type, such as an image, change the pattern accordingly, e.g.&nbsp;<code>file-patterns="*.png, *.jpg"</code> to accept PNG or JPG images, and update the instructions in the question text to match. :::</p>
+<p>This uses <code>file-patterns="*.pdf"</code> rather than a fixed <code>file-names</code> value, so students can submit a PDF under whatever file name they like, rather than being forced to rename it to something exact.</p></li>
 <li><p>Click “Save”.</p></li>
 </ul>
 <div class="callout callout-style-default callout-tip callout-titled">
@@ -406,17 +408,44 @@ Warning
 </ul></li>
 <li>Configure the assessment’s worth:
 <ul>
-<li>The file upload assessment can be worth 0 or more points. You might choose a non-zero worth if you want to penalize students for uploading a disallowed file. Alternatively, you could simply delete any disallowed files after reviewing them, and not assign any points to the assessment.</li>
-<li>In any case, go to the “Questions” tab for the file upload assessment, and click “Edit” for the file upload question. In the right panel, set “Manual points” to whatever you wish.</li>
-<li>Click the disk icon button to save.</li>
+<li><p>You might consider making the file upload assessment worth 0 points, and making the upload itself optional (i.e., don’t require a submission). Under this approach, a student who doesn’t submit a sheet simply won’t have one available during the exam — there’s no need to penalize them for it separately. To do so, go to the “Questions” tab for the file upload assessment, and click “Edit” for the file upload question. In the right panel, set “Manual points” to <code>0</code>.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If you’d rather assign points to this assessment (for example, to penalize a student who uploads a file that violates course policy), you can instead set “Manual points” to a non-zero value here. In that case, you would assign points during the <a href="#reviewing-uploaded-sheets">review step below</a> based on whether the sheet follows your requirements.</p>
+</div>
+</div></li>
+<li><p>Click the disk icon button to save.</p></li>
 </ul></li>
 <li>Configure the assessment’s access:
 <ul>
 <li><p>Go to the “Access” tab. Click the “Edit” button.</p></li>
 <li><p>Put a check in the “Date control” checkbox. Either let the file upload task be “Released” immediately, or choose “Scheduled for release” and set the date/time accordingly.</p></li>
-<li><p>Select “Due on date” and pick a date/time sometime before the exam window starts. This will (1) give you / course staff time to review the uploaded sheets, and (2) prevent students from uploading new sheets after they are reviewed.</p></li>
+<li><p>Select “Due on date” and pick a date/time sometime before the exam window starts. This will (1) give you / course staff time to review the uploaded sheets, and (2) prevent students from uploading new sheets after they are reviewed.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>You might consider advertising an earlier “soft” deadline to students than the actual due date you set here (e.g., in your syllabus or an announcement) — something like “submit by Friday if you want a guarantee that we’ll review it before the exam.” Students who upload after that soft deadline, but before the actual due date above, can still submit, but you make no promise their sheet will be reviewed in time. This gives you and your staff breathing room without needing to reject late-but-before-the-real-deadline uploads outright.</p>
+</div>
+</div></li>
 <li><p>In the “Integrations” section a bit further down, check the box next to “PrairieTest”, and enter the Exam UUID from PrairieTest for your exam. (Thus, both your actual exam assessment <em>and</em> this file upload assessment will be linked to the same PrairieTest exam.)</p></li>
-<li><p>In the “After completion” section, under “Question visibility after completion”, select “Show questions after completion”.</p>
+<li><p>Note that there are two related options we need to keep straight now. There’s “After completion” in the “Integrations” section, and then a bit further down there’s a separate section called “After completion” with a “Question visibility after completion” option.</p></li>
+<li><p>Starting with the “After completion” option in the “Integrations” section, select “Show questions and score”. This setting will allow students to see the question, and therefore their uploaded sheet, while their exam reservation is still active, i.e., during the exam itself. This is the setting that actually makes the sheet available during the exam.</p></li>
+<li><p>Next, for the “Question visibility after completion” option further below, select “Show questions after completion”. This setting will allow the student to review their uploaded sheet after the exam reservation has ended entirely (e.g., if a student needs to look back at what they submitted once the exam is over). It has no effect on what’s visible <em>during</em> the exam; that’s controlled solely by the setting above.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -427,7 +456,7 @@ Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>You will be warned that this is an unusual setting for PrairieTest exams, but for the file upload assessment, you may safely ignore this warning.</p>
+<p>You will be warned that this is an unusual setting for PrairieTest exams, but for the file upload assessment, you may safely ignore this warning. This top-level setting only controls visibility <em>after</em> the exam reservation ends, not during it — it does not replace the per-exam setting above.</p>
 </div>
 </div></li>
 <li><p>Click “Save” at the bottom of the page.</p></li>
@@ -505,7 +534,7 @@ Warning
 </div>
 </div></li>
 </ul>
-<p>With the above steps complete, students will be able to access their uploaded reference sheets during the exam, and you will have ensured that they follow course policies.</p>
+<p>With the above steps complete, students will be able to access their uploaded reference sheets during the exam, and you will have ensured that they follow course policies. To actually view their sheet during the exam, a student clicks “Assessments” in the left sidebar just as they would for any other assessment; because the file upload assessment is linked to the same PrairieTest exam, it will appear in their list alongside the real exam while their reservation is active. Clicking on it takes them to the “Reference Sheet Upload” question, where their previously submitted file is displayed (via the <code>pl-file-preview</code> element from <a href="#file-upload-question">Making a File Upload Question</a>) for them to view. Since this happens while their exam reservation is active, students will be able to switch between this page and their exam as needed.</p>
 
 
 </section>
