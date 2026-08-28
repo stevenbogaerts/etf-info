@@ -335,7 +335,7 @@ Warning
 <li><p>Give a title and QID, such as “Reference Sheet Upload” and “ref-sheet-upload”.</p></li>
 <li><p>With “PrairieLearn template” selected, choose the “File Upload” option.</p></li>
 <li><p>Click “Create question”.</p></li>
-<li><p>You will see the “Preview” tab for the question. Click on “Files”, and then the “Edit” button for <code>question.html</code>. Replace the entirety of its contents with the following (or adjust the wording / policies as needed):</p>
+<li><p>You will see the “Preview” tab for the question. Click on “Files”, and then the “Edit” button for <code>question.html</code>. Replace the entirety of its contents with the following (or adjust the wording / policies as needed) and click “Save”:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">pl-question-panel</span><span class="dt">&gt;</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">p</span><span class="dt">&gt;</span> $\textbf{Instructions:}$<span class="dt">&lt;/</span><span class="kw">p</span><span class="dt">&gt;</span></span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">p</span><span class="dt">&gt;</span>Take a picture or scan of your 1 page of handwritten notes and save it as a PDF.<span class="dt">&lt;/</span><span class="kw">p</span><span class="dt">&gt;</span></span>
@@ -346,11 +346,21 @@ Warning
 <span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">pl-question-panel</span><span class="dt">&gt;</span></span>
 <span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">pl-submission-panel</span><span class="dt">&gt;</span></span>
 <span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">pl-file-preview</span><span class="dt">&gt;&lt;/</span><span class="kw">pl-file-preview</span><span class="dt">&gt;</span></span>
-<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">pl-submission-panel</span><span class="dt">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>::: {.callout-tip} You are not required to use PDF. If you’d rather accept a different file type, such as an image, change the pattern accordingly, e.g.&nbsp;<code>file-patterns="*.png, *.jpg"</code> to accept PNG or JPG images, and update the instructions in the question text to match. :::</p>
-<p>This uses <code>file-patterns="*.pdf"</code> rather than a fixed <code>file-names</code> value, so students can submit a PDF under whatever file name they like, rather than being forced to rename it to something exact.</p></li>
-<li><p>Click “Save”.</p></li>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">pl-submission-panel</span><span class="dt">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
 </ul>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>You are not required to use PDF. If you’d rather accept a different file type, such as an image, change the pattern accordingly, e.g.&nbsp;<code>file-patterns="*.png, *.jpg"</code> to accept PNG or JPG images, and update the instructions in the question text to match.</p>
+</div>
+</div>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
