@@ -69,7 +69,11 @@ There are brief instructions at [git-scm.com macOS page](https://git-scm.com/ins
 
 ### Python
 
-Python is a programming language. As I promised before, you won't have to write any code to develop PrairieLearn questions. Your computer will need Python installed, though. To do this, go to the [Python downloads page](https://www.python.org/downloads/) and download the latest version of Python for your operating system. Run the installer and follow the prompts to install Python; ***on Windows***, be sure to check the box that says "Add Python to PATH" before installing.
+Python is a programming language. As I promised before, you won't have to write any code to develop PrairieLearn questions. Your computer will need Python installed, though. To do this, go to the [Python downloads page](https://www.python.org/downloads/) and download the latest version of Python for your operating system. Run the installer and follow the prompts to install Python. Use all the defaults that the installer suggests, except that ***on Windows***, be sure to check the box that says "Add Python to PATH".
+
+::: {.callout-tip}
+Precise installation steps for Python can vary by computer and as the Python website and installer is updated. If you run into trouble, I recommend you reach out to me and/or talk with AI about the issue you're having. We can work it out.
+:::
 
 ### An Integrated Development Environment and AI Agent
 
