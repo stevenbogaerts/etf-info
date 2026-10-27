@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Steven Bogaerts">
-<meta name="dcterms.date" content="2026-10-23">
+<meta name="dcterms.date" content="2026-10-27">
 
 <title>Making Content via the Repository Interface – Quick-Start Guide to PrairieLearn</title>
 <style>
@@ -204,6 +204,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#git" id="toc-git" class="nav-link" data-scroll-target="#git">Git</a></li>
   <li><a href="#python" id="toc-python" class="nav-link" data-scroll-target="#python">Python</a></li>
   <li><a href="#an-integrated-development-environment-and-ai-agent" id="toc-an-integrated-development-environment-and-ai-agent" class="nav-link" data-scroll-target="#an-integrated-development-environment-and-ai-agent">An Integrated Development Environment and AI Agent</a></li>
+  <li><a href="#git-identity" id="toc-git-identity" class="nav-link" data-scroll-target="#git-identity">Telling Git Who You Are</a></li>
   </ul></li>
   <li><a href="#cloning-your-repo" id="toc-cloning-your-repo" class="nav-link" data-scroll-target="#cloning-your-repo">Cloning Your Repo</a></li>
   <li><a href="#opening-and-exploring-your-repo" id="toc-opening-and-exploring-your-repo" class="nav-link" data-scroll-target="#opening-and-exploring-your-repo">Opening and Exploring Your Repo</a></li>
@@ -239,7 +240,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">October 23, 2026</p>
+      <p class="date">October 27, 2026</p>
     </div>
   </div>
   
@@ -375,6 +376,35 @@ Tip
 </div>
 </section>
 </section>
+<section id="git-identity" class="level3">
+<h3 class="anchored" data-anchor-id="git-identity">Telling Git Who You Are</h3>
+<p>Git labels every change you save with your name and email address, so it needs to know who you are. This is a one-time step. If you skip it, VS Code will show an error the first time you try to save changes to GitHub.com (“Make sure you configure your user.name and user.email in git”).</p>
+<ol type="1">
+<li><p>Open VS Code.</p></li>
+<li><p>In the top menu, click “Terminal”, then “New Terminal”. A terminal panel opens at the bottom of the window.</p></li>
+<li><p>Copy the first command below and paste it into the terminal. Before pressing <kbd>Enter</kbd>, replace <code>Your Name</code> with your name. Keep the quotation marks, and note that the word <code>global</code> is preceded by two dashes.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--global</span> user.name <span class="st">"Your Name"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
+<li><p>Press <kbd>Enter</kbd>. If nothing seems to happen, that’s normal. It means the command worked.</p></li>
+<li><p>Do the same with the second command. Replace <code>you@myemail.com</code> with the <strong>email address you use for your GitHub account</strong>. Again, keep the quotation marks and note the two dashes.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--global</span> user.email <span class="st">"you@myemail.com"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
+<li><p>To check your work, run this command:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--global</span> <span class="at">--list</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>You should see your name and email in the output. If you made a typo, just run the command for that line again with the correct value.</p></li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If you run into a Git error you don’t understand, here or later, paste the error message into Claude Code and ask it to fix the problem. Claude Code can usually diagnose and fix Git issues for you.</p>
+</div>
+</div>
+</section>
 </section>
 <section id="cloning-your-repo" class="level2">
 <h2 class="anchored" data-anchor-id="cloning-your-repo">Cloning Your Repo</h2>
@@ -382,7 +412,7 @@ Tip
 <ol type="1">
 <li><p>Open VS Code.</p></li>
 <li><p>Open the Command Palette (<kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>P</kbd> on Windows, <kbd>Cmd</kbd>+<kbd>Shift</kbd>+<kbd>P</kbd> on Mac), type “Git: Clone”, and press <kbd>Enter</kbd>.</p></li>
-<li><p>Choose “Clone from GitHub”. The first time you do this, VS Code will open your browser and ask you to sign in to GitHub.com and authorize VS Code. Approve this.</p></li>
+<li><p>Choose “Clone from GitHub”. The first time you do this, VS Code may show a popup saying “The extension ‘GitHub’ wants to sign in using GitHub.” Click “Allow”. VS Code will then open your browser and ask you to sign in to GitHub.com and authorize VS Code. Approve this. This one-time sign-in is all VS Code needs to send and receive changes on your behalf, so you won’t need to enter a password or set up anything else later.</p></li>
 <li><p>Back in VS Code, a list of your GitHub repositories will appear (or you can search for it by name). Select your PrairieLearn course’s repository.</p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -398,7 +428,20 @@ Tip
 </div>
 </div></li>
 <li><p>Choose a folder on your computer where you’d like to keep your PrairieLearn files.</p></li>
-<li><p>Choose to open the repository when prompted.</p></li>
+<li><p>Choose to open the repository when prompted.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>VS Code may ask “Do you trust the authors of the files in this folder?” Click “Yes, I trust the authors”. This is a safety check VS Code shows for any new folder, and these are your own course files. If you choose the other option, VS Code opens in “Restricted Mode” and some features (including Claude Code) won’t work properly.</p>
+</div>
+</div></li>
 </ol>
 <p>Your course files are now on your computer, and open in VS Code.</p>
 <div class="callout callout-style-default callout-tip callout-titled">
@@ -412,7 +455,7 @@ Tip
 </div>
 <div class="callout-body-container callout-body">
 <p>If you prefer the terminal, open a terminal in VS Code and run this command, replacing the example URL with your own repository’s URL (found by clicking the green “Code” button on your repository’s page on GitHub.com, under the “HTTPS” tab):</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone https://github.com/YOUR-ORGANIZATION/YOUR-REPOSITORY.git</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone https://github.com/YOUR-ORGANIZATION/YOUR-REPOSITORY.git</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </section>
@@ -467,15 +510,46 @@ flowchart LR
 </div>
 <p>When you edit files in your local code (e.g., with VS Code), you first need to <em>push</em> those changes back to the GitHub.com repo so that PrairieLearn can see them. The easiest way to do this is through VS Code’s built-in Source Control panel:</p>
 <ol type="1">
-<li>Click the Source Control icon in the left-hand activity bar (it looks like three connected dots and is labeled “Source Control” when you hover over it; it often shows a number badge for changed files).</li>
-<li>You’ll see a list of your changed files. Hover over “Changes” and click the “+” icon to stage all of them (or stage individual files the same way).</li>
-<li>Type a short message describing what you changed (e.g., “Added new question about linear equations”) in the message box at the top.</li>
-<li>Click the blue “Commit” button, then click “Sync Changes” (or “Push”) to send your changes to GitHub.com.</li>
+<li><p>Click the Source Control icon in the left-hand activity bar (it looks like three connected dots and is labeled “Source Control” when you hover over it; it often shows a number badge for changed files).</p></li>
+<li><p>You’ll see a list of your changed files. Hover over “Changes” and click the “+” icon to stage all of them (or stage individual files the same way).</p></li>
+<li><p>Type a short message describing what you changed (e.g., “Added new question about linear equations”) in the message box at the top.</p></li>
+<li><p>Click the blue “Commit” button, then click “Sync Changes” (or “Push”) to send your changes to GitHub.com.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If you see a message saying “Make sure you configure your user.name and user.email in git”, go back and complete <a href="#git-identity">Telling Git Who You Are</a>, then click “Commit” again.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Popups you may see.</strong> The first few times you do this, VS Code may show some popups. They’re all harmless:</p>
+<ul>
+<li><strong>“There are no staged changes to commit. Would you like to stage all your changes and commit them directly?”</strong> Click “Yes” (or “Always” to stop being asked). This means you skipped step 2, and VS Code is offering to do it for you.</li>
+<li><strong>“This action will pull and push commits from and to ‘origin/main’.”</strong> Click “OK” (or “OK, Don’t Show Again”). VS Code is just explaining that Sync sends your changes to GitHub.com and brings down any new changes from there, which is exactly what we want.</li>
+<li><strong>“Would you like Code to periodically run ‘git fetch’?”</strong> Click “Yes”. VS Code will then check GitHub.com in the background and let you know if there are new changes to pull. It won’t change any of your files on its own.</li>
+</ul>
+</div>
+</div></li>
 </ol>
 <p>If you prefer the terminal, open a terminal in VS Code (Terminal menu, “New Terminal”) and run these three commands in your repo folder, in order:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> add .</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"Describe your changes here"</span></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> push</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> add .</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"Describe your changes here"</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> push</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Next, we need to tell the PL web interface to <em>sync</em> the course so that it sees the changes we just pushed. Click the “Sync” tab on the left side, and then the blue “Pull from remote git repository” button. When the process completes successfully, your course has been updated! You can verify this by looking at the changed items (e.g., questions, assessments) in the web interface.</p>
 </section>
 <section id="if-you-edit-via-the-web-interface" class="level3">
@@ -502,7 +576,7 @@ flowchart LR
 <p>Similarly, if you make changes to your PrairieLearn course via the web interface, we need to get those changes to your local code. The first step of this happens automatically: when you make changes in the web interface, those changes are <em>automatically synced</em> to your GitHub.com repo. Thus, all that remains is to pull those changes to your local repo.</p>
 <p>In VS Code, click the Source Control icon in the left-hand activity bar and click the “…” (More Actions) menu at the top, then choose “Pull” (or simply click the sync/refresh icon in the bottom status bar if you see one). Your local files will be updated to match what’s on GitHub.com.</p>
 <p>If you prefer the terminal, open a terminal in VS Code and run this command in your repo folder:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> pull</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> pull</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 </section>
 <section id="resources-for-your-repo" class="level2">
