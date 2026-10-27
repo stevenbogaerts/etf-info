@@ -98,13 +98,44 @@ If you want AI assistance with more than minimal usage, you'll need a subscripti
 You may be aware that U-M also provides free access to several AI models (including Claude) through a [chat-only interface](https://umgpt.umich.edu/). That's a fine way to get a feel for AI-assisted question writing at no cost, but note that it can't directly edit files in your repo the way an IDE-integrated AI agent can. So it won't support the more advanced, hands-off workflows described earlier on this page (bulk generation, scope verification, and similar), where the AI is directly reading and editing your repo's files rather than you copying content back and forth by hand.
 :::
 
+### Telling Git Who You Are {#git-identity}
+
+Git labels every change you save with your name and email address, so it needs to know who you are. This is a one-time step. If you skip it, VS Code will show an error the first time you try to save changes to GitHub.com ("Make sure you configure your user.name and user.email in git").
+
+1. Open VS Code.
+2. In the top menu, click "Terminal", then "New Terminal". A terminal panel opens at the bottom of the window.
+3. Copy the first command below and paste it into the terminal. Before pressing <kbd>Enter</kbd>, replace `Your Name` with your name. Keep the quotation marks, and note that the word `global` is preceded by two dashes.
+
+    ```bash
+    git config --global user.name "Your Name"
+    ```
+
+4. Press <kbd>Enter</kbd>. If nothing seems to happen, that's normal. It means the command worked.
+5. Do the same with the second command. Replace `you@myemail.com` with the **email address you use for your GitHub account**. Again, keep the quotation marks and note the two dashes.
+
+    ```bash
+    git config --global user.email "you@myemail.com"
+    ```
+
+6. To check your work, run this command:
+
+    ```bash
+    git config --global --list
+    ```
+
+    You should see your name and email in the output. If you made a typo, just run the command for that line again with the correct value.
+
+::: {.callout-tip}
+If you run into a Git error you don't understand, here or later, paste the error message into Claude Code and ask it to fix the problem. Claude Code can usually diagnose and fix Git issues for you.
+:::
+
 ## Cloning Your Repo
 
 As briefly mentioned above, your PrairieLearn course (including questions and assessments) is stored in the GitHub repo that you gained access to when your course was created. This basically means that your course is stored "in the cloud". We need to get a local copy of it; this is called "cloning" the repo.
 
 1. Open VS Code.
 2. Open the Command Palette (<kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>P</kbd> on Windows, <kbd>Cmd</kbd>+<kbd>Shift</kbd>+<kbd>P</kbd> on Mac), type "Git: Clone", and press <kbd>Enter</kbd>.
-3. Choose "Clone from GitHub". The first time you do this, VS Code will open your browser and ask you to sign in to GitHub.com and authorize VS Code. Approve this.
+3. Choose "Clone from GitHub". The first time you do this, VS Code may show a popup saying "The extension 'GitHub' wants to sign in using GitHub." Click "Allow". VS Code will then open your browser and ask you to sign in to GitHub.com and authorize VS Code. Approve this. This one-time sign-in is all VS Code needs to send and receive changes on your behalf, so you won't need to enter a password or set up anything else later.
 4. Back in VS Code, a list of your GitHub repositories will appear (or you can search for it by name). Select your PrairieLearn course's repository.
 
    ::: {.callout-tip}
@@ -113,6 +144,10 @@ As briefly mentioned above, your PrairieLearn course (including questions and as
 
 5. Choose a folder on your computer where you'd like to keep your PrairieLearn files.
 6. Choose to open the repository when prompted.
+
+   ::: {.callout-tip}
+   VS Code may ask "Do you trust the authors of the files in this folder?" Click "Yes, I trust the authors". This is a safety check VS Code shows for any new folder, and these are your own course files. If you choose the other option, VS Code opens in "Restricted Mode" and some features (including Claude Code) won't work properly.
+   :::
 
 Your course files are now on your computer, and open in VS Code.
 
@@ -165,6 +200,18 @@ When you edit files in your local code (e.g., with VS Code), you first need to _
 2. You'll see a list of your changed files. Hover over "Changes" and click the "+" icon to stage all of them (or stage individual files the same way).
 3. Type a short message describing what you changed (e.g., "Added new question about linear equations") in the message box at the top.
 4. Click the blue "Commit" button, then click "Sync Changes" (or "Push") to send your changes to GitHub.com.
+
+   ::: {.callout-tip}
+   If you see a message saying "Make sure you configure your user.name and user.email in git", go back and complete [Telling Git Who You Are](#git-identity), then click "Commit" again.
+   :::
+
+   ::: {.callout-note}
+   **Popups you may see.** The first few times you do this, VS Code may show some popups. They're all harmless:
+
+   - **"There are no staged changes to commit. Would you like to stage all your changes and commit them directly?"** Click "Yes" (or "Always" to stop being asked). This means you skipped step 2, and VS Code is offering to do it for you.
+   - **"This action will pull and push commits from and to 'origin/main'."** Click "OK" (or "OK, Don't Show Again"). VS Code is just explaining that Sync sends your changes to GitHub.com and brings down any new changes from there, which is exactly what we want.
+   - **"Would you like Code to periodically run 'git fetch'?"** Click "Yes". VS Code will then check GitHub.com in the background and let you know if there are new changes to pull. It won't change any of your files on its own.
+   :::
 
 If you prefer the terminal, open a terminal in VS Code (Terminal menu, "New Terminal") and run these three commands in your repo folder, in order:
 
