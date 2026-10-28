@@ -98,6 +98,10 @@ If you want AI assistance with more than minimal usage, you'll need a subscripti
 You may be aware that U-M also provides free access to several AI models (including Claude) through a [chat-only interface](https://umgpt.umich.edu/). That's a fine way to get a feel for AI-assisted question writing at no cost, but note that it can't directly edit files in your repo the way an IDE-integrated AI agent can. So it won't support the more advanced, hands-off workflows described earlier on this page (bulk generation, scope verification, and similar), where the AI is directly reading and editing your repo's files rather than you copying content back and forth by hand.
 :::
 
+::: {.callout-warning}
+**Copilot is not Claude Code.** VS Code comes with a different AI assistant, GitHub Copilot, built in. When you open VS Code, you'll probably see a chat box labeled "Copilot" or just "Chat". That isn't what this guide uses, so you can ignore or close it. Instead, install the Claude Code extension by following the instructions at one of the links above (personal subscription, or U-M GPT toolkit). The Claude Code panel is clearly labeled "Claude Code", and that's where you'll type your requests to the AI.
+:::
+
 ### Telling Git Who You Are {#git-identity}
 
 Git labels every change you save with your name and email address, so it needs to know who you are. This is a one-time step. If you skip it, VS Code will show an error the first time you try to save changes to GitHub.com ("Make sure you configure your user.name and user.email in git").
@@ -165,7 +169,7 @@ Open your Repo in your IDE. For example, if you're using VS Code, start it, clic
 
 Explore the folder structure a bit, and open the files you see. You should recognize some of the files you saw in the web interface. For example, in the `questions` folder, there should be a subfolder for each question you created, and inside each of those subfolders are the files that define the question: info.json, question.html, and server.py. Similarly, note the `assessments` folder contents.
 
-Now, you can edit these files directly in your IDE, and also ask AI to do it for you.
+Now, you can edit these files directly in your IDE, and also ask AI to do it for you. To ask AI, type your request into the Claude Code panel, not the Copilot chat box.
 
 ## Keeping Everything in Sync
 
