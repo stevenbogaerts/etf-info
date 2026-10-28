@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Steven Bogaerts">
-<meta name="dcterms.date" content="2026-10-27">
+<meta name="dcterms.date" content="2026-10-28">
 
 <title>Making Content via the Repository Interface – Quick-Start Guide to PrairieLearn</title>
 <style>
@@ -240,7 +240,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">October 27, 2026</p>
+      <p class="date">October 28, 2026</p>
     </div>
   </div>
   
@@ -374,6 +374,19 @@ Tip
 <p>You may be aware that U-M also provides free access to several AI models (including Claude) through a <a href="https://umgpt.umich.edu/">chat-only interface</a>. That’s a fine way to get a feel for AI-assisted question writing at no cost, but note that it can’t directly edit files in your repo the way an IDE-integrated AI agent can. So it won’t support the more advanced, hands-off workflows described earlier on this page (bulk generation, scope verification, and similar), where the AI is directly reading and editing your repo’s files rather than you copying content back and forth by hand.</p>
 </div>
 </div>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Warning
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Copilot is not Claude Code.</strong> VS Code comes with a different AI assistant, GitHub Copilot, built in. When you open VS Code, you’ll probably see a chat box labeled “Copilot” or just “Chat”. That isn’t what this guide uses, so you can ignore or close it. Instead, install the Claude Code extension by following the instructions at one of the links above (personal subscription, or U-M GPT toolkit). The Claude Code panel is clearly labeled “Claude Code”, and that’s where you’ll type your requests to the AI.</p>
+</div>
+</div>
 </section>
 </section>
 <section id="git-identity" class="level3">
@@ -463,7 +476,7 @@ Tip
 <h2 class="anchored" data-anchor-id="opening-and-exploring-your-repo">Opening and Exploring Your Repo</h2>
 <p>Open your Repo in your IDE. For example, if you’re using VS Code, start it, click on “File” in the top menu, then “Open Folder”. Navigate to the folder where you cloned your repo and open it. You should see a list of files and folders in the left-hand panel.</p>
 <p>Explore the folder structure a bit, and open the files you see. You should recognize some of the files you saw in the web interface. For example, in the <code>questions</code> folder, there should be a subfolder for each question you created, and inside each of those subfolders are the files that define the question: info.json, question.html, and server.py. Similarly, note the <code>assessments</code> folder contents.</p>
-<p>Now, you can edit these files directly in your IDE, and also ask AI to do it for you.</p>
+<p>Now, you can edit these files directly in your IDE, and also ask AI to do it for you. To ask AI, type your request into the Claude Code panel, not the Copilot chat box.</p>
 </section>
 <section id="keeping-everything-in-sync" class="level2">
 <h2 class="anchored" data-anchor-id="keeping-everything-in-sync">Keeping Everything in Sync</h2>
