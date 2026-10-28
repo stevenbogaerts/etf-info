@@ -356,11 +356,103 @@ Tip
 <section id="setting-up-claude-code" class="level4">
 <h4 class="anchored" data-anchor-id="setting-up-claude-code">Setting Up Claude Code</h4>
 <p>Claude Code is an AI extension for VS Code. Once installed, it can read, write, and edit files in your repo directly, following your instructions.</p>
-<p>If you want AI assistance with more than minimal usage, you’ll need a subscription. There are two ways U-M faculty members might choose to pursue this:</p>
+<p>To install it:</p>
+<ol type="1">
+<li>Open VS Code.</li>
+<li>Click the Extensions icon in the left-hand bar (it looks like four small squares), or press <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>X</kbd> on Windows, <kbd>Cmd</kbd>+<kbd>Shift</kbd>+<kbd>X</kbd> on Mac.</li>
+<li>Search for “Claude Code”, and click “Install” on the one published by Anthropic.</li>
+</ol>
+<p>If you want AI assistance with more than minimal usage, you’ll need to pay for it. There are two ways U-M faculty members might choose to do this, corresponding to the two subsections below:</p>
 <ul>
-<li><strong>Personal subscription</strong>: Follow the setup instructions in the <a href="https://code.claude.com/docs/en/vs-code">Claude Code documentation for VS Code</a>. This walks you through installing the extension and signing in with a Claude.ai account. Anecdotally, at time of writing, I’ve found the $20/month subscription to be sufficient and highly worthwhile for PrairieLearn development.</li>
-<li><strong>U-M GPT Toolkit</strong>: Use Claude Code through the <a href="https://its.umich.edu/computing/ai/claude-code-gpt-toolkit">U-M GPT Toolkit</a>, with usage-based pricing billed through the university rather than a personal subscription. See the link for setup details.</li>
+<li><a href="#personal-subscription">Personal Subscription</a></li>
+<li><a href="#gpt-toolkit">U-M GPT Toolkit</a></li>
 </ul>
+<section id="personal-subscription" class="level5">
+<h5 class="anchored" data-anchor-id="personal-subscription">Personal Subscription</h5>
+<p>To use a personal Claude Code subscription, open the Claude Code panel (click the orange spark icon) and sign in with a Claude.ai account. More details are in the <a href="https://code.claude.com/docs/en/vs-code">Claude Code documentation for VS Code</a>. Anecdotally, at time of writing, I’ve found the $20/month subscription to be sufficient and highly worthwhile for PrairieLearn development.</p>
+</section>
+<section id="gpt-toolkit" class="level5">
+<h5 class="anchored" data-anchor-id="gpt-toolkit">U-M GPT Toolkit</h5>
+<p>The <a href="https://its.umich.edu/computing/ai/claude-code-gpt-toolkit">U-M GPT Toolkit</a> lets you use Claude Code with usage-based billing through the university rather than a personal subscription.</p>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Warning
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>“Usage-based billing” means you pay for exactly how much you use: longer prompts, longer AI responses, and longer AI work sessions all cost more. In practice, at time of writing, usage-based billing is often more expensive than what is available via a personal subscription.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>For questions on using the U-M GPT Toolkit, please reach out to the U-M ITS AI Service team at the contact information given on the <a href="https://its.umich.edu/computing/ai/claude-code-gpt-toolkit">U-M GPT Toolkit</a> page. The ETF and I are not affiliated with that team, and they are the best source of information on their product.</p>
+</div>
+</div>
+<p>Follow the link above to get an “API key”, which lets you access the U-M GPT Toolkit’s features. After you get it, the Toolkit shows a box titled “Claude Code Setup”. It contains a short block of text (starting with <code>{</code> and <code>"env"</code>) that you need to save to a settings file on your computer. Do the following:</p>
+<ol type="1">
+<li><p>In VS Code, click “Terminal” in the top menu, then “New Terminal”.</p></li>
+<li><p>Paste the command for your computer into the terminal and press <kbd>Enter</kbd>. This creates the settings file (if it doesn’t already exist) and opens it as a new tab in VS Code.</p>
+<p><strong>Windows:</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> <span class="at">-Force</span> ~<span class="dt">\.</span>claude<span class="kw">;</span> <span class="ex">code</span> ~<span class="dt">\.</span>claude<span class="dt">\s</span>ettings.json</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>If you see a message saying <code>code</code> is not recognized, quit VS Code completely, open it again, and repeat steps 1 and 2.</p>
+<p><strong>macOS:</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> <span class="at">-p</span> ~/.claude <span class="kw">&amp;&amp;</span> <span class="fu">touch</span> ~/.claude/settings.json <span class="kw">&amp;&amp;</span> <span class="ex">open</span> <span class="at">-a</span> <span class="st">"Visual Studio Code"</span> ~/.claude/settings.json</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
+<li><p>The <code>settings.json</code> tab will usually be empty. On the Toolkit page, click “Copy” in the top-right corner of the box. Then click inside the empty <code>settings.json</code> tab in VS Code and paste.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If the <code>settings.json</code> tab already has text in it, that’s probably because you’ve used Claude Code before. In that case, don’t paste the whole block from the Toolkit, because the file would then contain two sets of settings and stop working. Instead, add just the <code>"env"</code> section to your existing settings.</p>
+</div>
+</div></li>
+<li><p>Save the file (<kbd>Ctrl</kbd>+<kbd>S</kbd> on Windows, <kbd>Cmd</kbd>+<kbd>S</kbd> on Mac), and close the tab.</p></li>
+<li><p>Quit VS Code completely, then open it again.</p></li>
+<li><p>Open the Claude Code panel (click the orange spark icon), type “hello”, and press <kbd>Enter</kbd>. If Claude replies, you’re all set.</p></li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If Claude Code asks you to sign in or choose a login method, you can skip that. Open VS Code’s settings (<kbd>Ctrl</kbd>+<kbd>,</kbd> on Windows, <kbd>Cmd</kbd>+<kbd>,</kbd> on Mac), search for “Claude Code login”, and check the box for “Disable Login Prompt”. Then quit and reopen VS Code.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Warning
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Keep your key private.</strong> The text you pasted includes your personal API key (the long string after <code>ANTHROPIC_AUTH_TOKEN</code>). Anyone who has it can run up charges in your name. Treat it like a password: don’t email it, post it, or show it in screenshots. If it does get shared, get a new key from the Toolkit and repeat the steps above.</p>
+</div>
+</div>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -384,9 +476,10 @@ Warning
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p><strong>Copilot is not Claude Code.</strong> VS Code comes with a different AI assistant, GitHub Copilot, built in. When you open VS Code, you’ll probably see a chat box labeled “Copilot” or just “Chat”. That isn’t what this guide uses, so you can ignore or close it. Instead, install the Claude Code extension by following the instructions at one of the links above (personal subscription, or U-M GPT toolkit). The Claude Code panel is clearly labeled “Claude Code”, and that’s where you’ll type your requests to the AI.</p>
+<p><strong>Copilot is not Claude Code.</strong> VS Code comes with a different AI assistant, GitHub Copilot, built in. When you open VS Code, you’ll probably see a chat box labeled “Copilot” or just “Chat”. That isn’t what this guide uses, so you can ignore or close it. Instead, install the Claude Code extension as described above. The Claude Code panel is clearly labeled “Claude Code”, and that’s where you’ll type your requests to the AI.</p>
 </div>
 </div>
+</section>
 </section>
 </section>
 <section id="git-identity" class="level3">
@@ -396,12 +489,12 @@ Warning
 <li><p>Open VS Code.</p></li>
 <li><p>In the top menu, click “Terminal”, then “New Terminal”. A terminal panel opens at the bottom of the window.</p></li>
 <li><p>Copy the first command below and paste it into the terminal. Before pressing <kbd>Enter</kbd>, replace <code>Your Name</code> with your name. Keep the quotation marks, and note that the word <code>global</code> is preceded by two dashes.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--global</span> user.name <span class="st">"Your Name"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--global</span> user.name <span class="st">"Your Name"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
 <li><p>Press <kbd>Enter</kbd>. If nothing seems to happen, that’s normal. It means the command worked.</p></li>
 <li><p>Do the same with the second command. Replace <code>you@myemail.com</code> with the <strong>email address you use for your GitHub account</strong>. Again, keep the quotation marks and note the two dashes.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--global</span> user.email <span class="st">"you@myemail.com"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--global</span> user.email <span class="st">"you@myemail.com"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
 <li><p>To check your work, run this command:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--global</span> <span class="at">--list</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--global</span> <span class="at">--list</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>You should see your name and email in the output. If you made a typo, just run the command for that line again with the correct value.</p></li>
 </ol>
 <div class="callout callout-style-default callout-tip callout-titled">
@@ -468,7 +561,7 @@ Tip
 </div>
 <div class="callout-body-container callout-body">
 <p>If you prefer the terminal, open a terminal in VS Code and run this command, replacing the example URL with your own repository’s URL (found by clicking the green “Code” button on your repository’s page on GitHub.com, under the “HTTPS” tab):</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone https://github.com/YOUR-ORGANIZATION/YOUR-REPOSITORY.git</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone https://github.com/YOUR-ORGANIZATION/YOUR-REPOSITORY.git</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </section>
@@ -560,9 +653,9 @@ Note
 </div></li>
 </ol>
 <p>If you prefer the terminal, open a terminal in VS Code (Terminal menu, “New Terminal”) and run these three commands in your repo folder, in order:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> add .</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"Describe your changes here"</span></span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> push</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> add .</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"Describe your changes here"</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> push</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Next, we need to tell the PL web interface to <em>sync</em> the course so that it sees the changes we just pushed. Click the “Sync” tab on the left side, and then the blue “Pull from remote git repository” button. When the process completes successfully, your course has been updated! You can verify this by looking at the changed items (e.g., questions, assessments) in the web interface.</p>
 </section>
 <section id="if-you-edit-via-the-web-interface" class="level3">
@@ -589,7 +682,7 @@ flowchart LR
 <p>Similarly, if you make changes to your PrairieLearn course via the web interface, we need to get those changes to your local code. The first step of this happens automatically: when you make changes in the web interface, those changes are <em>automatically synced</em> to your GitHub.com repo. Thus, all that remains is to pull those changes to your local repo.</p>
 <p>In VS Code, click the Source Control icon in the left-hand activity bar and click the “…” (More Actions) menu at the top, then choose “Pull” (or simply click the sync/refresh icon in the bottom status bar if you see one). Your local files will be updated to match what’s on GitHub.com.</p>
 <p>If you prefer the terminal, open a terminal in VS Code and run this command in your repo folder:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> pull</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> pull</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 </section>
 <section id="resources-for-your-repo" class="level2">
