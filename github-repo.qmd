@@ -89,17 +89,75 @@ Go to the [VS Code downloads page](https://code.visualstudio.com/) and download 
 
 Claude Code is an AI extension for VS Code. Once installed, it can read, write, and edit files in your repo directly, following your instructions.
 
-If you want AI assistance with more than minimal usage, you'll need a subscription. There are two ways U-M faculty members might choose to pursue this:
+To install it:
 
-- **Personal subscription**: Follow the setup instructions in the [Claude Code documentation for VS Code](https://code.claude.com/docs/en/vs-code). This walks you through installing the extension and signing in with a Claude.ai account. Anecdotally, at time of writing, I've found the $20/month subscription to be sufficient and highly worthwhile for PrairieLearn development.
-- **U-M GPT Toolkit**: Use Claude Code through the [U-M GPT Toolkit](https://its.umich.edu/computing/ai/claude-code-gpt-toolkit), with usage-based pricing billed through the university rather than a personal subscription. See the link for setup details.
+1. Open VS Code.
+2. Click the Extensions icon in the left-hand bar (it looks like four small squares), or press <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>X</kbd> on Windows, <kbd>Cmd</kbd>+<kbd>Shift</kbd>+<kbd>X</kbd> on Mac.
+3. Search for "Claude Code", and click "Install" on the one published by Anthropic.
+
+If you want AI assistance with more than minimal usage, you'll need to pay for it. There are two ways U-M faculty members might choose to do this, corresponding to the two subsections below:
+
+- [Personal Subscription](#personal-subscription)
+- [U-M GPT Toolkit](#gpt-toolkit)
+
+##### Personal Subscription {#personal-subscription}
+
+To use a personal Claude Code subscription, open the Claude Code panel (click the orange spark icon) and sign in with a Claude.ai account. More details are in the [Claude Code documentation for VS Code](https://code.claude.com/docs/en/vs-code). Anecdotally, at time of writing, I've found the $20/month subscription to be sufficient and highly worthwhile for PrairieLearn development.
+
+##### U-M GPT Toolkit {#gpt-toolkit}
+
+The [U-M GPT Toolkit](https://its.umich.edu/computing/ai/claude-code-gpt-toolkit) lets you use Claude Code with usage-based billing through the university rather than a personal subscription.
+
+::: {.callout-warning}
+"Usage-based billing" means you pay for exactly how much you use: longer prompts, longer AI responses, and longer AI work sessions all cost more. In practice, at time of writing, usage-based billing is often more expensive than what is available via a personal subscription.
+:::
+
+::: {.callout-tip}
+For questions on using the U-M GPT Toolkit, please reach out to the U-M ITS AI Service team at the contact information given on the [U-M GPT Toolkit](https://its.umich.edu/computing/ai/claude-code-gpt-toolkit) page. The ETF and I are not affiliated with that team, and they are the best source of information on their product.
+:::
+
+Follow the link above to get an "API key", which lets you access the U-M GPT Toolkit's features. After you get it, the Toolkit shows a box titled "Claude Code Setup". It contains a short block of text (starting with `{` and `"env"`) that you need to save to a settings file on your computer. Do the following:
+
+1. In VS Code, click "Terminal" in the top menu, then "New Terminal".
+2. Paste the command for your computer into the terminal and press <kbd>Enter</kbd>. This creates the settings file (if it doesn't already exist) and opens it as a new tab in VS Code.
+
+    **Windows:**
+
+    ```bash
+    mkdir -Force ~\.claude; code ~\.claude\settings.json
+    ```
+
+    If you see a message saying `code` is not recognized, quit VS Code completely, open it again, and repeat steps 1 and 2.
+
+    **macOS:**
+
+    ```bash
+    mkdir -p ~/.claude && touch ~/.claude/settings.json && open -a "Visual Studio Code" ~/.claude/settings.json
+    ```
+
+3. The `settings.json` tab will usually be empty. On the Toolkit page, click "Copy" in the top-right corner of the box. Then click inside the empty `settings.json` tab in VS Code and paste.
+
+   ::: {.callout-tip}
+   If the `settings.json` tab already has text in it, that's probably because you've used Claude Code before. In that case, don't paste the whole block from the Toolkit, because the file would then contain two sets of settings and stop working. Instead, add just the `"env"` section to your existing settings.
+   :::
+4. Save the file (<kbd>Ctrl</kbd>+<kbd>S</kbd> on Windows, <kbd>Cmd</kbd>+<kbd>S</kbd> on Mac), and close the tab.
+5. Quit VS Code completely, then open it again.
+6. Open the Claude Code panel (click the orange spark icon), type "hello", and press <kbd>Enter</kbd>. If Claude replies, you're all set.
+
+::: {.callout-tip}
+If Claude Code asks you to sign in or choose a login method, you can skip that. Open VS Code's settings (<kbd>Ctrl</kbd>+<kbd>,</kbd> on Windows, <kbd>Cmd</kbd>+<kbd>,</kbd> on Mac), search for "Claude Code login", and check the box for "Disable Login Prompt". Then quit and reopen VS Code.
+:::
+
+::: {.callout-warning}
+**Keep your key private.** The text you pasted includes your personal API key (the long string after `ANTHROPIC_AUTH_TOKEN`). Anyone who has it can run up charges in your name. Treat it like a password: don't email it, post it, or show it in screenshots. If it does get shared, get a new key from the Toolkit and repeat the steps above.
+:::
 
 ::: {.callout-tip}
 You may be aware that U-M also provides free access to several AI models (including Claude) through a [chat-only interface](https://umgpt.umich.edu/). That's a fine way to get a feel for AI-assisted question writing at no cost, but note that it can't directly edit files in your repo the way an IDE-integrated AI agent can. So it won't support the more advanced, hands-off workflows described earlier on this page (bulk generation, scope verification, and similar), where the AI is directly reading and editing your repo's files rather than you copying content back and forth by hand.
 :::
 
 ::: {.callout-warning}
-**Copilot is not Claude Code.** VS Code comes with a different AI assistant, GitHub Copilot, built in. When you open VS Code, you'll probably see a chat box labeled "Copilot" or just "Chat". That isn't what this guide uses, so you can ignore or close it. Instead, install the Claude Code extension by following the instructions at one of the links above (personal subscription, or U-M GPT toolkit). The Claude Code panel is clearly labeled "Claude Code", and that's where you'll type your requests to the AI.
+**Copilot is not Claude Code.** VS Code comes with a different AI assistant, GitHub Copilot, built in. When you open VS Code, you'll probably see a chat box labeled "Copilot" or just "Chat". That isn't what this guide uses, so you can ignore or close it. Instead, install the Claude Code extension as described above. The Claude Code panel is clearly labeled "Claude Code", and that's where you'll type your requests to the AI.
 :::
 
 ### Telling Git Who You Are {#git-identity}
