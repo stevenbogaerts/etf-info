@@ -141,11 +141,11 @@ Follow the link above to get an "API key", which lets you access the U-M GPT Too
    If the `settings.json` tab already has text in it, that's probably because you've used Claude Code before. In that case, don't paste the whole block from the Toolkit, because the file would then contain two sets of settings and stop working. Instead, add just the `"env"` section to your existing settings.
    :::
 4. Save the file (<kbd>Ctrl</kbd>+<kbd>S</kbd> on Windows, <kbd>Cmd</kbd>+<kbd>S</kbd> on Mac), and close the tab.
-5. Quit VS Code completely, then open it again.
+5. Quit VS Code completely, then open it again. On a Mac, closing the VS Code window isn't enough, because the program keeps running in the background. Instead, press <kbd>Cmd</kbd>+<kbd>Q</kbd> (or click "Code" in the top menu bar, then "Quit Visual Studio Code").
 6. Open the Claude Code panel (click the orange spark icon), type "hello", and press <kbd>Enter</kbd>. If Claude replies, you're all set.
 
 ::: {.callout-tip}
-If Claude Code asks you to sign in or choose a login method, you can skip that. Open VS Code's settings (<kbd>Ctrl</kbd>+<kbd>,</kbd> on Windows, <kbd>Cmd</kbd>+<kbd>,</kbd> on Mac), search for "Claude Code login", and check the box for "Disable Login Prompt". Then quit and reopen VS Code.
+If Claude Code asks you to sign in or choose a login method, you can skip that. Open VS Code's settings (<kbd>Ctrl</kbd>+<kbd>,</kbd> on Windows, <kbd>Cmd</kbd>+<kbd>,</kbd> on Mac), search for "Claude Code login", and check the box for "Disable Login Prompt". Then quit and reopen VS Code, as in step 5.
 :::
 
 ::: {.callout-warning}
