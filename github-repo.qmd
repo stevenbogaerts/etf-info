@@ -124,7 +124,7 @@ Follow the link above to get an "API key", which lets you access the U-M GPT Too
     **Windows:**
 
     ```bash
-    mkdir -Force ~\.claude; code ~\.claude\settings.json
+    mkdir -Force "$HOME\.claude"; code "$HOME\.claude\settings.json"
     ```
 
     If you see a message saying `code` is not recognized, quit VS Code completely, open it again, and repeat steps 1 and 2.
