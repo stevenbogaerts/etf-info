@@ -405,7 +405,7 @@ Tip
 <li><p>In VS Code, click “Terminal” in the top menu, then “New Terminal”.</p></li>
 <li><p>Paste the command for your computer into the terminal and press <kbd>Enter</kbd>. This creates the settings file (if it doesn’t already exist) and opens it as a new tab in VS Code.</p>
 <p><strong>Windows:</strong></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> <span class="at">-Force</span> ~<span class="dt">\.</span>claude<span class="kw">;</span> <span class="ex">code</span> ~<span class="dt">\.</span>claude<span class="dt">\s</span>ettings.json</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> <span class="at">-Force</span> <span class="st">"</span><span class="va">$HOME</span><span class="st">\.claude"</span><span class="kw">;</span> <span class="ex">code</span> <span class="st">"</span><span class="va">$HOME</span><span class="st">\.claude\settings.json"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>If you see a message saying <code>code</code> is not recognized, quit VS Code completely, open it again, and repeat steps 1 and 2.</p>
 <p><strong>macOS:</strong></p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> <span class="at">-p</span> ~/.claude <span class="kw">&amp;&amp;</span> <span class="fu">touch</span> ~/.claude/settings.json <span class="kw">&amp;&amp;</span> <span class="ex">open</span> <span class="at">-a</span> <span class="st">"Visual Studio Code"</span> ~/.claude/settings.json</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
@@ -424,7 +424,7 @@ Tip
 </div>
 </div></li>
 <li><p>Save the file (<kbd>Ctrl</kbd>+<kbd>S</kbd> on Windows, <kbd>Cmd</kbd>+<kbd>S</kbd> on Mac), and close the tab.</p></li>
-<li><p>Quit VS Code completely, then open it again.</p></li>
+<li><p>Quit VS Code completely, then open it again. On a Mac, closing the VS Code window isn’t enough, because the program keeps running in the background. Instead, press <kbd>Cmd</kbd>+<kbd>Q</kbd> (or click “Code” in the top menu bar, then “Quit Visual Studio Code”).</p></li>
 <li><p>Open the Claude Code panel (click the orange spark icon), type “hello”, and press <kbd>Enter</kbd>. If Claude replies, you’re all set.</p></li>
 </ol>
 <div class="callout callout-style-default callout-tip callout-titled">
@@ -437,7 +437,7 @@ Tip
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>If Claude Code asks you to sign in or choose a login method, you can skip that. Open VS Code’s settings (<kbd>Ctrl</kbd>+<kbd>,</kbd> on Windows, <kbd>Cmd</kbd>+<kbd>,</kbd> on Mac), search for “Claude Code login”, and check the box for “Disable Login Prompt”. Then quit and reopen VS Code.</p>
+<p>If Claude Code asks you to sign in or choose a login method, you can skip that. Open VS Code’s settings (<kbd>Ctrl</kbd>+<kbd>,</kbd> on Windows, <kbd>Cmd</kbd>+<kbd>,</kbd> on Mac), search for “Claude Code login”, and check the box for “Disable Login Prompt”. Then quit and reopen VS Code, as in step 5.</p>
 </div>
 </div>
 <div class="callout callout-style-default callout-warning callout-titled">
