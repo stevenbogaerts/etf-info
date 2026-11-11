@@ -1,0 +1,843 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.10.18">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Steven Bogaerts">
+<meta name="dcterms.date" content="2026-11-11">
+
+<title>Tips for Working with AI – Quick-Start Guide to PrairieLearn</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./student-prep.html" rel="next">
+<link href="./github-repo.html" rel="prev">
+<link href="./images/favicon.png" rel="icon" type="image/png">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-b85bc7c33db8c58e0ec93c3465666fed.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-6009a37e146ae0c1f77f94c5ed8ea4e0.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-61cdea222805b293b3373786953ee3df.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-6009a37e146ae0c1f77f94c5ed8ea4e0.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="nav-sidebar docked quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <a class="flex-grow-1 no-decor" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+          <h1 class="quarto-secondary-nav-title">Tips for Working with AI</h1>
+        </a>     
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Quick-Start Guide to PrairieLearn</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">First Steps</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./web-interface.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Making Content via the Web Interface</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./reference-sheets.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Allowing a Reference Sheet in an Exam</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./github-repo.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Making Content via the Repository Interface</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ai-tips.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Tips for Working with AI</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./student-prep.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preparing Your Students</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./additional-resources.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Additional Resources</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#why" id="toc-why" class="nav-link active" data-scroll-target="#why">Should You Give the AI Your Course Materials?</a>
+  <ul class="collapse">
+  <li><a href="#what-you-gain" id="toc-what-you-gain" class="nav-link" data-scroll-target="#what-you-gain">What You Gain</a></li>
+  <li><a href="#why-you-might-not" id="toc-why-you-might-not" class="nav-link" data-scroll-target="#why-you-might-not">Why You Might Not</a></li>
+  <li><a href="#what-you-lose-without-them" id="toc-what-you-lose-without-them" class="nav-link" data-scroll-target="#what-you-lose-without-them">What You Lose Without Them</a></li>
+  </ul></li>
+  <li><a href="#materials" id="toc-materials" class="nav-link" data-scroll-target="#materials">Setting Up Your Course Materials</a>
+  <ul class="collapse">
+  <li><a href="#why-plain-text" id="toc-why-plain-text" class="nav-link" data-scroll-target="#why-plain-text">Why Plain Text?</a></li>
+  <li><a href="#where-to-put-them" id="toc-where-to-put-them" class="nav-link" data-scroll-target="#where-to-put-them">Where to Put Them</a></li>
+  <li><a href="#letting-claude-code-see-the-folder" id="toc-letting-claude-code-see-the-folder" class="nav-link" data-scroll-target="#letting-claude-code-see-the-folder">Letting Claude Code See the Folder</a></li>
+  <li><a href="#converting-to-markdown" id="toc-converting-to-markdown" class="nav-link" data-scroll-target="#converting-to-markdown">Converting to Markdown</a></li>
+  </ul></li>
+  <li><a href="#stay-in-control" id="toc-stay-in-control" class="nav-link" data-scroll-target="#stay-in-control">Stay in Control</a></li>
+  <li><a href="#next-steps" id="toc-next-steps" class="nav-link" data-scroll-target="#next-steps">Next Steps</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title d-none d-lg-block">Tips for Working with AI</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p><a href="https://eecs.engin.umich.edu/people/bogaerts-steven/">Steven Bogaerts</a> </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">November 11, 2026</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>Once you’ve set up the <a href="./github-repo.html">repository interface</a>, you’re ready to put AI to work on your PrairieLearn materials. This page collects some tips I’ve found helpful.</p>
+<section id="why" class="level2">
+<h2 class="anchored" data-anchor-id="why">Should You Give the AI Your Course Materials?</h2>
+<p>The AI knows a lot about your subject in general, but it doesn’t know anything about <em>your</em> course: what you covered, in what order, what notation you use, which examples you showed in lecture. You can fix that by giving it copies of your course materials (lecture notes, slides, handouts, old exams) to read.</p>
+<section id="what-you-gain" class="level3">
+<h3 class="anchored" data-anchor-id="what-you-gain">What You Gain</h3>
+<p>With your materials in hand, the AI can answer and act on requests like these:</p>
+<ul>
+<li><strong>Coverage questions</strong>: “Based on the lecture notes, which topics from Lectures 1 through 5 have no questions yet?”</li>
+<li><strong>Discussing coverage</strong>: “Lecture 6 seems to spend a lot of time on X. Is that reflected in the homework questions?”</li>
+<li><strong>Questions that match your teaching</strong>: “Write 5 questions on the material in Lecture 7, using the same notation and terminology as the notes.”</li>
+<li><strong>Staying in scope</strong>: “Check that every question in this assessment uses only concepts covered in Lectures 1 through 8.”</li>
+<li><strong>Building on your examples</strong>: “Make a randomized version of the worked example on page 3 of the Lecture 4 notes.”</li>
+</ul>
+</section>
+<section id="why-you-might-not" class="level3">
+<h3 class="anchored" data-anchor-id="why-you-might-not">Why You Might Not</h3>
+<p>Giving the AI your materials means sending their contents to the AI company. That’s usually fine for your own lecture notes and slides, but think twice about:</p>
+<ul>
+<li><strong>Material you don’t own</strong>, such as textbook chapters or articles, especially anything you accessed through a U-M Library subscription. Publisher licenses may not allow uploading it to AI tools. See U-M’s <a href="https://ai.umich.edu/ai-copyright">AI and copyright guidance</a>, or email the Library Copyright Office at <a href="mailto:copyright@umich.edu">copyright@umich.edu</a>.</li>
+<li><strong>Anything with student information</strong>, such as names, IDs, grades, or student work. Keep this out of your course materials and your prompts entirely. See U-M’s guidance on <a href="https://safecomputing.umich.edu/protect-the-u/safely-use-sensitive-data/AI-and-UM-Data">AI and U-M data</a>.</li>
+</ul>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If you’re using a <a href="./github-repo.html#personal-subscription">personal subscription</a>, check your account’s privacy settings to see whether your conversations may be used to improve future AI models, and adjust them to your preference. The <a href="./github-repo.html#gpt-toolkit">U-M GPT Toolkit</a> is covered by U-M’s agreements; see the guidance linked above for details.</p>
+</div>
+</div>
+</section>
+<section id="what-you-lose-without-them" class="level3">
+<h3 class="anchored" data-anchor-id="what-you-lose-without-them">What You Lose Without Them</h3>
+<p>You can absolutely use AI without sharing your materials. But the AI will have to guess at what you covered, and it will often guess wrong: it may use different notation, go beyond what you taught, or miss your emphasis. You’ll have to describe the relevant content in each prompt yourself, and requests like “check that these questions only use material from Lectures 1 through 8” won’t be possible.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>A middle ground:</strong> If you’d rather not share everything, even a syllabus or a list of topics per lecture helps a lot. You can also share just your own notes and leave out anything from a textbook.</p>
+</div>
+</div>
+</section>
+</section>
+<section id="materials" class="level2">
+<h2 class="anchored" data-anchor-id="materials">Setting Up Your Course Materials</h2>
+<section id="why-plain-text" class="level3">
+<h3 class="anchored" data-anchor-id="why-plain-text">Why Plain Text?</h3>
+<p>The AI works best with <em>plain text</em> files, meaning files that contain only text, with no special formatting hidden inside. A good choice is Markdown, which uses the file ending <code>.md</code>. Markdown is just ordinary text with a few simple marks for things like headings (<code>#</code>) and bullet points (<code>-</code>). You don’t need to learn it; the AI will write it for you.</p>
+<p>Files like PowerPoint (<code>.pptx</code>), Word (<code>.docx</code>), and PDF (<code>.pdf</code>) are harder for the AI to read. It can often manage, but it’s slower, more expensive, and more error-prone, and it has to do that work again every time it looks at them. It’s much better to convert them to Markdown once, and then let the AI read the Markdown from then on.</p>
+<p>If some of your materials are already plain text, such as LaTeX (<code>.tex</code>) files, you can use them as-is.</p>
+</section>
+<section id="where-to-put-them" class="level3">
+<h3 class="anchored" data-anchor-id="where-to-put-them">Where to Put Them</h3>
+<p>I recommend keeping your course materials in their own folder, <em>outside</em> your PrairieLearn repo. This keeps them separate from what PrairieLearn sees, and it keeps your repo small and quick to sync.</p>
+<p>A convenient spot is right next to your repo. For example, if your repo is in a folder called <code>PL-UMICH-ENGR100</code>, you might end up with:</p>
+<pre><code>PrairieLearn/
+├── PL-UMICH-ENGR100/      ← your repo (cloned earlier)
+└── course_materials/      ← your course materials</code></pre>
+<p>To set this up:</p>
+<ol type="1">
+<li>In File Explorer (Windows) or Finder (Mac), go to the folder that <em>contains</em> your repo folder.</li>
+<li>Make a new folder there called <code>course_materials</code>.</li>
+<li>Copy your files (PDF, PowerPoint, Word, etc.) into it. Use copies, so your originals stay safe wherever they are now.</li>
+</ol>
+<p>You can organize the folder however you like, for example with a subfolder for lecture notes and another for old exams.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Lecture recordings count too!</strong> If you record your lectures (e.g., with Zoom or Canvas), you can usually download a transcript. Transcripts are a great record of what you actually said in class, including the examples and emphasis that may not be in your slides. Put them in <code>course_materials</code> along with everything else.</p>
+</div>
+</div>
+</section>
+<section id="letting-claude-code-see-the-folder" class="level3">
+<h3 class="anchored" data-anchor-id="letting-claude-code-see-the-folder">Letting Claude Code See the Folder</h3>
+<p>Claude Code normally works only with files inside the folder you have open in VS Code (your repo). We need to tell it that it may also read your <code>course_materials</code> folder. This is a one-time step.</p>
+<ol type="1">
+<li><p>Copy the location (the “path”) of your <code>course_materials</code> folder:</p>
+<ul>
+<li><strong>Windows</strong>: In File Explorer, right-click the <code>course_materials</code> folder and choose “Copy as path”.</li>
+<li><strong>Mac</strong>: In Finder, right-click (or <kbd>Control</kbd>-click) the <code>course_materials</code> folder, then hold down the <kbd>Option</kbd> key. The menu item “Copy” changes to “Copy”course_materials” as Pathname”. Click it.</li>
+</ul></li>
+<li><p>Open your repo in VS Code, open the Claude Code panel, and type the following, pasting your path where shown:</p>
+<blockquote class="blockquote">
+<p>Please add this folder to additionalDirectories in .claude/settings.local.json so that you can always read it: (paste path here)</p>
+</blockquote></li>
+<li><p>Claude Code will ask permission to make the change. Approve it.</p></li>
+<li><p>Quit VS Code completely and open it again (on a Mac, press <kbd>Cmd</kbd>+<kbd>Q</kbd>; just closing the window isn’t enough).</p></li>
+</ol>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The file Claude Code just changed, <code>settings.local.json</code>, holds settings for your computer only. It is not pushed to GitHub.com, so it won’t affect PrairieLearn or anyone else working on your course.</p>
+</div>
+</div>
+<!-- TODO Steve: test this flow on a fresh setup (Win + Mac). Also confirm settings.local.json is gitignored automatically in a PL repo; if not, add a step to ask Claude to gitignore it. -->
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If you skip this step, Claude Code can still read the folder. It will just ask your permission each time. You can approve these requests.</p>
+</div>
+</div>
+</section>
+<section id="converting-to-markdown" class="level3">
+<h3 class="anchored" data-anchor-id="converting-to-markdown">Converting to Markdown</h3>
+<p>In the Claude Code panel, type something like the following, again pasting your folder’s path:</p>
+<blockquote class="blockquote">
+<p>In the folder (paste path here), convert each file to a Markdown (.md) file with the same name. Keep all the content, including equations and any text in tables or images. When you’re done, delete the original copies, leaving only the .md files.</p>
+</blockquote>
+<p>Claude Code may ask your permission before running some steps. That’s normal; you can approve them. When it’s done, open a few of the new <code>.md</code> files and skim them to make sure the content looks right. Pay particular attention to equations and tables.</p>
+<p>From now on, you can refer to your materials in any prompt, e.g., “Using my course materials, write 5 questions on the topics from Lecture 7.”</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Because <code>course_materials</code> is outside your repo, it isn’t backed up to GitHub.com along with your course. If you work on more than one computer, or share course development with a colleague, you’ll need to copy the folder over yourself (or keep it in a shared drive like Dropbox or Google Drive).</p>
+</div>
+</div>
+</section>
+</section>
+<section id="stay-in-control" class="level2">
+<h2 class="anchored" data-anchor-id="stay-in-control">Stay in Control</h2>
+<p>AI is a powerful assistant, but it does make mistakes. A few habits will keep you in charge:</p>
+<ul>
+<li><strong>Try every question yourself.</strong> Before students see a question, open it in the PrairieLearn web interface and try it, including a few wrong answers. Click “New variant” a few times to see different random versions.</li>
+<li><strong>Start small.</strong> Ask for 3 questions before you ask for 30. Once you’re happy with the style, ask for more “just like these.”</li>
+<li><strong>Be specific.</strong> “Make some questions on derivatives” will get you something. “Make 5 short-answer questions on the chain rule, at the difficulty level of the examples in Lecture 9, with integer coefficients between 2 and 9” will get you something much closer to what you want.</li>
+<li><strong>Point to examples.</strong> Name a question you like and ask for more in that style. The <code>templates</code> folder from <a href="./github-repo.html#resources-for-your-repo">Resources for your Repo</a> is helpful here too.</li>
+<li><strong>Push often.</strong> Each time you <a href="./github-repo.html#if-you-edit-your-local-code">push your changes</a>, you save a snapshot of your course. If the AI later makes a mess, you (or the AI) can go back to that snapshot. If you’re unsure how, ask Claude Code: “Undo all the changes since my last commit.”</li>
+<li><strong>Ask the AI to explain.</strong> If you’re not sure what a file does or why something isn’t working, just ask: “What does this question’s server.py do, in plain English?”</li>
+</ul>
+<!-- TODO Steve: add a short subsection on CLAUDE.md? e.g., "Ask Claude to create a CLAUDE.md file describing your course conventions (notation, tagging scheme, point values, and where course_materials lives) so it remembers them every time." Could be very handy, but it's one more concept. -->
+</section>
+<section id="next-steps" class="level2">
+<h2 class="anchored" data-anchor-id="next-steps">Next Steps</h2>
+<p>When you’re ready to put your content in front of students, continue on to <a href="./student-prep.html"><strong>Preparing Your Students</strong></a>.</p>
+<p>If you have questions or run into trouble, I’m happy to help. Reach out anytime at <a href="mailto:etf-advisor@umich.edu">etf-advisor@umich.edu</a>.</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/stevenbogaerts\.github\.io\/etf-info\/");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./github-repo.html" class="pagination-link" aria-label="Making Content via the Repository Interface">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Making Content via the Repository Interface</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./student-prep.html" class="pagination-link" aria-label="Preparing Your Students">
+        <span class="nav-page-text">Preparing Your Students</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>Maintained by <a href="https://eecs.engin.umich.edu/people/bogaerts-steven/">Steven Bogaerts</a>, ETF Faculty Advisor<br><a href="mailto:etf-advisor@umich.edu">etf-advisor@umich.edu</a></p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item">
+    <a class="nav-link" href="https://github.com/stevenbogaerts/etf-info">
+<p>Source on GitHub</p>
+</a>
+  </li>  
+</ul>
+    </div>
+  </div>
+</footer>
+
+
+
+
+</body></html>
