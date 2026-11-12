@@ -1,0 +1,47 @@
+---
+title: "Preparing Your Students"
+---
+
+The goal of this page is simple: **when students sit down for an exam, nothing about PrairieLearn should surprise them.** They should be thinking about your material, not about how to enter an answer or what a button does.
+
+## Give Them Practice with the Format
+
+Before the first exam, give students a low-stakes assessment that uses the same *kinds* of questions they'll see on the exam. For example, if your exam will have numeric answers, multiple-choice questions, and a drawing question, the practice should too.
+
+Be careful about how you describe it. If you call it a "practice exam," students may assume it shows them what will be *on* the exam, and study accordingly. Something like "format practice" or "PrairieLearn practice problems" sets clearer expectations: the goal is to get comfortable with the interface.
+
+A few ways to set this up:
+
+- **A homework assessment** with unlimited attempts, so students can experiment freely without worrying about their score.
+- **Questions you're already using elsewhere**, such as earlier homework questions. They don't need to be new.
+- **Ask the AI to build it**: "Make a new Homework assessment called 'Exam Format Practice' with one question of each type used in the Exam 1 assessment. Use questions from the homework, not from the exam."
+
+::: {.callout-note}
+The ETF is developing plans for practice sessions in the testing facility itself. Nothing is official yet; check the [ETF website](https://etf.engin.umich.edu/) or contact [etf-support@umich.edu](mailto:etf-support@umich.edu) for the latest.
+:::
+
+## Tell Them About Grading Details
+
+Some things about how PrairieLearn grades are worth telling students explicitly, ideally in writing (e.g., on Canvas or your course website) and also in class. Think about which of these apply to your exam:
+
+- **Multiple attempts**: On a PrairieLearn exam, you can allow students to try a question more than once, with fewer points available on each attempt (e.g., 10 points on the first try, 5 on the second). If you do this, students need to know, and they need to know how to tell whether an answer was right.
+- **Feedback during the exam**: Will students see whether each answer is correct as they go, or only after the exam ends? Either is fine, but tell them which. If they *do* get feedback, tell them where to look for it.
+- **Partial credit**: For example, on "select all that apply" questions, will students get partial credit for some correct choices? Can they get partial credit on a multi-part question?
+- **Answer format**: How precise do numeric answers need to be? Should students round, and to how many places? Do they enter units? For formulas, how do they type an exponent or a square root?
+- **Hand-graded questions**: If some questions are graded by hand (or by AI) after the exam, students won't see a score right away. Let them know so they don't worry.
+- **Saving and finishing**: Make sure students know how to save their answers, and what to do when they're done.
+- **Reference sheets**: If you're [allowing a reference sheet](reference-sheets.qmd), make sure students know how to open it during the exam.
+
+::: {.callout-tip}
+The practice assessment is a great place to show all of this in action. If your exam gives partial credit on a certain question type, include one in the practice so students can see what partial credit looks like on screen. And if you're not sure how your exam is set up on some of these points, ask Claude Code: "Look at the Exam 1 assessment and summarize, for students, how grading works: attempts, partial credit, feedback, and answer formats."
+:::
+
+<!-- TODO Steve: verify the PL details above (exam points-per-attempt arrays, real-time grading on/off, partial credit settings) match what you want to emphasize, and decide whether to link to the specific PL docs pages. -->
+
+## Point Them to Student Tutorials
+
+You don't have to write everything from scratch. The [Additional Resources](additional-resources.qmd) page links to student-facing PrairieLearn and PrairieTest tutorials from EECS 183, which you're welcome to share or adapt.
+
+## Next Steps
+
+If you have questions or run into trouble, I'm happy to help. Reach out anytime at [etf-advisor@umich.edu](mailto:etf-advisor@umich.edu).

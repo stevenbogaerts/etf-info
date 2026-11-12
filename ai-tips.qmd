@@ -1,0 +1,146 @@
+---
+title: "Tips for Working with AI"
+---
+
+Once you've set up the [repository interface](github-repo.qmd), you're ready to put AI to work on your PrairieLearn materials. This page collects some tips I've found helpful.
+
+## Should You Give the AI Your Course Materials? {#why}
+
+The AI knows a lot about your subject in general, but it doesn't know anything about *your* course: what you covered, in what order, what notation you use, which examples you showed in lecture. You can fix that by giving it copies of your course materials (lecture notes, slides, handouts, old exams) to read.
+
+### What You Gain
+
+With your materials in hand, the AI can answer and act on requests like these:
+
+- **Coverage questions**: "Based on the lecture notes, which topics from Lectures 1 through 5 have no questions yet?"
+- **Discussing coverage**: "Lecture 6 seems to spend a lot of time on X. Is that reflected in the homework questions?"
+- **Questions that match your teaching**: "Write 5 questions on the material in Lecture 7, using the same notation and terminology as the notes."
+- **Staying in scope**: "Check that every question in this assessment uses only concepts covered in Lectures 1 through 8."
+- **Building on your examples**: "Make a randomized version of the worked example on page 3 of the Lecture 4 notes."
+
+### Why You Might Not
+
+Giving the AI your materials means sending their contents to the AI company. That's usually fine for your own lecture notes and slides, but think twice about:
+
+- **Material you don't own**, such as textbook chapters or articles, especially anything you accessed through a U-M Library subscription. Publisher licenses may not allow uploading it to AI tools. See U-M's [AI and copyright guidance](https://ai.umich.edu/ai-copyright), or email the Library Copyright Office at [copyright@umich.edu](mailto:copyright@umich.edu).
+- **Anything with student information**, such as names, IDs, grades, or student work. Keep this out of your course materials and your prompts entirely. See U-M's guidance on [AI and U-M data](https://safecomputing.umich.edu/protect-the-u/safely-use-sensitive-data/AI-and-UM-Data).
+
+::: {.callout-note}
+If you're using a [personal subscription](github-repo.qmd#personal-subscription), check your account's privacy settings to see whether your conversations may be used to improve future AI models, and adjust them to your preference. The [U-M GPT Toolkit](github-repo.qmd#gpt-toolkit) is covered by U-M's agreements; see the guidance linked above for details.
+:::
+
+### What You Lose Without Them
+
+You can absolutely use AI without sharing your materials. But the AI will have to guess at what you covered, and it will often guess wrong: it may use different notation, go beyond what you taught, or miss your emphasis. You'll have to describe the relevant content in each prompt yourself, and requests like "check that these questions only use material from Lectures 1 through 8" won't be possible.
+
+::: {.callout-tip}
+**A middle ground:** If you'd rather not share everything, even a syllabus or a list of topics per lecture helps a lot. You can also share just your own notes and leave out anything from a textbook.
+:::
+
+## Setting Up Your Course Materials {#materials}
+
+### Why Plain Text?
+
+The AI works best with *plain text* files, meaning files that contain only text, with no special formatting hidden inside. A good choice is Markdown, which uses the file ending `.md`. Markdown is just ordinary text with a few simple marks for things like headings (`#`) and bullet points (`-`). You don't need to learn it; the AI will write it for you.
+
+Files like PowerPoint (`.pptx`), Word (`.docx`), and PDF (`.pdf`) are harder for the AI to read. It can often manage, but it's slower, more expensive, and more error-prone, and it has to do that work again every time it looks at them. It's much better to convert them to Markdown once, and then let the AI read the Markdown from then on.
+
+If some of your materials are already plain text, such as LaTeX (`.tex`) files, you can use them as-is.
+
+### Where to Put Them
+
+I recommend keeping your course materials in their own folder, *outside* your PrairieLearn repo. This keeps them separate from what PrairieLearn sees, and it keeps your repo small and quick to sync.
+
+A convenient spot is right next to your repo. For example, if your repo is in a folder called `PL-UMICH-ENGR100`, you might end up with:
+
+```
+PrairieLearn/
+├── PL-UMICH-ENGR100/      ← your repo (cloned earlier)
+└── course_materials/      ← your course materials
+```
+
+To set this up:
+
+1. In File Explorer (Windows) or Finder (Mac), go to the folder that *contains* your repo folder.
+2. Make a new folder there called `course_materials`.
+3. Copy your files (PDF, PowerPoint, Word, etc.) into it. Use copies, so your originals stay safe wherever they are now.
+
+You can organize the folder however you like, for example with a subfolder for lecture notes and another for old exams.
+
+::: {.callout-tip}
+**Lecture recordings count too!** If you record your lectures (e.g., with Zoom or Canvas), you can usually download a transcript. Transcripts are a great record of what you actually said in class, including the examples and emphasis that may not be in your slides. Put them in `course_materials` along with everything else.
+:::
+
+### Letting Claude Code See the Folder
+
+Claude Code normally works only with files inside the folder you have open in VS Code (your repo). We need to tell it that it may also read your `course_materials` folder. This is a one-time step.
+
+1. Copy the location (the "path") of your `course_materials` folder:
+    - **Windows**: In File Explorer, right-click the `course_materials` folder and choose "Copy as path".
+    - **Mac**: In Finder, right-click (or <kbd>Control</kbd>-click) the `course_materials` folder, then hold down the <kbd>Option</kbd> key. The menu item "Copy" changes to "Copy "course_materials" as Pathname". Click it.
+2. Open your repo in VS Code, open the Claude Code panel, and type the following, pasting your path where shown:
+
+    > Please add this folder to additionalDirectories in .claude/settings.local.json so that you can always read it: (paste path here)
+
+3. Claude Code will ask permission to make the change. Approve it.
+4. Quit VS Code completely and open it again (on a Mac, press <kbd>Cmd</kbd>+<kbd>Q</kbd>; just closing the window isn't enough).
+
+::: {.callout-note}
+The file Claude Code just changed, `settings.local.json`, holds settings for your computer only. It is not pushed to GitHub.com, so it won't affect PrairieLearn or anyone else working on your course.
+:::
+
+<!-- TODO Steve: test this flow on a fresh setup (Win + Mac). Also confirm settings.local.json is gitignored automatically in a PL repo; if not, add a step to ask Claude to gitignore it. -->
+
+::: {.callout-tip}
+If you skip this step, Claude Code can still read the folder. It will just ask your permission each time. You can approve these requests.
+:::
+
+### Converting to Markdown
+
+In the Claude Code panel, type something like the following, again pasting your folder's path:
+
+> In the folder (paste path here), convert each file to a Markdown (.md) file with the same name. Keep all the content, including equations and any text in tables or images. When you're done, delete the original copies, leaving only the .md files.
+
+Claude Code may ask your permission before running some steps. That's normal; you can approve them. When it's done, open a few of the new `.md` files and skim them to make sure the content looks right. Pay particular attention to equations and tables.
+
+From now on, you can refer to your materials in any prompt, e.g., "Using my course materials, write 5 questions on the topics from Lecture 7."
+
+::: {.callout-note}
+Because `course_materials` is outside your repo, it isn't backed up to GitHub.com along with your course. If you work on more than one computer, or share course development with a colleague, you'll need to copy the folder over yourself (or keep it in a shared drive like Dropbox or Google Drive).
+:::
+
+## Stay in Control
+
+AI makes mistakes, and it lacks your judgment and knowledge of your students. Sometimes you'll be happy with what it generates, but often you'll want changes.
+
+Let the AI handle the technical details while you make the pedagogical decisions. A generated question can work correctly, be accurate, and fit your course, and still not be ideal. For example, you might want to:
+
+- **Adjust the difficulty.**
+- **Add randomness.**
+    - *Homework:* so students can retry a problem and get real practice, with some features changing while others stay fixed.
+    - *Exams:* so students can't easily share answers.
+- **Reduce randomness.**
+    - *Homework:* so every student sees the case you consider essential.
+    - *Exams:* so every version is of equal difficulty and offers the same opportunities for partial credit.
+- **Cover an edge case** or a common misconception.
+- **Target the right skill.** For example, a question meant to test the concept shouldn't depend on messy arithmetic or a long, wordy setup.
+- **Change the answer format.** Depending on the question, multiple choice, short answer, etc., may be more suitable than the current presentation.
+- **Improve the wrong answers** in multiple choice, so they reflect errors students actually make in your course.
+- **Change the feedback** that students see: hints, worked solutions, or how much partial credit each part is worth.
+- **Break it into steps**, or remove the steps, depending on how much support you want to give.
+- **Set how precise answers must be**, such as rounding, significant figures, or units.
+
+A few habits help:
+
+- **Try every question yourself.** Before students see a question, open it in the PrairieLearn web interface and try it, including a few wrong answers. Click "New variant" a few times to see different random versions.
+- **Start small.** Ask for 3 questions before you ask for 30. Once you're happy with the style, ask for more "just like these."
+- **Be specific.** "Make some questions on derivatives" will get you something. "Make 5 short-answer questions on the chain rule, at the difficulty level of the examples in Lecture 9, with integer coefficients between 2 and 9" will get you something much closer to what you want.
+- **Point to examples.** Name a question you like and ask for more in that style. The `templates` folder from [Resources for your Repo](github-repo.qmd#resources-for-your-repo) is helpful here too.
+- **Push often.** Each time you [push your changes](github-repo.qmd#if-you-edit-your-local-code), you save a snapshot of your course. If the AI later makes a mess, you (or the AI) can go back to that snapshot. If you're unsure how, ask Claude Code: "Undo all the changes since my last commit."
+- **Ask the AI to explain.** If you're not sure what a file does or why something isn't working, just ask: "What does this question's server.py do, in plain English?"
+
+## Next Steps
+
+When you're ready to put your content in front of students, continue on to [**Preparing Your Students**](student-prep.qmd).
+
+If you have questions or run into trouble, I'm happy to help. Reach out anytime at [etf-advisor@umich.edu](mailto:etf-advisor@umich.edu).

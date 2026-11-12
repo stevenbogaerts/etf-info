@@ -16,6 +16,8 @@ website:
       - web-interface.qmd
       - reference-sheets.qmd
       - github-repo.qmd
+      - ai-tips.qmd
+      - student-prep.qmd
       - additional-resources.qmd
   page-footer:
     left: "Maintained by [Steven Bogaerts](https://eecs.engin.umich.edu/people/bogaerts-steven/), ETF Faculty Advisor<br>[etf-advisor@umich.edu](mailto:etf-advisor@umich.edu)"

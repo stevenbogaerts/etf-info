@@ -12,6 +12,8 @@ The site is organized as follows:
 - [**Making Content via the Web Interface**](web-interface.qmd) — Build questions and assessments by interacting with your PrairieLearn course through a web browser.
 - [**Allowing a Reference Sheet in an Exam**](reference-sheets.qmd) — Let students access reference/formula/"cheat" sheets during an assessment.
 - [**Making Content via the Repository Interface**](github-repo.qmd) — Work with your course's underlying files directly, including with AI assistance.
+- [**Tips for Working with AI**](ai-tips.qmd) — Give the AI your course materials, and stay in control of what it does.
+- [**Preparing Your Students**](student-prep.qmd) — Make sure nothing about PrairieLearn surprises your students on exam day.
 - [**Additional Resources**](additional-resources.qmd) — Official documentation and student-facing tutorials.
 
 I recommend working through these pages in order, using the navigation in the left sidebar or the navigation links at the bottom of each page.
@@ -20,9 +22,12 @@ I recommend working through these pages in order, using the navigation in the le
 
 PrairieLearn is an online learning and assessment platform useful for practice, homework, quizzes, and exams. Some notable features include:
 
-- Great flexibility in question types and randomization of question details
-- Support for automatic and manual grading
-- Easy-to-use web interface, plus the opportunity to integrate with agentic AI workflows
+- Great **flexibility** in question types and randomization of question details
+- Support for **automatic grading**: both rule-based (as complex as you want them) and AI-based (extra fees may apply)
+- Support for **manual grading** (Gradescope-like)
+- Easy-to-use **web interface**, plus the opportunity to integrate with **agentic AI workflows**
+
+For a more detailed overview of PrairieLearn, see the [official PrairieLearn website](https://www.prairielearn.com/).
 
 ## Giving an Exam with PrairieLearn
 
