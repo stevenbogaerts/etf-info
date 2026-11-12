@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Steven Bogaerts">
-<meta name="dcterms.date" content="2026-11-11">
+<meta name="dcterms.date" content="2026-11-12">
 
 <title>Tips for Working with AI – Quick-Start Guide to PrairieLearn</title>
 <style>
@@ -213,7 +213,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">November 11, 2026</p>
+      <p class="date">November 12, 2026</p>
     </div>
   </div>
   
@@ -384,7 +384,29 @@ Note
 </section>
 <section id="stay-in-control" class="level2">
 <h2 class="anchored" data-anchor-id="stay-in-control">Stay in Control</h2>
-<p>AI is a powerful assistant, but it does make mistakes. A few habits will keep you in charge:</p>
+<p>AI makes mistakes, and it lacks your judgment and knowledge of your students. Sometimes you’ll be happy with what it generates, but often you’ll want changes.</p>
+<p>Let the AI handle the technical details while you make the pedagogical decisions. A generated question can work correctly, be accurate, and fit your course, and still not be ideal. For example, you might want to:</p>
+<ul>
+<li><strong>Adjust the difficulty.</strong></li>
+<li><strong>Add randomness.</strong>
+<ul>
+<li><em>Homework:</em> so students can retry a problem and get real practice, with some features changing while others stay fixed.</li>
+<li><em>Exams:</em> so students can’t easily share answers.</li>
+</ul></li>
+<li><strong>Reduce randomness.</strong>
+<ul>
+<li><em>Homework:</em> so every student sees the case you consider essential.</li>
+<li><em>Exams:</em> so every version is of equal difficulty and offers the same opportunities for partial credit.</li>
+</ul></li>
+<li><strong>Cover an edge case</strong> or a common misconception.</li>
+<li><strong>Target the right skill.</strong> For example, a question meant to test the concept shouldn’t depend on messy arithmetic or a long, wordy setup.</li>
+<li><strong>Change the answer format.</strong> Depending on the question, multiple choice, short answer, etc., may be more suitable than the current presentation.</li>
+<li><strong>Improve the wrong answers</strong> in multiple choice, so they reflect errors students actually make in your course.</li>
+<li><strong>Change the feedback</strong> that students see: hints, worked solutions, or how much partial credit each part is worth.</li>
+<li><strong>Break it into steps</strong>, or remove the steps, depending on how much support you want to give.</li>
+<li><strong>Set how precise answers must be</strong>, such as rounding, significant figures, or units.</li>
+</ul>
+<p>A few habits help:</p>
 <ul>
 <li><strong>Try every question yourself.</strong> Before students see a question, open it in the PrairieLearn web interface and try it, including a few wrong answers. Click “New variant” a few times to see different random versions.</li>
 <li><strong>Start small.</strong> Ask for 3 questions before you ask for 30. Once you’re happy with the style, ask for more “just like these.”</li>
@@ -393,7 +415,6 @@ Note
 <li><strong>Push often.</strong> Each time you <a href="./github-repo.html#if-you-edit-your-local-code">push your changes</a>, you save a snapshot of your course. If the AI later makes a mess, you (or the AI) can go back to that snapshot. If you’re unsure how, ask Claude Code: “Undo all the changes since my last commit.”</li>
 <li><strong>Ask the AI to explain.</strong> If you’re not sure what a file does or why something isn’t working, just ask: “What does this question’s server.py do, in plain English?”</li>
 </ul>
-<!-- TODO Steve: add a short subsection on CLAUDE.md? e.g., "Ask Claude to create a CLAUDE.md file describing your course conventions (notation, tagging scheme, point values, and where course_materials lives) so it remembers them every time." Could be very handy, but it's one more concept. -->
 </section>
 <section id="next-steps" class="level2">
 <h2 class="anchored" data-anchor-id="next-steps">Next Steps</h2>
